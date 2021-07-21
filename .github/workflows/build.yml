@@ -36,7 +36,7 @@ jobs:
     #       ${{ runner.os }}-node-
     - name: Install
       run: |
-        npm ci --no-optional
+        yarn install --ignore-optional --ignore-scripts
     - name: Get Build Number
       id: vars
       uses: ./.github/actions/get-build-number
