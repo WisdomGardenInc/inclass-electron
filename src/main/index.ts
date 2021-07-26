@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
@@ -33,7 +33,30 @@ function createWindow() {
     icon: logoUrl
   })
 
+
+  let currentOrg: Org | null = null;
+
+
+  ipcMain.handle("orgChanged", (event, arg) => {
+    currentOrg = JSON.parse(arg)
+  })
+
   mainWindow.loadURL(indexHtmlUrl)
+
+  // session.defaultSession.webRequest.onHeadersReceived({urls: ['*://lms-qa.tronclass.com.cn/*']}, (details, callback) => {
+  //   console.log("###onHeadersReceived:", details.responseHeaders)
+  //   callback(details)
+  // })
+
+  mainWindow.webContents.on('did-create-window', (childWindow) => {
+    childWindow.webContents.on('will-redirect', async (e, url) => {
+      if (currentOrg && url.includes("/user/index")) {
+        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`);
+        childWindow.close();
+        mainWindow.maximize()
+      }
+    })
+  })
   return mainWindow
 }
 

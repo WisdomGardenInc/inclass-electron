@@ -1,73 +1,87 @@
 <template>
   <div class="container">
-    <div class="card" >
-      <h2>Electron Clipboard API</h2>
-      <p>{{ contentToCopy }}</p>
-      <div class="card clickable" @click="copyToClipboard">Click To Copy</div>
+    <div class="w-full">
+      <a-select
+        class="form-control w-full"
+        showSearch
+        placeholder="org select"
+        size="large"
+        @search="getOrgs"
+        @change="orgChanged"
+        v-model:value="selectedOrg"
+        :filterOption="false"
+      >
+        <a-select-option
+          :value="org"
+          v-for="org in filteredOrgs"
+          :key="orgKey(org)"
+        >
+          {{ org.orgName }}
+        </a-select-option>
+      </a-select>
     </div>
-    <div class="card" >
-      <h2>Electron Shell & Dialog API</h2>
-      <p v-if="filePath"> {{ filePath }} </p>
-      <p v-else style="color: grey"> File path will display here! </p>
-      <div class="flex">
-        <div class="card clickable" @click="pickItem">Click To Pick File</div>
-        <div class="card clickable" @click="showItem">Click To Show File in Directory</div>
+    <div class="w-full">
+      {{ selectedOrg }}
+    </div>
+    <div class="w-full" v-if="selectedOrg">
+      <div class="card">
+        <a :href="selectedOrg.apiUrl + '/login'" target="_blank"
+          >统一身份认证登录</a
+        >
       </div>
-    </div>
-    <div class="card">
-      <h2>Vue reactivity</h2>
-      <p>Click below button to checkout vue reactivity</p>
-      <sum-equation />
-    </div>
-    <div class="card" >
-      <h2>Vuex Store</h2>
-      <p> count: {{ count }} </p>
-      <div class="flex">
-        <div class="card clickable" @click="increment">Click To Increment by Commit</div>
+      <div class="card">
+        <a href="https://lms-qa.tronclass.com.cn/login?no_cas" target="_blank"
+          >校外人员登录</a
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script lang=ts>
-import { defineComponent, reactive, toRefs } from 'vue'
-import { useClipboard, useShell, useDialog, useCount } from '../composables'
+import { defineComponent, reactive, ref } from 'vue'
 import SumEquation from './SumEquation.vue'
+
+import { orgs } from "../../shared/orgs.json"
+import { useIpc } from '../composables'
 
 export default defineComponent({
   components: {
     SumEquation
   },
   setup(props, context) {
-    const data = reactive({
-      contentToCopy: 'hello, you will copy/paste this piece of text!',
-      filePath: ''
-    })
-    const { showItemInFolder } = useShell()
-    const { write } = useClipboard()
-    const { showOpenDialog } = useDialog()
-    const name = 'abc'
-    function copyToClipboard() {
-      write({ text: data.contentToCopy })
-    }
-    async function pickItem() {
-      const { filePaths } = await showOpenDialog({
-        title: 'Pick the file to show',
-        properties: ['openFile']
+    const { invoke } = useIpc()
+
+    const filteredOrgs = ref<Org[]>([]);
+
+    const selectedOrg = ref<null | Org>(null);
+
+    const getOrgs = (keyword = "") => {
+      if (!keyword) {
+        return;
+      }
+
+      filteredOrgs.value = (orgs as Org[]).filter((org) => {
+        return org.orgName.includes(keyword)
       })
-      data.filePath = filePaths[0] ?? ''
     }
-    function showItem() {
-      showItemInFolder(data.filePath)
+
+    const orgKey = (org: any): string => {
+      return `${org.id}|${org.isPublic || ""}|${org.orgName}`;
+    }
+
+    const orgChanged = (org: any) => {
+      invoke('orgChanged', JSON.stringify(selectedOrg.value))
+      console.log(org)
     }
     return {
-      ...toRefs(data),
-      ...useCount(),
-      name,
-      copyToClipboard,
-      showItem,
-      pickItem
+      filteredOrgs, orgs, getOrgs, orgKey, orgChanged, selectedOrg
     }
   }
 })
 </script>
+<style lang="scss" scoped>
+.w-full {
+  width: 100%;
+}
+</style>

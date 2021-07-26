@@ -1,5 +1,14 @@
 /* eslint-disable no-unused-vars */
 
+declare interface Org {
+  apiUrl: string;
+  orgName: string;
+  objectId: string;
+  area: string;
+  isPublic?: boolean;
+}
+
+
 /**
  * @see https://github.com/vitejs/vite/blob/03acecd797d8393e38c8a78f920c8e0927762018/importMeta.d.ts
  */

@@ -24,10 +24,14 @@
     },
     "license": "MIT",
     "dependencies": {
+        "ant-design-vue": "^2.2.2",
         "electron-updater": "^4.3.5",
+        "vite-plugin-components": "^0.13.2",
+        "vite-plugin-windicss": "^1.2.5",
         "vue": "^3.1.5",
         "vue-router": "^4.0.10",
-        "vuex": "^4.0.2"
+        "vuex": "^4.0.2",
+        "windicss": "^3.1.5"
     },
     "external": [
         "electron-updater",
@@ -52,6 +56,7 @@
         "got": "^9.6.0",
         "magic-string": "^0.25.7",
         "rollup": "^2.38.5",
+        "sass": "^1.35.2",
         "tslib": "^1.14.1",
         "typescript": "^4.3.5",
         "vite": "^2.4.3"

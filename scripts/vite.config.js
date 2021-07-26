@@ -2,6 +2,11 @@ const { join, resolve } = require('path')
 const { external } = require('../package.json')
 const { default: vue } = require('@vitejs/plugin-vue')
 const { readdirSync } = require('fs')
+const ViteComponents = require('vite-plugin-components').default;
+const AntDesignVueResolver = require('vite-plugin-components').AntDesignVueResolver
+
+const WindiCSS = require('vite-plugin-windicss').default
+
 
 const entries = readdirSync(join(__dirname, '../src/renderer')).filter(f => f.endsWith('.html'))
   .map(f => join(__dirname, '../src/renderer', f))
@@ -30,7 +35,14 @@ const config = {
     exclude: external
   },
   // @ts-ignore
-  plugins: [vue()]
+  plugins: [
+    vue(),
+    ViteComponents({
+      customComponentResolvers: [
+        AntDesignVueResolver(),
+      ]
+    })
+  ]
 }
 
 module.exports = config
