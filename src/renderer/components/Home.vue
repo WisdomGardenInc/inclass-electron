@@ -20,19 +20,22 @@
         </a-select-option>
       </a-select>
     </div>
+
     <div class="w-full">
       {{ selectedOrg }}
     </div>
+
     <div class="w-full" v-if="selectedOrg">
-      <div class="card">
+      <div class="card" v-if="!selectedOrg.isPublic">
         <a :href="selectedOrg.apiUrl + '/login'" target="_blank"
           >统一身份认证登录</a
         >
       </div>
       <div class="card">
-        <a href="https://lms-qa.tronclass.com.cn/login?no_cas" target="_blank"
-          >校外人员登录</a
-        >
+<!--        <a href="https://lms-qa.tronclass.com.cn/login?no_cas" target="_blank"-->
+<!--          >公有云登录</a-->
+<!--        >        -->
+        <a href="https://wwww.baidu.com" target="_blank">公有云账号密码登陆</a>
       </div>
     </div>
   </div>
@@ -42,7 +45,7 @@
 import { defineComponent, reactive, ref } from 'vue'
 import SumEquation from './SumEquation.vue'
 
-import { orgs } from "../../shared/orgs.json"
+import { orgs } from '../../shared/orgs.json'
 import { useIpc } from '../composables'
 
 export default defineComponent({
@@ -56,7 +59,7 @@ export default defineComponent({
 
     const selectedOrg = ref<null | Org>(null);
 
-    const getOrgs = (keyword = "") => {
+    const getOrgs = (keyword = '') => {
       if (!keyword) {
         return;
       }
@@ -67,7 +70,7 @@ export default defineComponent({
     }
 
     const orgKey = (org: any): string => {
-      return `${org.id}|${org.isPublic || ""}|${org.orgName}`;
+      return `${org.id}|${org.isPublic || ''}|${org.orgName}`;
     }
 
     const orgChanged = (org: any) => {

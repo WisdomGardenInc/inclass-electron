@@ -1,4 +1,5 @@
 <template>
+  <div>This is the login page</div>
   <div>
     <img alt="Vue logo" src="../assets/logo.png" />
     <div>Electron Version: {{ version }} </div>

@@ -14,9 +14,6 @@ async function main() {
   initialize(logger)
   app.whenReady().then(() => {
     const main = createWindow()
-    // const [x, y] = main.getPosition()
-    // const side = createSecondWindow()
-    // side.setPosition(x + 800 + 5, y)
   })
 }
 
@@ -28,25 +25,33 @@ function createWindow() {
     webPreferences: {
       preload: indexPreload,
       contextIsolation: true,
-      nodeIntegration: false
+      nodeIntegration: false,
+      webSecurity: false
     },
     icon: logoUrl
   })
 
-
-  let currentOrg: Org | null = null;
-
+  let currentOrg: Org | null = null
 
   ipcMain.handle("orgChanged", (event, arg) => {
     currentOrg = JSON.parse(arg)
   })
 
-  mainWindow.loadURL(indexHtmlUrl)
+  ipcMain.handle("open-inclass-list", (event, arg) => {
+    mainWindow.loadURL(arg.next_url);
+    mainWindow.maximize();
+    mainWindow.webContents.on("did-finish-load", function() {
+      //
+      // 这里放注入代码逻辑
+      //
+    });
+  })
 
-  // session.defaultSession.webRequest.onHeadersReceived({urls: ['*://lms-qa.tronclass.com.cn/*']}, (details, callback) => {
-  //   console.log("###onHeadersReceived:", details.responseHeaders)
-  //   callback(details)
-  // })
+  ipcMain.handle("closeApp", (event, arg) => {
+    mainWindow.close();
+  })
+
+  mainWindow.loadURL(indexHtmlUrl)
 
   mainWindow.webContents.on('did-create-window', (childWindow) => {
     childWindow.webContents.on('will-redirect', async (e, url) => {
@@ -58,21 +63,6 @@ function createWindow() {
     })
   })
   return mainWindow
-}
-
-function createSecondWindow() {
-  const sideWindow = new BrowserWindow({
-    height: 600,
-    width: 300,
-    webPreferences: {
-      preload: anotherPreload,
-      contextIsolation: true,
-      nodeIntegration: false
-    }
-  })
-
-  sideWindow.loadURL(sideHtmlUrl)
-  return sideWindow
 }
 
 // ensure app start as single instance
