@@ -30,8 +30,6 @@
       <img class="arrow-right" src="../assets/svg/arrow-right-green.svg" alt=">">
     </div>
   </div>
-
-  <div style="margin-top: 50px">{{ scope.currentOrg }}</div>
 </template>
 
 <script>
@@ -52,12 +50,12 @@ export default {
   data() {
     return {
       scope: {
-        currentComponent: 'step-1',
-        currentOrg: { orgName: '666', id: 1 }
+        currentComponent: '',
+        currentOrg: null
       },
       localeList: ['cn', 'tw', 'uk'],
-      localeIndex: 2,
-      showLocaleChange: false,
+      localeIndex: 0,
+      showLocaleChange: false
     }
   },
 
@@ -65,6 +63,9 @@ export default {
     canBack() {
       return this.scope.currentComponent !== 'step-1';
     },
+    historyOrg() {
+      return JSON.parse(localStorage.getItem('org'));
+    }
   },
 
   methods: {
@@ -102,6 +103,11 @@ export default {
       this.scope.currentOrg = null;
     },
   },
+
+  mounted() {
+    this.scope.currentComponent = this.historyOrg ? 'step-2' : 'step-1';
+    this.scope.currentOrg = this.historyOrg ? this.historyOrg : null;
+  }
 }
 </script>
 

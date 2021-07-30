@@ -11,9 +11,9 @@ const uk = {
     input_org_name: 'please input org/school name',
     invalid_org_name: 'no org/school found, please try again',
 
-    login_method_tip: 'guest account please sign in via username & password',
-    uniform_identification_login: 'uniform identity gateway authentication login',
-    username_password_login: 'username & password login',
+    login_method_tip: 'off-campus user please sign in using username & passsword',
+    uniform_identification_login: 'CAS login',
+    username_password_login: 'Off-Campus User login',
 
     passwordLogin: 'username & password login',
     username_input: 'please input email-address/username',

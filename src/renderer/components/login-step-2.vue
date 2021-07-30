@@ -7,14 +7,15 @@
     </div>
 
     <div class="button">
-      <a v-if="isPublicCloud" class="btn-primary" :href="loginUrl" target="_blank">
+      <a v-if="!isPublicCloud" class="btn-primary" :href="loginUrl" target="_blank">
         <span>{{ $t("uniform_identification_login") }}</span>
         <img class="arrow-right" src="../assets/svg/arrow-right-white.svg" alt=">">
       </a>
-        <img class="arrow-right" src="../assets/svg/arrow-right-white.svg" alt=">">
       <div class="btn-default" @click="pwdLogin">{{ $t('login.username_password_login') }}</div>
     </div>
   </div>
+
+  <div>{{ scope.currentOrg.isPublic }}</div>
 </template>
 
 <script>
@@ -42,6 +43,10 @@ export default {
       this.scope.currentComponent = 'step-3';
     }
   },
+
+  mounted() {
+    localStorage.setItem('org', JSON.stringify(this.scope.currentOrg));
+  }
 }
 </script>
 

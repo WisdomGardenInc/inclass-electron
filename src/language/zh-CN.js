@@ -12,7 +12,7 @@ const cn = {
     invalid_org_name: '未找到符合条件的学校/机构，请重新输入',
 
     login_method_tip: '非本学校/机构人员，请选择 账号密码 或 第三方登录',
-    uniform_identification_login: '统一身份网关认证登录',
+    uniform_identification_login: '统一身份认证网关登录',
     username_password_login: '账号密码登录',
 
     passwordLogin: '账号密码登录',
