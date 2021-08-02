@@ -40,10 +40,8 @@ function createWindow() {
   ipcMain.handle("open-inclass-list", (event, arg) => {
     mainWindow.loadURL(arg.next_url);
     mainWindow.maximize();
+    mainWindow.fullScreen = true;
     mainWindow.webContents.on("did-finish-load", function() {
-      //
-      // 这里放注入代码逻辑
-      //
     });
   })
 
@@ -59,6 +57,7 @@ function createWindow() {
         mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`);
         childWindow.close();
         mainWindow.maximize()
+        mainWindow.fullScreen = true;
       }
     })
   })

@@ -3,9 +3,9 @@
     <div class="title">{{ $t("login.passwordLogin") }}</div>
     <div class="input">
       <input class="username" :class="{'default': !errorMessage, 'has-err': errorMessage}" type="text" v-model="username" :placeholder="$t('login.username_input')">
-      <input class="password" :class="{'default': !errorMessage, 'has-err': errorMessage}" type="text" v-model="password" :placeholder="$t('login.password_input')">
+      <input class="password" :class="{'default': !errorMessage, 'has-err': errorMessage}" type="password" v-model="password" :placeholder="$t('login.password_input')">
       <div class="errMsg">{{ errorMessage }}</div>
-      <div class="button btn-primary" :class="{'mask': !validInput}" @click="handleSubmit">登录</div>
+      <div class="button btn-primary" :class="{'mask': !validInput}" @click="handleSubmit">{{ $t('common.login') }}</div>
     </div>
   </div>
 </template>
@@ -22,8 +22,8 @@ export default {
 
   data() {
     return {
-      username: 'zhubin@wisdomgarden.com',
-      password: '7RWJAGWUPF5QU',
+      username: '',
+      password: '',
       errorMessage: ''
     }
   },

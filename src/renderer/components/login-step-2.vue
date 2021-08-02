@@ -8,14 +8,12 @@
 
     <div class="button">
       <a v-if="!isPublicCloud" class="btn-primary" :href="loginUrl" target="_blank">
-        <span>{{ $t("uniform_identification_login") }}</span>
-        <img class="arrow-right" src="../assets/svg/arrow-right-white.svg" alt=">">
+        <span>{{ $t("login.uniform_identification_login") }}</span>
+        <div class="arrow-right-white"></div>
       </a>
       <div class="btn-default" @click="pwdLogin">{{ $t('login.username_password_login') }}</div>
     </div>
   </div>
-
-  <div>{{ scope.currentOrg.isPublic }}</div>
 </template>
 
 <script>
@@ -40,7 +38,7 @@ export default {
 
   methods: {
     pwdLogin() {
-      this.scope.currentComponent = 'step-3';
+      this.scope.currentComponent = 'step-3'
     }
   },
 
@@ -83,10 +81,16 @@ export default {
       line-height: 56px;
       color: #FFFFFF;
 
-      .arrow-right {
+      .arrow-right-white {
+        display: inline-block;
         position: absolute;
-        right: 15px;
-        top: 20px;
+        right: 20px;
+        top: 22px;
+        width: 12px;
+        height: 12px;
+        border-top: 2px solid #FFFFFF;
+        border-right: 2px solid #FFFFFF;
+        transform: rotate(45deg);
       }
     }
     .btn-default {

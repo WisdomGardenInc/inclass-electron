@@ -1,7 +1,5 @@
 import { readFile } from 'fs-extra'
 
-console.log('hello world 2nd preload!')
-
 /**
  * You can access node module here!
  */

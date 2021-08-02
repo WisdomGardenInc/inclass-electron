@@ -36,7 +36,7 @@ export default {
 
   data() {
     return {
-      filteredOrgs: orgs,
+      filteredOrgs: null,
       selectedOrg: null
     }
   },
@@ -47,11 +47,11 @@ export default {
   methods: {
     getOrgs(keyword) {
       if (!keyword) {
-        this.filteredOrgs = orgs;
-        return;
+        this.filteredOrgs = null
+        return
       }
       this.filteredOrgs = (orgs).filter((org) => {
-        return org.orgName.includes(keyword);
+        return org.orgName.includes(keyword)
       })
     },
 
@@ -65,10 +65,10 @@ export default {
 
     handleSubmit() {
       if (!this.selectedOrg) {
-        return;
+        return
       }
-      this.scope.currentComponent = 'step-2';
-      this.scope.currentOrg = this.selectedOrg;
+      this.scope.currentComponent = 'step-2'
+      this.scope.currentOrg = this.selectedOrg
     }
   }
 }

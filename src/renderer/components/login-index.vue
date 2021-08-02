@@ -2,8 +2,8 @@
   <div class="header">
     <img src="../assets/svg/close.svg" alt="X" class="close" @click="closeHandler">
     <div class="locale" @click="langChange">
-      {{ $t(localeList[localeIndex]) }}
-      <img src="../assets/svg/arrow-down.svg" alt="" class="arrow-down">
+      {{ $t($i18n.locale) }}
+      <div :class="[showLocaleChange ? 'arrow-up' : 'arrow-down']"></div>
       <div class="locale-change" :class="{'none': !showLocaleChange}">
         <ul>
           <li @click.stop="toCN">简体中文</li>
@@ -27,7 +27,7 @@
     </div>
     <div class="change-org" @click="changeOrgHandler">
       {{ $t('login.changeOrg') }}
-      <img class="arrow-right" src="../assets/svg/arrow-right-green.svg" alt=">">
+      <div class="arrow-right-green"></div>
     </div>
   </div>
 </template>
@@ -53,8 +53,6 @@ export default {
         currentComponent: '',
         currentOrg: null
       },
-      localeList: ['cn', 'tw', 'uk'],
-      localeIndex: 0,
       showLocaleChange: false
     }
   },
@@ -77,36 +75,34 @@ export default {
     langChange() {
       this.showLocaleChange = !this.showLocaleChange;
     },
-    closeLangChange() {
-      this.$i18n.locale = this.localeList[this.localeIndex];
-      this.showLocaleChange = false;
-    },
     toCN() {
-      this.localeIndex = 0;
-      this.closeLangChange();
+      this.$i18n.locale = 'cn'
+      this.showLocaleChange = false
     },
     toTW() {
-      this.localeIndex = 1;
-      this.closeLangChange();
+      this.$i18n.locale = 'tw'
+      this.showLocaleChange = false
     },
     toUK() {
-      this.localeIndex = 2;
-      this.closeLangChange();
+      this.$i18n.locale = 'uk'
+      this.showLocaleChange = false
     },
 
     closeHandler() {
-      invoke('closeApp');
+      invoke('closeApp')
     },
-
     changeOrgHandler() {
-      this.scope.currentComponent = 'step-1';
-      this.scope.currentOrg = null;
+      this.scope.currentComponent = 'step-1'
+      this.scope.currentOrg = null
     },
   },
 
   mounted() {
-    this.scope.currentComponent = this.historyOrg ? 'step-2' : 'step-1';
-    this.scope.currentOrg = this.historyOrg ? this.historyOrg : null;
+    this.scope.currentComponent = this.historyOrg ? 'step-2' : 'step-1'
+    this.scope.currentOrg = this.historyOrg ? this.historyOrg : null
+    if (!this.$i18n.locale) {
+      this.$i18n.locale = 'cn'
+    }
   }
 }
 </script>
@@ -174,6 +170,26 @@ export default {
 
       .arrow-down {
         display: inline-block;
+        position: relative;
+        top: -3px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid #C5C8CE;
+        border-bottom: 2px solid #C5C8CE;
+        transform: rotate(45deg);
+      }
+
+      .arrow-up {
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid #C5C8CE;
+        border-bottom: 2px solid #C5C8CE;
+        transform: rotate(225deg);
       }
     }
   }
@@ -206,10 +222,16 @@ export default {
       font-size: 20px;
       line-height: 22px;
 
-      .arrow-right {
+      .arrow-right-green {
+        display: inline-block;
         position: relative;
         width: 8px;
         height: 8px;
+        top: -1px;
+        left: 4px;
+        border-top: 2px solid #20BEC9;
+        border-right: 2px solid #20BEC9;
+        transform: rotate(45deg);
       }
     }
   }
