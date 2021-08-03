@@ -1,7 +1,5 @@
 import { shell, clipboard, ipcRenderer, contextBridge, Dialog, IpcRenderer } from 'electron'
 
-console.log('hello world 1st preload!')
-
 /**
  * Wrapper of ipc renderer.
  *
@@ -88,4 +86,30 @@ try {
   contextBridge.exposeInMainWorld('electron', api)
 } catch {
   (window as any).electron = api
+}
+
+window.onload = function() {
+  // redefine the behavior of close button
+  const closeBtn = <HTMLElement>document.querySelector('.exit')
+  if (closeBtn) {
+    closeBtn.setAttribute('href', '#')
+    closeBtn.onclick = function() {
+      window.close()
+    }
+  }
+  const inClassCloseBtn = <HTMLElement>document.querySelector('.icon-cl-exit')
+  if (inClassCloseBtn) {
+    inClassCloseBtn.onclick = function() {
+      const dialogDiv = <HTMLElement>document.querySelector('.cl-dialog')
+      if (dialogDiv) {
+        dialogDiv.style.display = 'none'
+      }
+      const a = window.document.createElement('a')
+      a.href = '/inclass/courses?from_class_mode_page=true'
+      a.style.display = 'none'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
+  }
 }

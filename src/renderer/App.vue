@@ -1,6 +1,7 @@
-<template >
+<template>
   <div class="app">
-    <router-view> </router-view>
+    <router-view></router-view>
+<!--    <navigator style="position: absolute; bottom: 0"></navigator>-->
   </div>
 </template>
 
@@ -11,7 +12,7 @@ import Navigator from '/@/components/HomeNavigator.vue'
 export default defineComponent({
   components: {
     Navigator
-  },
+  }
 })
 </script>
 
