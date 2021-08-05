@@ -43,7 +43,7 @@ jobs:
         uses: ./.github/actions/get-build-number
       - name: Build
         run: |
-          npm run build:production
+          yarn build:production
         env:
           BUILD_NUMBER: ${{ steps.vars.outputs.build_number }}
           FULL_RELEASE: ${{ startsWith(github.event.commits[0].message, 'chore(release)') }}
@@ -82,7 +82,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install
         run: |
-          npm ci --no-optional
+          yarn install --ignore-optional
         env:
           CI: true
       - name: Get Package Version
@@ -131,7 +131,7 @@ jobs:
       #       ${{ runner.os }}-node-
       - name: Install
         run: |
-          npm ci --no-optional
+          yarn install --ignore-optional
       - name: Download Build
         uses: actions/download-artifact@v2
         with:
