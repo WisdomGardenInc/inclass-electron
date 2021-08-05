@@ -11,6 +11,7 @@ on:
       - "static/**"
       - "package.json"
       - "yarn.lock"
+      - ".github/workflows/build.yml"
 
 jobs:
   build:
