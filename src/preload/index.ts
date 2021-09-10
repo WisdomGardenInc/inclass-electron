@@ -90,13 +90,18 @@ try {
 
 window.onload = function() {
   // redefine the behavior of close button
+  let confirmClose = false;
   const closeBtn = <HTMLElement>document.querySelector('.exit')
   if (closeBtn) {
     closeBtn.setAttribute('href', '#')
     closeBtn.onclick = function() {
-      window.close()
+      confirmClose = confirm('Are you sure you want to exit?');
+      if (confirmClose) {
+        window.close();
+      }
     }
   }
+
   const inClassCloseBtn = <HTMLElement>document.querySelector('.icon-cl-exit')
   if (inClassCloseBtn) {
     inClassCloseBtn.onclick = function() {

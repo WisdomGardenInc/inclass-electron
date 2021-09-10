@@ -4,7 +4,8 @@ const tw = {
   uk: 'English(UK)',
   common: {
     confirm: '確定',
-    login: '登錄'
+    login: '登錄',
+    exitConfirm: '確定退出嗎?'
   },
   login: {
     orgName: '學校/機構名稱',

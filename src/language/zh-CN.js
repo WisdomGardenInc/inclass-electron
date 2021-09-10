@@ -4,7 +4,8 @@ const cn = {
   uk: 'English(UK)',
   common: {
     confirm: '确定',
-    login: '登录'
+    login: '登录',
+    exitConfirm: '确定退出吗?'
   },
   login: {
     orgName: '学校/机构名称',

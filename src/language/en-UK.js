@@ -4,7 +4,8 @@ const uk = {
   uk: 'English(UK)',
   common: {
     confirm: 'Confirm',
-    login: 'Login'
+    login: 'Login',
+    exitConfirm: 'Are you sure you want to exit?'
   },
   login: {
     orgName: 'org/school name',

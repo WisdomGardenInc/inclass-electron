@@ -89,7 +89,10 @@ export default {
     },
 
     closeHandler() {
-      invoke('closeApp')
+      const confirmClose = confirm(this.$t('common.exitConfirm'))
+      if (confirmClose) {
+        invoke('closeApp');
+      }
     },
     changeOrgHandler() {
       this.scope.currentComponent = 'step-1'
