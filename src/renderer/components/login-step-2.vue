@@ -29,9 +29,9 @@ export default {
 
     loginUrl() {
       if (this.isPublicCloud) {
-        return 'https://tronclass.com.cn/login';
+        return 'https://tronclass.com.cn/inclass/courses';
       } else {
-        return `${this.scope.currentOrg.apiUrl}/login`;
+        return `${this.scope.currentOrg.apiUrl}/inclass/courses`;
       }
     }
   },

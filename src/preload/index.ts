@@ -95,7 +95,7 @@ window.onload = function() {
   if (closeBtn) {
     closeBtn.setAttribute('href', '#')
     closeBtn.onclick = function() {
-      confirmClose = confirm('Are you sure you want to exit?');
+      confirmClose = confirm('Exit(确认退出)?');
       if (confirmClose) {
         window.close();
       }
