@@ -28,13 +28,11 @@
     "axios": "^0.21.1",
     "electron-updater": "^4.3.5",
     "qs": "^6.10.1",
-    "vite-plugin-components": "^0.13.2",
-    "vite-plugin-windicss": "^1.2.5",
-    "vue": "^3.1.5",
+    "vite-plugin-windicss": "^1.8.4",
+    "vue": "3.1.5",
     "vue-axios": "^3.2.5",
     "vue-i18n": "^9.1.7",
-    "vue-router": "^4.0.10",
-    "vuex": "^4.0.2",
+    "vue-router": "^4.0.14",
     "windicss": "^3.1.5"
   },
   "external": [
@@ -48,7 +46,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@vitejs/plugin-vue": "^1.2.5",
-    "@vue/compiler-sfc": "^3.1.5",
+    "@vue/compiler-sfc": "3.1.5",
     "builtin-modules": "^3.2.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
@@ -63,7 +61,8 @@
     "sass": "^1.35.2",
     "tslib": "^1.14.1",
     "typescript": "^4.3.5",
-    "vite": "^2.4.3"
+    "unplugin-vue-components": "^0.19.3",
+    "vite": "^2.9.5"
   },
   "optionalDependencies": {
     "@types/node": "^14.14.7",
@@ -75,6 +74,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.2",
-    "eslint-plugin-vue": "^7.1.0"
+    "eslint-plugin-vue": "^8.6.0"
   }
 }

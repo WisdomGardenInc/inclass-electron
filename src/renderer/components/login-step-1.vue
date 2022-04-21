@@ -1,26 +1,14 @@
 <template>
   <div class="wrapper">
     <div class="title">{{ $t('login.orgName') }}</div>
-    <a-select
-      class="form-control"
-      showSearch
-      :placeholder="$t('login.input_org_name')"
-      size="large"
-      @search="getOrgs"
-      @change="orgChanged"
-      v-model:value="selectedOrg"
-      :filterOption="false"
-      :notFoundContent="$t('login.invalid_org_name')"
-    >
-      <a-select-option
-        :value="org"
-        v-for="org in filteredOrgs"
-        :key="orgKey(org)"
-      >
+    <a-select class="form-control" showSearch :placeholder="$t('login.input_org_name')" size="large" @search="getOrgs"
+      @change="orgChanged" v-model:value="selectedOrg" :filterOption="false"
+      :notFoundContent="$t('login.invalid_org_name')">
+      <a-select-option :value="org" v-for="org in filteredOrgs" :key="orgKey(org)">
         {{ org.orgName }}
       </a-select-option>
     </a-select>
-    <div class="button submit" :class="{'mask': !selectedOrg}" @click="handleSubmit">{{ $t("common.confirm") }}</div>
+    <div class="button submit" :class="{ 'mask': !selectedOrg }" @click="handleSubmit">{{ $t("common.confirm") }}</div>
   </div>
 </template>
 
@@ -36,7 +24,7 @@ export default {
 
   data() {
     return {
-      filteredOrgs: null,
+      filteredOrgs: [],
       selectedOrg: null
     }
   },
@@ -47,20 +35,22 @@ export default {
   methods: {
     getOrgs(keyword) {
       if (!keyword) {
-        this.filteredOrgs = null
+        this.filteredOrgs = []
         return
       }
-      this.filteredOrgs = (orgs).filter((org) => {
+      this.filteredOrgs = orgs.filter((org) => {
         return org.orgName.includes(keyword)
       })
     },
 
     orgKey(org) {
-      return `${org.id}|${org.isPublic || ''}|${org.orgName}`;
+      return `${org.objectId}|${org.isPublic}|${org.orgName}`;
     },
 
     orgChanged(org) {
-      invoke('orgChanged', JSON.stringify(this.selectedOrg));
+      if (org) {
+        invoke('orgChanged', JSON.stringify(this.selectedOrg));
+      }
     },
 
     handleSubmit() {
@@ -146,6 +136,7 @@ export default {
     line-height: 56px;
     color: #FFFFFF;
   }
+
   .mask {
     opacity: 35%;
   }

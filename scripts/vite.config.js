@@ -2,9 +2,8 @@ const { join, resolve } = require('path')
 const { external } = require('../package.json')
 const { default: vue } = require('@vitejs/plugin-vue')
 const { readdirSync } = require('fs')
-const ViteComponents = require('vite-plugin-components').default;
-const AntDesignVueResolver = require('vite-plugin-components').AntDesignVueResolver
-
+const Components = require("unplugin-vue-components/vite")
+const Resolver = require('unplugin-vue-components/resolvers')
 const WindiCSS = require('vite-plugin-windicss').default
 
 
@@ -37,9 +36,9 @@ const config = {
   // @ts-ignore
   plugins: [
     vue(),
-    ViteComponents({
-      customComponentResolvers: [
-        AntDesignVueResolver(),
+    Components({
+      resolvers: [
+        Resolver.AntDesignVueResolver(),
       ]
     })
   ]
