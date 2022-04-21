@@ -4,6 +4,7 @@ const tw = {
   uk: 'English(UK)',
   common: {
     confirm: '確定',
+    cancel: "取消",
     login: '登錄',
     exitConfirm: '確定退出嗎?'
   },

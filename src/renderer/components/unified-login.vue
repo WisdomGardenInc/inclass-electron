@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="title mb-10">{{ $t("common.login") }}</div>
+    <div class="title mb-16"> {{ scope.currentOrg.orgName }} </div>
 
     <div class="button">
       <a v-if="!isPublicCloud" class="btn-primary" @click="toUniformLogin">

@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="../assets/svg/close.svg" alt="X" class="close" @click="closeConfirm">
+    <img src="../assets/svg/close.svg" alt="X" class="close cursor-pointer" @click="closeConfirm">
     <div class="locale" @click="langChange">
       {{ $t($i18n.locale) }}
       <div :class="[showLocaleChange ? 'arrow-up' : 'arrow-down']"></div>
@@ -14,17 +14,14 @@
         </ul>
       </div>
     </div>
-    <img v-if="canBack" src="../assets/svg/back.svg" alt="<" class="back" @click="backHandler">
+    <img v-if="canBack" src="../assets/svg/back.svg" alt="<" class="back cursor-pointer" @click="backHandler">
   </div>
 
   <div class="body">
     <component v-bind:is="scope.currentComponent" :scope="scope"></component>
   </div>
 
-  <div v-if="scope.currentOrg && scope.currentComponent === 'step-2'" class="footer clearfix">
-    <div class="org-info">
-      {{ scope.currentOrg.orgName }}
-    </div>
+  <div v-if="scope.currentOrg && scope.currentComponent !== 'step-1'" class="footer clearfix flex justify-center mt-2">
     <div class="change-org" @click="changeOrgHandler">
       {{ $t('login.changeOrg') }}
       <div class="arrow-right-green"></div>
@@ -89,23 +86,17 @@ export default {
       this.showLocaleChange = false
     },
 
-    async closeConfirm() {
-      await Modal.confirm({
+    closeConfirm() {
+      Modal.confirm({
         title: this.$t('common.exitConfirm'),
-        okText: '确认',
-        cancelText: '取消',
+        okText: this.$t('common.confirm'),
+        cancelText: this.$t('common.cancel'),
         onOk() {
           invoke('closeApp');
         },
       });
     },
 
-    closeHandler() {
-      const confirmClose = confirm(this.$t('common.exitConfirm'))
-      if (confirmClose) {
-        invoke('closeApp');
-      }
-    },
     changeOrgHandler() {
       this.scope.currentComponent = 'step-1'
       this.scope.currentOrg = null
@@ -211,8 +202,6 @@ export default {
 
 .footer {
   position: relative;
-  width: 400px;
-  margin: 82px auto 0;
 
   .org-info {
     float: left;
@@ -231,7 +220,6 @@ export default {
 
   .change-org {
     float: left;
-    width: 200px;
     color: #20BEC9;
     text-align: right;
     font-size: 20px;

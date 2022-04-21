@@ -4,6 +4,7 @@ const cn = {
   uk: 'English(UK)',
   common: {
     confirm: '确定',
+    cancel: "取消",
     login: '登录',
     exitConfirm: '确定退出吗?'
   },

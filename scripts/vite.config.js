@@ -33,12 +33,20 @@ const config = {
   optimizeDeps: {
     exclude: external
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: { 'primary-color': '#00BBBD' },
+        javascriptEnabled: true,
+      },
+    },
+  },
   // @ts-ignore
   plugins: [
     vue(),
     Components({
       resolvers: [
-        Resolver.AntDesignVueResolver(),
+        Resolver.AntDesignVueResolver({ importStyle: "less" }),
       ]
     }),
     Unocss({

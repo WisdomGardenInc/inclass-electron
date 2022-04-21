@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
-    <div class="title">{{ $t("login.passwordLogin") }}</div>
+    <div class="title">
+      {{ scope.currentOrg.orgName }}
+    </div>
     <div class="input">
       <input class="username mb-6 placeholder-[#C5C8CE]" :class="{ 'default': !errorMessage, 'has-err': errorMessage }"
         type="text" v-model="username" :placeholder="$t('login.username_input')">
