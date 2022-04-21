@@ -1,10 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="title">{{ $t("common.login") }}</div>
-
-    <div class="tips">
-      {{ $t("login.login_method_tip") }}
-    </div>
+    <div class="title mb-10">{{ $t("common.login") }}</div>
 
     <div class="button">
       <a v-if="!isPublicCloud" class="btn-primary" @click="toUniformLogin">
@@ -46,7 +42,7 @@ export default {
         try {
           const feature = `top=0,left=0,toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,location=no,status=no,channelmode = yes,height=${screen.height},width=${screen.width}`;
           window.open(this.loginUrl, '_blank', feature);
-        } catch (e) {}
+        } catch (e) { }
       }
     }
   },
@@ -65,7 +61,6 @@ export default {
     height: 40px;
     line-height: 40px;
     font-size: 28px;
-    margin-bottom: 12px;
   }
 
   .tips {
@@ -102,6 +97,7 @@ export default {
         transform: rotate(45deg);
       }
     }
+
     .btn-default {
       height: 56px;
       border: 2px solid #DCDEE2;

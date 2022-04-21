@@ -30,6 +30,7 @@ function createWindow() {
     },
     icon: logoUrl
   })
+  mainWindow.setMenu(null)
 
   let currentOrg: Org | null = null
 
@@ -41,7 +42,7 @@ function createWindow() {
     mainWindow.loadURL(arg.next_url);
     mainWindow.maximize();
     mainWindow.fullScreen = true;
-    mainWindow.webContents.on("did-finish-load", function() {
+    mainWindow.webContents.on("did-finish-load", function () {
     });
   })
 

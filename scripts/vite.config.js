@@ -4,8 +4,8 @@ const { default: vue } = require('@vitejs/plugin-vue')
 const { readdirSync } = require('fs')
 const Components = require("unplugin-vue-components/vite")
 const Resolver = require('unplugin-vue-components/resolvers')
-const WindiCSS = require('vite-plugin-windicss').default
-
+const Unocss = require('unocss/vite').default;
+const presetWind = require('@unocss/preset-wind').default;
 
 const entries = readdirSync(join(__dirname, '../src/renderer')).filter(f => f.endsWith('.html'))
   .map(f => join(__dirname, '../src/renderer', f))
@@ -39,6 +39,11 @@ const config = {
     Components({
       resolvers: [
         Resolver.AntDesignVueResolver(),
+      ]
+    }),
+    Unocss({
+      presets: [
+        presetWind()
       ]
     })
   ]

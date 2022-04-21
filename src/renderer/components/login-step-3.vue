@@ -2,10 +2,13 @@
   <div class="wrapper">
     <div class="title">{{ $t("login.passwordLogin") }}</div>
     <div class="input">
-      <input class="username" :class="{'default': !errorMessage, 'has-err': errorMessage}" type="text" v-model="username" :placeholder="$t('login.username_input')">
-      <input class="password" :class="{'default': !errorMessage, 'has-err': errorMessage}" type="password" v-model="password" :placeholder="$t('login.password_input')">
+      <input class="username mb-6 placeholder-[#C5C8CE]" :class="{ 'default': !errorMessage, 'has-err': errorMessage }"
+        type="text" v-model="username" :placeholder="$t('login.username_input')">
+      <input class="password placeholder-[#C5C8CE]" :class="{ 'default': !errorMessage, 'has-err': errorMessage }"
+        type="password" v-model="password" :placeholder="$t('login.password_input')">
       <div class="errMsg">{{ errorMessage }}</div>
-      <div class="button btn-primary" :class="{'mask': !validInput}" @click="handleSubmit">{{ $t('common.login') }}</div>
+      <div class="button btn-primary" :class="{ 'mask': !validInput }" @click="handleSubmit">{{ $t('common.login') }}
+      </div>
     </div>
   </div>
 </template>
@@ -74,19 +77,20 @@ export default {
     width: 400px;
 
     input {
+      border-radius: 3px;
       display: block;
-      padding-top: 8px;
       width: inherit;
       height: 56px;
       font-size: 24px;
       line-height: 48px;
-      border: none;
-      outline:none;
+      border: 1px solid #E8EAEC;
+      padding: 9px 12px;
     }
 
     .default {
       border-bottom: 2px solid #E8EAEC;
     }
+
     .has-err {
       border-bottom: 2px solid #FF5734;
     }

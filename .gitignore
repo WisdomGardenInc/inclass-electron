@@ -1,7 +1,7 @@
 dist
 node_modules
 .idea/
-!build/icons
 /extensions
-build
+build/*
+!build/icons/
 .DS_Store

@@ -85,7 +85,7 @@ export default {
       width: 400px;
       height: 56px !important;
       border: 2px solid #DCDEE2;
-      border-radius: 36px;
+      border-radius: 4px;
       font-size: 24px;
 
       .ant-select-selection-search {
@@ -119,7 +119,8 @@ export default {
 
     ::v-deep(.ant-select-arrow) {
       position: absolute;
-      right: 40px;
+      display: none;
+      right: 30px;
       top: 24px;
       font-size: 24px;
     }

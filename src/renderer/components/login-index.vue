@@ -1,10 +1,10 @@
 <template>
   <div class="header">
-    <img src="../assets/svg/close.svg" alt="X" class="close" @click="closeHandler">
+    <img src="../assets/svg/close.svg" alt="X" class="close" @click="closeConfirm">
     <div class="locale" @click="langChange">
       {{ $t($i18n.locale) }}
       <div :class="[showLocaleChange ? 'arrow-up' : 'arrow-down']"></div>
-      <div class="locale-change" :class="{'none': !showLocaleChange}">
+      <div class="locale-change" :class="{ 'none': !showLocaleChange }">
         <ul>
           <li @click.stop="toCN">简体中文</li>
           <li class="split-line"></li>
@@ -21,7 +21,7 @@
     <component v-bind:is="scope.currentComponent" :scope="scope"></component>
   </div>
 
-  <div v-if="scope.currentOrg && scope.currentComponent==='step-2'" class="footer clearfix">
+  <div v-if="scope.currentOrg && scope.currentComponent === 'step-2'" class="footer clearfix">
     <div class="org-info">
       {{ scope.currentOrg.orgName }}
     </div>
@@ -33,17 +33,18 @@
 </template>
 
 <script>
-import loginStepOne from '/@/components/login-step-1.vue'
-import loginStepTwo from '/@/components/login-step-2.vue'
+import OrgSelect from '/@/components/org-select.vue'
+import UnifiedLogin from '/@/components/unified-login.vue'
 import loginStepThree from '/@/components/login-step-3.vue'
 import { useIpc } from '../composables'
+import { Modal } from 'ant-design-vue';
 
 const { invoke } = useIpc()
 
 export default {
   components: {
-    'step-1': loginStepOne,
-    'step-2': loginStepTwo,
+    'step-1': OrgSelect,
+    'step-2': UnifiedLogin,
     'step-3': loginStepThree
   },
 
@@ -88,6 +89,17 @@ export default {
       this.showLocaleChange = false
     },
 
+    async closeConfirm() {
+      await Modal.confirm({
+        title: this.$t('common.exitConfirm'),
+        okText: '确认',
+        cancelText: '取消',
+        onOk() {
+          invoke('closeApp');
+        },
+      });
+    },
+
     closeHandler() {
       const confirmClose = confirm(this.$t('common.exitConfirm'))
       if (confirmClose) {
@@ -111,131 +123,131 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .header {
-    padding: 26px 32px 28px;
-    height: 74px;
-    vertical-align: center;
+.header {
+  padding: 26px 32px 28px;
+  height: 74px;
+  vertical-align: center;
 
-    .back {
-      float: left;
-      width: 20px;
-      height: 20px;
-    }
+  .back {
+    float: left;
+    width: 20px;
+    height: 20px;
+  }
 
-    .close {
-      float: right;
-      margin-left: 32px;
-      margin-top: 2px;
-      width: 16px;
-      height: 16px;
-    }
+  .close {
+    float: right;
+    margin-left: 32px;
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+  }
 
-    .locale {
-      float: right;
-      height: 20px;
-      text-align: right;
-      line-height: 20px;
-      font-size: 20px;
-      color: #828394;
-      cursor: pointer;
+  .locale {
+    float: right;
+    height: 20px;
+    text-align: right;
+    line-height: 20px;
+    font-size: 20px;
+    color: #828394;
+    cursor: pointer;
 
-      .locale-change {
-        position: relative;
-        z-index: 1;
-        top: 4px;
-        width: 202px;
-        height: 144px;
-        background: #FFFFFF;
-        box-shadow: 0 4px 24px rgba(6, 1, 25, 0.1);
-        border-radius: 8px;
-        color: #262833;
+    .locale-change {
+      position: relative;
+      z-index: 1;
+      top: 4px;
+      width: 202px;
+      height: 144px;
+      background: #FFFFFF;
+      box-shadow: 0 4px 24px rgba(6, 1, 25, 0.1);
+      border-radius: 8px;
+      color: #262833;
 
-        li {
-          padding: 12px 0;
-          height: 48px;
-          font-size: 20px;
-          line-height: 24px;
-          text-align: center;
+      li {
+        padding: 12px 0;
+        height: 48px;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
 
-          &:hover {
-            color: #20BEC9;
-          }
-        }
-
-        li.split-line {
-          padding: 0;
-          height: 0;
-          width: 75%;
-          margin: auto;
-          border: 1px solid #E8EAEC;
+        &:hover {
+          color: #20BEC9;
         }
       }
 
-      .arrow-down {
-        display: inline-block;
-        position: relative;
-        top: -3px;
-        left: 5px;
-        width: 10px;
-        height: 10px;
-        border-right: 2px solid #C5C8CE;
-        border-bottom: 2px solid #C5C8CE;
-        transform: rotate(45deg);
+      li.split-line {
+        padding: 0;
+        height: 0;
+        width: 75%;
+        margin: auto;
+        border: 1px solid #E8EAEC;
       }
+    }
 
-      .arrow-up {
-        display: inline-block;
-        position: relative;
-        top: 1px;
-        left: 5px;
-        width: 10px;
-        height: 10px;
-        border-right: 2px solid #C5C8CE;
-        border-bottom: 2px solid #C5C8CE;
-        transform: rotate(225deg);
-      }
+    .arrow-down {
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #C5C8CE;
+      border-bottom: 2px solid #C5C8CE;
+      transform: rotate(45deg);
+    }
+
+    .arrow-up {
+      display: inline-block;
+      position: relative;
+      top: 1px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #C5C8CE;
+      border-bottom: 2px solid #C5C8CE;
+      transform: rotate(225deg);
     }
   }
+}
 
-  .footer {
-    position: relative;
-    width: 400px;
-    margin: 82px auto 0;
+.footer {
+  position: relative;
+  width: 400px;
+  margin: 82px auto 0;
 
-    .org-info {
-      float: left;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-      width: 200px;
-      height: 44px;
-      text-align: left;
-      font-size: 20px;
-      line-height: 22px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  .org-info {
+    float: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: 200px;
+    height: 44px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-    .change-org {
-      float: left;
-      width: 200px;
-      color: #20BEC9;
-      text-align: right;
-      font-size: 20px;
-      line-height: 22px;
+  .change-org {
+    float: left;
+    width: 200px;
+    color: #20BEC9;
+    text-align: right;
+    font-size: 20px;
+    line-height: 22px;
 
-      .arrow-right-green {
-        display: inline-block;
-        position: relative;
-        width: 8px;
-        height: 8px;
-        top: -1px;
-        left: 4px;
-        border-top: 2px solid #20BEC9;
-        border-right: 2px solid #20BEC9;
-        transform: rotate(45deg);
-      }
+    .arrow-right-green {
+      display: inline-block;
+      position: relative;
+      width: 8px;
+      height: 8px;
+      top: -1px;
+      left: 4px;
+      border-top: 2px solid #20BEC9;
+      border-right: 2px solid #20BEC9;
+      transform: rotate(45deg);
     }
   }
+}
 </style>
