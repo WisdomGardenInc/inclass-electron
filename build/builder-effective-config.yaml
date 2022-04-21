@@ -26,7 +26,7 @@ mac:
     - target: zip
     - target: dmg
 win:
-  icon: build/icons/icon.png
+  icon: build/icons/icon.ico
   target:
     - nsis:x64
     - target: zip
