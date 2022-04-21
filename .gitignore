@@ -2,6 +2,5 @@ dist
 node_modules
 .idea/
 /extensions
-build/*
-!build/icons/
+build/mac/
 .DS_Store
