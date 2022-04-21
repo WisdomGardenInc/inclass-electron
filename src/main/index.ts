@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu, session } from 'electron'
 import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
@@ -8,6 +8,7 @@ import indexHtmlUrl from '/@renderer/index.html'
 import sideHtmlUrl from '/@renderer/side.html'
 import logoUrl from '/@static/logo.png'
 
+Menu.setApplicationMenu(null)
 async function main() {
   const logger = new Logger()
   logger.initialize(app.getPath('userData'))
@@ -30,7 +31,6 @@ function createWindow() {
     },
     icon: logoUrl
   })
-  mainWindow.setMenu(null)
 
   let currentOrg: Org | null = null
 
@@ -71,6 +71,7 @@ if (!app.requestSingleInstanceLock()) {
 }
 
 app.on('window-all-closed', () => {
+  session.defaultSession.clearStorageData({ storages: ['cookies'] })
   app.quit()
 })
 
