@@ -88,15 +88,16 @@ try {
   (window as any).electron = api
 }
 
-window.onload = function() {
+window.onload = function () {
   // redefine the behavior of close button
   let confirmClose = false;
   const closeBtn = <HTMLElement>document.querySelector('.exit')
   if (closeBtn) {
     closeBtn.setAttribute('href', '#')
-    closeBtn.onclick = function() {
+    closeBtn.onclick = function () {
       confirmClose = confirm('Exit(确认退出)?');
       if (confirmClose) {
+        api.ipcRenderer.invoke('app:logout')
         window.close();
       }
     }
@@ -104,7 +105,7 @@ window.onload = function() {
 
   const inClassCloseBtn = <HTMLElement>document.querySelector('.icon-cl-exit')
   if (inClassCloseBtn) {
-    inClassCloseBtn.onclick = function() {
+    inClassCloseBtn.onclick = function () {
       const dialogDiv = <HTMLElement>document.querySelector('.cl-dialog')
       if (dialogDiv) {
         dialogDiv.style.display = 'none'

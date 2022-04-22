@@ -18,6 +18,10 @@ async function main() {
   })
 }
 
+function logout() {
+  session.defaultSession.clearStorageData({ storages: ['cookies'] })
+}
+
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -50,6 +54,10 @@ function createWindow() {
     mainWindow.close();
   })
 
+  ipcMain.handle('app:logout', () => {
+    logout()
+  })
+
   mainWindow.loadURL(indexHtmlUrl)
 
   mainWindow.webContents.on('did-create-window', (childWindow) => {
@@ -71,7 +79,7 @@ if (!app.requestSingleInstanceLock()) {
 }
 
 app.on('window-all-closed', () => {
-  session.defaultSession.clearStorageData({ storages: ['cookies'] })
+  logout()
   app.quit()
 })
 
