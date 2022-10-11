@@ -4297,7 +4297,7 @@
       "apiUrl": "https://lms-qa.tronclass.com.cn",
       "identityConfig": {
         "realm": "wisdomgarden-uat",
-        "auth-server-url":  "http://identity.uat.roomis.com.cn/auth",
+        "auth-server-url": "http://identity.uat.roomis.com.cn/auth",
         "ssl-required": "external",
         "resource": "tronclass-app",
         "public-client": true,
@@ -6844,6 +6844,34 @@
       "updatedAt": "2021-07-14T08:03:04.462Z",
       "objectId": "60ee9a38a3b5755931718584",
       "createdAt": "2021-07-14T08:03:04.462Z"
+    },
+    {
+      "orgName": "成理学堂",
+      "id": 1,
+      "apiUrl": "https://lms.cdut.edu.cn",
+      "keywords": [
+        "成都理工大学",
+        "成都理工"
+      ],
+      "deliveryOrg": "CDUT",
+      "ntfUrl": "https://lms.cdut.edu.cn/ntf",
+      "area": "cn",
+      "identityConfigH5Wecom": {
+        "realm": "cdut",
+        "auth-server-url": "https://lmsidentity.cdut.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfig": {
+        "realm": "cdut",
+        "auth-server-url": "https://lmsidentity.cdut.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassApp",
+        "public-client": true,
+        "confidential-port": 0
+      }
     }
   ]
 }
