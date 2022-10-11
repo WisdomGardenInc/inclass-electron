@@ -6630,16 +6630,6 @@
       "env": "prod"
     },
     {
-      "objectId": "60b6ec07fab79976a99ab746",
-      "orgName": "成都理工大学",
-      "area": "cn",
-      "isPublic": true,
-      "id": "1000000156",
-      "updatedAt": "2021-06-02T02:25:11.069Z",
-      "createdAt": "2021-06-02T02:25:11.069Z",
-      "env": "prod"
-    },
-    {
       "objectId": "60c073af0a112c6b64dce691",
       "updatedAt": "2021-06-09T07:54:23.347Z",
       "orgName": "东北师范大学信息技术学院",
