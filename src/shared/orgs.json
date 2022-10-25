@@ -1,6 +1,18 @@
 {
   "orgs": [
     {
+      "orgName": "OtaVersion",
+      "area": "earth",
+      "readableVersion": "2.3.1.9",
+      "version": "2.3.1.1665458779(f405594d)",
+      "zipFileUrl": "https://mobile-download.tronclass.com.cn/mobile-2.0/ota/prod/2.3.1.1665458779.f405594d.zip",
+      "zipFileUrlTW": "https://aztcmedia.blob.core.windows.net/mobile-ota/prod/2.3.1.1665458779.f405594d.zip",
+      "env": "prod",
+      "force": true,
+      "autoReload": false,
+      "reset": false
+    },
+    {
       "orgName": "智园研究院",
       "objectId": "5b6d56b1a22b9d0031707a10",
       "createdAt": "2018-08-10T09:11:13.731Z",
@@ -8,7 +20,8 @@
       "area": "cn",
       "apiUrl": "http://lms-uat.tronclass.com.cn",
       "yeekeApi": "http://app.stg.iyeeke.com",
-      "edurpApi": "http://edurp-h5.qa.tronclass.com.cn/identity-token-login",
+      "edurpApi": "http://qms-h5-uat.tronclass.com.cn/identity-token-login-to-portal",
+      "inCastUrl": "http://incast-uat.tronclass.com.cn",
       "identityConfig": {
         "realm": "wisdomgarden-uat",
         "auth-server-url": "http://identity-uat.tronclass.com.cn/auth",
@@ -17,6 +30,19 @@
         "public-client": true,
         "confidential-port": 0,
         "isApiLogin": true
+      },
+      "identityConfigH5Feishu": {
+        "realm": "wisdomgarden-uat",
+        "auth-server-url": "http://identity-uat.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronclassFeishuH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "thirdParty": {
+        "feishu": {
+          "appId": "cli_a2f199bd3838d00e"
+        }
       },
       "keywords": [
         "智园",
@@ -55,6 +81,27 @@
       "canOffCampusLogin": false
     },
     {
+      "orgName": "陆军军医大学士官学校",
+      "area": "cn",
+      "apiUrl": "http://lms.sgxx.cn",
+      "keywords": [
+        "陆军军医大学士官学校"
+      ],
+      "deliveryOrg": "SGXX",
+      "ntfUrl": "http://lms.sgxx.cn/ntf",
+      "id": 1,
+      "inCastUrl": "http://incast.sgxx.cn",
+      "identityConfig": {
+        "realm": "sgxx",
+        "auth-server-url": "http://identity.sgxx.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclass-h5",
+        "public-client": true,
+        "confidential-port": 0,
+        "isApiLogin": true
+      }
+    },
+    {
       "orgName": "北京轻工技师学院",
       "objectId": "5ae929feee920a0043275201",
       "createdAt": "2018-05-02T03:01:18.973Z",
@@ -84,7 +131,7 @@
       "canOffCampusLogin": true
     },
     {
-      "apiUrl": "http://study.step-bbs.com",
+      "apiUrl": "http://study.qtone-wr.com",
       "orgName": "双元教育",
       "keywords": [
         "双元教育",
@@ -93,7 +140,7 @@
       "objectId": "5ad07df19f545400441b5b17",
       "createdAt": "2018-04-13T09:52:49.796Z",
       "updatedAt": "2018-04-13T09:55:49.644Z",
-      "ntfUrl": "http://study.step-bbs.com/ntf",
+      "ntfUrl": "http://study.qtone-wr.com/ntf",
       "area": "cn",
       "deliveryOrg": "SHUANGYUAN",
       "TDID": "C16192D8E9D940C9A2BC0543FA41F7AB",
@@ -154,17 +201,18 @@
       "TDID": "DA1B9B3F86B647E3B99A5987BDFF5979",
       "id": 1,
       "identityConfig": {
-        "kc_idp_hint": "",
-        "isApiLogin": false,
+        "realm": "bjdzxx",
+        "auth-server-url": "https://lms.bjdzxxjsxy.cn:8600/auth",
+        "ssl-required": "external",
         "resource": "TronClassApp",
-        "realm": "nsjx",
-        "tms-url": "https://lms.bjdzxxjsxy.cn:81"
+        "public-client": true,
+        "confidential-port": 0
       },
       "tms-url": "https://lms.bjdzxxjsxy.cn:81",
       "canOffCampusLogin": true
     },
     {
-      "orgName": "亞東技術學院",
+      "orgName": "亞東科技大學",
       "area": "tw",
       "objectId": "5ba34feb9f54540036139dcd",
       "createdAt": "2018-09-20T07:44:43.939Z",
@@ -172,14 +220,38 @@
       "accountType": "user_no",
       "keywords": [
         "OIT",
+        "aeust",
         "亞東",
-        "亞東技術學院"
+        "亞東技術學院",
+        "亞東科技大學"
       ],
       "deliveryOrg": "OIT",
-      "apiUrl": "https://elearning.oit.edu.tw",
-      "casApi": "https://tccas.oit.edu.tw",
-      "ntfUrl": "https://elearning.oit.edu.tw/ntf",
-      "casUrl": "https://tccas.oit.edu.tw",
+      "apiUrl": "https://elearning.aeust.edu.tw",
+      "casApi": "https://tccas.aeust.edu.tw",
+      "ntfUrl": "https://elearning.aeust.edu.tw/ntf",
+      "casUrl": "https://tccas.aeust.edu.tw",
+      "TDID": "9935C408815246EDB033A72D41BBF269",
+      "id": 1
+    },
+    {
+      "orgName": "亞東技術學院",
+      "area": "tw",
+      "objectId": "5ba34feb9f54541036139dcd",
+      "createdAt": "2018-09-20T07:44:43.939Z",
+      "updatedAt": "2018-09-20T07:48:06.762Z",
+      "accountType": "user_no",
+      "keywords": [
+        "OIT",
+        "aeust",
+        "亞東",
+        "亞東技術學院",
+        "亞東科技大學"
+      ],
+      "deliveryOrg": "OIT",
+      "apiUrl": "https://elearning.aeust.edu.tw",
+      "casApi": "https://tccas.aeust.edu.tw",
+      "ntfUrl": "https://elearning.aeust.edu.tw/ntf",
+      "casUrl": "https://tccas.aeust.edu.tw",
       "TDID": "9935C408815246EDB033A72D41BBF269",
       "id": 1
     },
@@ -226,9 +298,11 @@
       "updatedAt": "2016-09-21T07:36:08.979Z",
       "identityConfig": {
         "realm": "eurasia",
-        "auth-server-url": "http://219.144.130.218:9900/auth",
-        "resource": "TronClass-app",
-        "isApiLogin": true
+        "auth-server-url": "http://identity.eurasia.edu:9900/auth",
+        "ssl-required": "none",
+        "resource": "TronClass-app2",
+        "public-client": true,
+        "confidential-port": 0
       },
       "id": 1,
       "yeekeApi": "http://219.144.130.204:8000"
@@ -287,7 +361,7 @@
     },
     {
       "TDID": "7D82C9A96480B9A7F1FEFD85C0A0E6D9",
-      "apiUrl": "http://www.ahmooc.cn",
+      "apiUrl": "https://www.ahmooc.cn:443",
       "area": "cn",
       "createdAt": "2016-06-30T06:24:55.889Z",
       "deliveryOrg": "CHZU",
@@ -295,11 +369,20 @@
         "CHZU",
         "chuzhouxueyuan"
       ],
-      "ntfUrl": "http://www.ahmooc.cn/ntf",
+      "ntfUrl": "https://www.ahmooc.cn:9443/ntf",
       "objectId": "5774bb37a633bd002678010f",
       "orgName": "滁州学院",
       "updatedAt": "2016-09-21T07:37:40.780Z",
-      "id": 1
+      "id": 1,
+      "canOffCampusLogin": true,
+      "identityConfig": {
+        "realm": "chzu",
+        "auth-server-url": "https://www.ahmooc.cn:8600/auth",
+        "ssl-required": "none",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      }
     },
     {
       "TDID": "E93BAE94D16E47639FAF7B07977AE5DA",
@@ -410,6 +493,8 @@
       "deliveryOrg": "PCCU",
       "keywords": [
         "中国文化大学",
+        "中國文化大學",
+        "文化",
         "zhongguowenhuadaxue",
         "文大",
         "wenda",
@@ -515,7 +600,8 @@
       "keywords": [
         "国防医学院",
         "guofangyixueyuan",
-        "NDMC"
+        "NDMC",
+        "國防醫學院"
       ],
       "ntfUrl": "http://210.60.124.12/ntf",
       "objectId": "577f74ab7db2a200246d18f6",
@@ -555,7 +641,8 @@
         "阳大",
         "YM",
         "guoliyangmingdaxue",
-        "yangda"
+        "yangda",
+        "陽明"
       ],
       "objectId": "5779c44ca633bd002679d64b",
       "orgName": "國立陽明大學",
@@ -619,6 +706,15 @@
       "orgName": "西安交通大学思源学习空间（本科生）",
       "updatedAt": "2016-11-18T08:09:09.128Z",
       "id": 1,
+      "identityConfig": {
+        "realm": "xjtu",
+        "auth-server-url": "http://class.xjtu.edu.cn:8600/auth",
+        "ssl-required": "external",
+        "resource": "tronclass-app",
+        "public-client": true,
+        "confidential-port": 0,
+        "isApiLogin": false
+      },
       "identityConfigH5": {
         "realm": "xjtu",
         "auth-server-url": "http://class.xjtu.edu.cn:8600/auth",
@@ -653,6 +749,41 @@
         "auth-server-url": "http://v.ispace.xjtu.edu.cn:8600/auth",
         "resource": "TronClassH5"
       }
+    },
+    {
+      "apiUrl": "https://lms.xjtudlc.com",
+      "orgName": "西安交通大学继续教育学院",
+      "id": 1,
+      "deliveryOrg": "XJTU-SCE",
+      "ntfUrl": "https://lms.xjtudlc.com/ntf",
+      "area": "cn",
+      "objectId": "5dc4cc5f2a6bfd00922d318f",
+      "createdAt": "2022-09-16T10:01:03.588Z",
+      "updatedAt": "2022-09-16T10:02:03.948Z",
+      "keywords": [
+        "西交大继续教育",
+        "西安交通大学继续教育学院"
+      ],
+      "tms-url": "https://tms.xjtudlc.com",
+      "identityConfig": {
+        "realm": "xjtu-sce",
+        "auth-server-url": "https://identity.xjtudlc.com/auth",
+        "ssl-required": "external",
+        "resource": "Tronclass-mobile",
+        "public-client": true,
+        "confidential-port": 0,
+        "tms-url": "https://tms.xjtudlc.com"
+      },
+      "identityConfigH5": {
+        "realm": "xjtu-sce",
+        "auth-server-url": "https://identity.xjtudlc.com/auth",
+        "resource": "TronClassH5",
+        "tms-url": "https://tms.xjtudlc.com",
+        "ssl-required": "external",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": false
     },
     {
       "TDID": "DE7B9C3830F3D553FB167FE2567DCCF0",
@@ -716,7 +847,11 @@
       "createdAt": "2016-07-04T02:05:00.275Z",
       "deliveryOrg": "HK",
       "keywords": [
-        "HK"
+        "弘光科技大学",
+        "弘光科大",
+        "HK",
+        "hongguangkejidaxue",
+        "hongguangkeda"
       ],
       "accountType": "user_no",
       "ntfUrl": "https://tronclass.hk.edu.tw/ntf",
@@ -773,13 +908,12 @@
       "apiUrl": "https://staging-lms.tronclass.com.tw",
       "area": "tw",
       "createdAt": "2017-06-21T07:57:51.409Z",
-      "deliveryOrg": "",
+      "deliveryOrg": "staging-fet",
       "keywords": [
         "TronClass",
         "School",
         "示範"
       ],
-      "accountType": "email",
       "ntfUrl": "https://staging-lms.tronclass.com.tw/ntf",
       "objectId": "594a26ff5c497d006b0c5dad",
       "orgName": "TronClass示範學校",
@@ -797,6 +931,7 @@
       "keywords": [
         "實踐大學",
         "實踐",
+        "usc",
         "shijiandaxue"
       ],
       "accountType": "user_no",
@@ -817,7 +952,8 @@
       "keywords": [
         "朝陽",
         "朝陽科技大學",
-        "chaoyangkejidaxue"
+        "chaoyangkejidaxue",
+        "cyut"
       ],
       "accountType": "user_no",
       "ntfUrl": "https://tronclass.cyut.edu.tw/ntf",
@@ -837,7 +973,8 @@
       "keywords": [
         "元培醫事科技大學",
         "元培",
-        "yuanpeiyishikejidaxue"
+        "yuanpeiyishikejidaxue",
+        "ypu"
       ],
       "accountType": "user_no",
       "ntfUrl": "https://tronclass.ypu.edu.tw/ntf",
@@ -857,7 +994,12 @@
         "taibeishikukexueyuanwangluoxuexiao",
         "cooc",
         "酷課",
-        "OnO"
+        "OnO",
+        "高中",
+        "國中",
+        "國小",
+        "中學",
+        "小學"
       ],
       "ssoConfig": {
         "url": "https://sso.tp.edu.tw/oauth2/oauth/authorize?client_id=2gMSkBmGUSJVkwCrZz2fnMNtMj2Dfasc&response_type=code&scope=User.Info,User.Role,User.RoleDetail,User.IDNumber,User.EMail,User.SSORole&redirect_uri=https://ono.tp.edu.tw/login?mobile=y",
@@ -885,6 +1027,7 @@
       "keywords": [
         "NTUSPECS",
         "台灣大學進修推廣學院",
+        "台大",
         "taiwandaxuejinxiutuiguangxueyuan"
       ],
       "accountType": "user_no",
@@ -942,11 +1085,49 @@
       "id": 1
     },
     {
+      "apiUrl": "https://ilearn.thu.edu.tw:4433",
+      "orgName": "東海大學 Tunghai University line",
+      "ntfUrl": "https://ilearn.thu.edu.tw/ntf",
+      "objectId": "5a98b79c9f5454507414b179",
+      "createdAt": "2022-03-29T09:16:22.399Z",
+      "updatedAt": "2022-03-29T09:16:22.521Z",
+      "casApi": "https://tccas.thu.edu.tw:8080",
+      "casUrl": "https://tccas.thu.edu.tw:8080",
+      "deliveryOrg": "THU",
+      "area": "tw",
+      "keywords": [
+        "東海大學",
+        "東海",
+        "东海大学",
+        "东海",
+        "THU"
+      ],
+      "accountType": "user_no",
+      "TDID": "4BA14019233A46ECBFCF04C755EEE391",
+      "id": 1,
+      "identityConfig": {
+        "realm": "thu",
+        "auth-server-url": "https://tccas.thu.edu.tw:8080/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Line": {
+        "realm": "thu",
+        "auth-server-url": "https://tccas.thu.edu.tw:8080/auth",
+        "ssl-required": "external",
+        "resource": "tronclassLineH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
       "orgName": "北京市工艺美术高级技工学校",
       "objectId": "5c81e254fe88c2006fe6f196",
       "createdAt": "2019-03-08T03:32:36.353Z",
       "updatedAt": "2019-03-08T03:45:55.725Z",
-      "apiUrl": "http://lms.bjgmjx.com/",
+      "apiUrl": "http://lms.bjgmjx.com",
       "keywords": [
         "工美",
         "北京工美技师",
@@ -956,7 +1137,24 @@
       "ntfUrl": "http://lms.bjgmjx.com/ntf",
       "area": "cn",
       "TDID": "A93964171E5646218FE9C9C57D261B5E",
-      "id": 1
+      "id": 1,
+      "identityConfig": {
+        "realm": "bjgmjx",
+        "auth-server-url": "http://identity.bjgmjx.com/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5": {
+        "realm": "bjgmjx",
+        "auth-server-url": "http://identity.bjgmjx.com/auth",
+        "resource": "TronClassH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "tms-url": "http://tms.bjgmjx.com",
+      "canOffCampusLogin": false
     },
     {
       "orgName": "浙江大学",
@@ -987,8 +1185,43 @@
         "public-client": true,
         "confidential-port": 0
       },
+      "thirdParty": {
+        "dingtalk": {
+          "cropId": "ding2c6bcab1e41b0242"
+        }
+      },
       "id": 1,
       "canOffCampusLogin": true
+    },
+    {
+      "orgName": "浙大宁波理工学院",
+      "createdAt": "2022-08-09T10:09:21.980Z",
+      "updatedAt": "2022-08-09T10:15:25.854Z",
+      "apiUrl": "https://courses.nbt.edu.cn",
+      "keywords": [
+        "学在宁理",
+        "宁理",
+        "浙大宁波理工学院",
+        "nbt"
+      ],
+      "deliveryOrg": "NBU",
+      "ntfUrl": "https://courses.nbt.edu.cn/ntf",
+      "area": "cn",
+      "identityConfigH5Dingtalk": {
+        "realm": "nbt",
+        "auth-server-url": "https://identity.nbt.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronclassDingTalkH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "thirdParty": {
+        "dingtalk": {
+          "cropId": "dingea1ae8d6df27737dffe93478753d9884"
+        }
+      },
+      "id": 1,
+      "canOffCampusLogin": false
     },
     {
       "orgName": "浙江研究生课程联盟",
@@ -1030,8 +1263,8 @@
       "objectId": "5c988d1b42cda6007240717a",
       "createdAt": "2019-03-25T08:11:07.491Z",
       "updatedAt": "2019-03-25T08:16:10.241Z",
-      "apiUrl": "http://tronclass.gxscl.org:8123",
-      "ntfUrl": "http://tronclass.gxscl.org:8123/ntf",
+      "apiUrl": "http://tronclass.bjgx.com:8123",
+      "ntfUrl": "http://tronclass.bjgx.com:8123/ntf",
       "area": "cn",
       "deliveryOrg": "BJGX",
       "keywords": [
@@ -1040,7 +1273,7 @@
       ],
       "identityConfig": {
         "realm": "bjgx",
-        "auth-server-url": "http://identity.gxscl.org:8123/auth",
+        "auth-server-url": "http://identity.bjgx.com:8123/auth",
         "resource": "tronclass-app",
         "isApiLogin": true
       },
@@ -1056,6 +1289,24 @@
       "apiUrl": "https://gjn.bjqjx.com:9060",
       "ntfUrl": "https://gjn.bjqjx.com:9060/ntf",
       "lrpApi": "https://gjn.bjqjx.com:38090",
+      "tms-url": "https://gjn.bjqjx.com",
+      "canOffCampusLogin": false,
+      "identityConfig": {
+        "realm": "bjqjx",
+        "auth-server-url": "https://gjn.bjqjx.com:8600/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5": {
+        "realm": "bjqjx",
+        "auth-server-url": "https://gjn.bjqjx.com:8600/auth",
+        "ssl-required": "external",
+        "resource": "TronClassH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
       "keywords": [
         "汽车技师",
         "北京汽车技师学院",
@@ -1069,15 +1320,32 @@
       "TDID": "8E6E8D3065B2496D8463B0C08F925A11",
       "objectId": "5cc117ba17b54d006835fcdb",
       "createdAt": "2019-04-25T02:13:14.467Z",
-      "updatedAt": "2019-04-25T02:17:49.620Z",
+      "updatedAt": "20194-25T02:17:49.620Z",
       "deliveryOrg": "BJNMTC",
-      "apiUrl": "http://114.242.177.134",
-      "ntfUrl": "http://114.242.177.134/ntf",
+      "apiUrl": "http://lms.bjnmtc.com",
+      "ntfUrl": "http://lms.bjnmtc.com/ntf",
+      "tms-url": "http://tms.bjnmtc.com",
+      "canOffCampusLogin": false,
       "keywords": [
         "新媒体",
         "北京市新媒体技师学院",
         "bjnmtc"
       ],
+      "identityConfig": {
+        "realm": "bjnmtc",
+        "auth-server-url": "http://identity.bjnmtc.com/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5": {
+        "realm": "bjnmtc",
+        "auth-server-url": "http://identity.bjnmtc.com/auth",
+        "resource": "TronClassH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
       "area": "cn",
       "id": 1
     },
@@ -1325,6 +1593,12 @@
         "resource": "tronclass-app",
         "isApiLogin": false
       },
+      "identityConfigH5": {
+        "realm": "chd",
+        "auth-server-url": "http://course-online.chd.edu.cn:8600/auth",
+        "resource": "tronclass-app",
+        "isApiLogin": false
+      },
       "TDID": "A3C9B3EB961A4ACE8808E76290CE2409"
     },
     {
@@ -1404,6 +1678,15 @@
         "北科",
         "beijingkeji"
       ],
+      "identityConfig": {
+        "realm": "bjkjgjjx",
+        "auth-server-url": "http://111.202.220.168:8600/auth",
+        "isApiLogin": false,
+        "resource": "tronclass-app",
+        "tms-url": "http://111.202.220.172:82"
+      },
+      "tms-url": "http://111.202.220.172:82",
+      "canOffCampusLogin": true,
       "TDID": "E022067C6E7040979FF6190DC0B94825"
     },
     {
@@ -1543,30 +1826,31 @@
       "updatedAt": "2020-01-08T07:54:01.643Z"
     },
     {
-      "apiUrl": "http://124.193.101.34:8081",
+      "apiUrl": "http://www.syrbjjx.com:8006",
       "orgName": "北京市顺义区人力资源和社会保障局高级技工学校",
       "keywords": [
         "顺义",
-        "北京顺义"
+        "北京顺义",
+        "shunyi"
       ],
       "id": 1,
       "TDID": "D6862D192C2E46B480075416C65065D1",
       "deliveryOrg": "NSJX",
-      "ntfUrl": "http://124.193.101.34:8081/ntf",
+      "ntfUrl": "http://www.syrbjjx.com:8006/ntf",
       "area": "cn",
       "objectId": "5e97ff36ff54810009c2cc87",
       "createdAt": "2020-04-16T06:46:14.311Z",
       "updatedAt": "2020-04-16T06:50:57.623Z",
+      "tms-url": "http://www.syrbjjx.com:8081",
+      "canOffCampusLogin": true,
       "identityConfig": {
-        "kc_idp_hint": "",
-        "auth-server-url": "http://124.193.101.34:8600/auth",
-        "isApiLogin": false,
-        "resource": "TronClassApp",
         "realm": "nsjx",
-        "tms-url": "http://124.193.101.34:8181"
-      },
-      "tms-url": "http://124.193.101.34:8181",
-      "canOffCampusLogin": true
+        "auth-server-url": "http://www.syrbjjx.com:8600/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      }
     },
     {
       "orgName": "北京外国语大学",
@@ -1914,6 +2198,27 @@
         "resource": "TronClassH5",
         "public-client": true,
         "confidential-port": 0
+      },
+      "identityConfigH5Wecom": {
+        "realm": "1",
+        "auth-server-url": "https://identity.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassH5Wecom",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Feishu": {
+        "realm": "1",
+        "auth-server-url": "https://identity.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassFeishuH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "thirdParty": {
+        "feishu": {
+          "appId": "cli_a11b6783727c100d"
+        }
       }
     },
     {
@@ -2477,19 +2782,30 @@
       "updatedAt": "2017-09-05T09:11:51.052Z"
     },
     {
-      "TDID": "F09B008EE75148F88506DB23903E7836",
-      "apiUrl": "https://pu.tronclass.com.tw",
+      "TDID": "63783D83F65842CCA697002FFA383100",
+      "apiUrl": "https://tronclass.pu.edu.tw",
       "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 5,
+      "deliveryOrg": "PU",
+      "id": 1,
+      "accountType": "user_no",
       "orgName": "靜宜大學",
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
+      "ntfUrl": "https://tronclass.pu.edu.tw/ntf",
       "keywords": [
-        "靜宜"
+        "靜宜",
+        "pu",
+        "Providence University"
       ],
-      "objectId": "5f83f8e10ed95f044fca123",
-      "createdAt": "2020-10-12T06:34:09.854Z",
-      "updatedAt": "2020-10-12T06:34:09.854Z"
+      "objectId": "61a886e85ff1f2711a07e0ec",
+      "createdAt": "2021-12-02T08:42:16.876Z",
+      "updatedAt": "2021-12-02T08:42:16.876Z",
+      "identityConfig": {
+        "realm": "pu",
+        "auth-server-url": "https://identity.pu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      }
     },
     {
       "area": "tw",
@@ -2756,7 +3072,8 @@
       "keywords": [
         "明新",
         "明新科大",
-        "明新科技大學"
+        "明新科技大學",
+        "must"
       ],
       "TDID": "084FD087324E43ED957A28C7E59775B7",
       "id": 1
@@ -2782,7 +3099,7 @@
       "area": "cn"
     },
     {
-      "apiUrl": "http://gjn.sgjx.com.cn:8060",
+      "apiUrl": "https://gjn.sgjx.com.cn:8060",
       "orgName": "北京市应急管理学院",
       "keywords": [
         "首钢技师学院",
@@ -2792,14 +3109,14 @@
       ],
       "TDID": "4D7CD2EB16BD4F57A37C0383FD0FF0DF",
       "deliveryOrg": "SGJX2",
-      "ntfUrl": "http://gjn.sgjx.com.cn:8060/ntf",
+      "ntfUrl": "https://gjn.sgjx.com.cn:8060/ntf",
       "area": "cn",
       "objectId": "5bcdaf68808ca4007292b4e5",
       "createdAt": "2018-10-22T11:07:20.028Z",
       "updatedAt": "2018-10-22T11:18:51.340Z",
       "identityConfig": {
         "realm": "sgjx",
-        "auth-server-url": "http://gjn.sgjx.com.cn:8080/auth",
+        "auth-server-url": "https://gjn.sgjx.com.cn:8080/auth",
         "resource": "tronclass-app",
         "isApiLogin": true
       },
@@ -2870,8 +3187,8 @@
       "updatedAt": "2018-11-08T06:30:05.016Z",
       "ntfUrl": "https://lms-stg.tronclass.com.cn/ntf",
       "identityConfig": {
-        "realm": "qa",
-        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "realm": "stg",
+        "auth-server-url": "https://identity-stg.tronclass.com.cn/auth",
         "ssl-required": "external",
         "resource": "TronClass App",
         "public-client": true,
@@ -2911,11 +3228,12 @@
       },
       "canOffCampusLogin": true,
       "area": "cn",
-      "deliveryOrg": "ALIYUN-STG",
+      "deliveryOrg": "OUYA",
       "TDID": "70ACEA58B4F14415AF615F946F25E537",
       "orderRoomApi": "http://219.144.130.218:9990/identity-login",
       "edurpApi": "http://edurp-h5.qa.tronclass.com.cn/identity-token-login",
-      "id": 1
+      "id": 1,
+      "casUrl": "https://cas.jlu.edu.cn/tpass"
     },
     {
       "apiUrl": "http://lms.stg.tronclass.com.cn",
@@ -2930,16 +3248,26 @@
       "id": 3
     },
     {
-      "apiUrl": "http://lms.stg.tronclass.com.cn",
-      "orgName": "stg多机构",
+      "apiUrl": "http://lms-stg.tronclass.com.cn",
+      "orgName": "多机构stg",
       "objectId": "5be3d7afee920a006640047c",
       "createdAt": "2018-11-08T06:29:03.362Z",
       "updatedAt": "2018-11-08T06:30:05.016Z",
-      "ntfUrl": "http://lms.stg.tronclass.com.cn/ntf",
+      "ntfUrl": "http://lms-stg.tronclass.com.cn/ntf",
       "area": "cn",
-      "deliveryOrg": "ALIYUN-STG",
+      "deliveryOrg": "nfu",
       "TDID": "70ACEA58B4F14415AF615F946F25E537",
-      "id": 4
+      "id": 1
+    },
+    {
+      "orgName": "KCISXA",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "62ff00a3dedc972c208e4a82",
+      "createdAt": "2022-08-19T03:16:51.837Z",
+      "updatedAt": "2022-08-19T03:16:51.837Z",
+      "id": "1000000212"
     },
     {
       "apiUrl": "http://10.107.12.81",
@@ -3031,16 +3359,6 @@
       "area": "cn"
     },
     {
-      "orgName": "國立中山大學",
-      "objectId": "5c08d7cb9f5454006645043a",
-      "createdAt": "2018-12-06T08:03:23.891Z",
-      "updatedAt": "2018-12-06T08:03:40.196Z",
-      "env": "prod",
-      "isPublic": true,
-      "id": 135,
-      "area": "tw"
-    },
-    {
       "orgName": "浙江旅游职业学院",
       "objectId": "5c1718bb808ca40072a7b73a",
       "createdAt": "2018-12-17T03:32:11.600Z",
@@ -3057,7 +3375,7 @@
       "updatedAt": "2018-12-17T11:58:32.084Z",
       "env": "qa",
       "isPublic": true,
-      "id": "93",
+      "id": "1",
       "area": "cn",
       "orderRoomApi": "http://h5.roomis.com.cn/identity-login"
     },
@@ -3128,7 +3446,7 @@
       "objectId": "5c36de060b61600070135525",
       "createdAt": "2019-01-10T05:54:14.350Z",
       "updatedAt": "2019-01-10T05:54:31.973Z",
-      "id": "2751",
+      "id": "1000000180",
       "env": "prod",
       "isPublic": true,
       "area": "cn"
@@ -3150,12 +3468,15 @@
       "updatedAt": "2019-01-19T04:41:57.160Z",
       "TDID": "59C6B407E17E4FF399A23E9BB0A55D96",
       "deliveryOrg": "TTU",
+      "accountType": "user_no",
       "apiUrl": "https://ilearn.ttu.edu.tw",
       "ntfUrl": "https://ilearn.ttu.edu.tw/ntf",
-      "casUrl": "https://ilearn.ttu.edu.tw/cas",
+      "casApi": "https://ilearn.ttu.edu.tw",
+      "casUrl": "https://ilearn.ttu.edu.tw",
       "keywords": [
         "大同",
-        "大同大學"
+        "大同大學",
+        "ttu"
       ],
       "area": "tw",
       "id": 1
@@ -3167,7 +3488,7 @@
       "objectId": "5e29094e562071008e3a91c6",
       "createdAt": "2020-01-23T02:47:42.433Z",
       "updatedAt": "2020-01-23T02:47:42.433Z",
-      "casApi": "https://tronclass.cityu.edu.mo",
+      "casApi": "https://login.cityu.edu.mo",
       "deliveryOrg": "CITYU",
       "area": "mo",
       "keywords": [
@@ -3177,7 +3498,7 @@
       ],
       "accountType": "user_no",
       "TDID": "C543FF662F1E432695DB05DE561DBCBC",
-      "casUrl": "https://tronclass.cityu.edu.mo",
+      "casUrl": "https://login.cityu.edu.mo",
       "id": 1
     },
     {
@@ -3501,14 +3822,11 @@
       "updatedAt": "2020-02-01T09:01:45.070Z"
     },
     {
-      "orgName": "中国传媒大学",
+      "orgName": "湖南开放大学（试用版）",
       "env": "prod",
       "isPublic": true,
-      "id": "1000000000",
-      "area": "cn",
-      "objectId": "5e38dc78844bb4008e67dc1c",
-      "createdAt": "2020-02-04T02:52:40.071Z",
-      "updatedAt": "2020-02-04T02:52:40.071Z"
+      "id": "1000000210",
+      "area": "cn"
     },
     {
       "orgName": "大连大学",
@@ -3692,13 +4010,24 @@
     },
     {
       "orgName": "温州大学",
-      "env": "prod",
-      "isPublic": true,
-      "id": "1000000148",
-      "area": "cn",
-      "objectId": "6082a16b47454649c55cf4e8",
-      "createdAt": "2020-02-11T04:42:10.122Z",
-      "updatedAt": "2020-02-11T04:42:10.122Z"
+      "createdAt": "2019-08-01T08:09:53.875Z",
+      "updatedAt": "2019-08-01T08:16:02.965Z",
+      "id": 1,
+      "apiUrl": "http://courses.wzu.edu.cn",
+      "identityConfig": {
+        "realm": "wzu",
+        "auth-server-url": "http://courses.wzu.edu.cn:8600/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "keywords": [
+        "温州大学"
+      ],
+      "deliveryOrg": "WZU",
+      "ntfUrl": "http://courses.wzu.edu.cn/ntf",
+      "area": "cn"
     },
     {
       "orgName": "北京师范大学珠海分校",
@@ -3811,7 +4140,7 @@
       "updatedAt": "2020-02-22T10:00:23.346Z"
     },
     {
-      "orgName": "中国科学技术大学",
+      "orgName": "中国科学技术大学(公有云)",
       "env": "prod",
       "isPublic": true,
       "id": "1000000031",
@@ -4131,7 +4460,7 @@
       "updatedAt": "2020-04-14T04:00:51.476Z"
     },
     {
-      "orgName": "北京市仪器仪表高级技工学校公有云",
+      "orgName": "北京仪器仪表高级技工学校公有云",
       "env": "prod",
       "isPublic": true,
       "id": "1000000067",
@@ -4294,12 +4623,13 @@
       "createdAt": "2019-08-01T08:09:53.875Z",
       "updatedAt": "2019-08-01T08:16:02.965Z",
       "id": 1,
+      "inCastUrl": "https://incast-qa.tronclass.com.cn",
       "apiUrl": "https://lms-qa.tronclass.com.cn",
       "identityConfig": {
-        "realm": "wisdomgarden-uat",
-        "auth-server-url": "http://identity.uat.roomis.com.cn/auth",
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
         "ssl-required": "external",
-        "resource": "tronclass-app",
+        "resource": "TronClassApp",
         "public-client": true,
         "confidential-port": 0
       },
@@ -4308,7 +4638,7 @@
         "realm": "qa",
         "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
         "ssl-required": "external",
-        "resource": "tronclassH5",
+        "resource": "TronClass App",
         "public-client": true,
         "confidential-port": 0
       },
@@ -4328,7 +4658,18 @@
         "public-client": true,
         "confidential-port": 0
       },
+      "identityConfigH5Feishu": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronclassFeishuH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
       "thirdParty": {
+        "feishu": {
+          "appId": "cli_a2eb91354238900c"
+        },
         "dingtalk": {
           "cropId": "dingba1b48d1ce4e9029ffe93478753d9884"
         },
@@ -4336,14 +4677,19 @@
           "liffId": "1655259824-bwQGzjj9"
         }
       },
-      "edurpApi": "http://edurp-h5.qa.tronclass.com.cn/identity-token-login",
+      "edurpApi": "https://qms-h5-qa.tronclass.com.cn/identity-token-login-to-portal",
       "keywords": [
         "qa",
-        "product"
+        "product",
+        "qa-product"
       ],
-      "deliveryOrg": "",
+      "deliveryOrg": "ZUCC",
       "ntfUrl": "https://lms-qa.tronclass.com.cn/ntf",
-      "area": "cn"
+      "area": "cn",
+      "opsInfo": {
+        "underMaintenance": false,
+        "maintenanceContent": "tku系統維護中，停機時間 2020/01/30 15:00-2020/01/30 16:00，造成不便敬請見諒。"
+      }
     },
     {
       "orgName": "stg-dashboard",
@@ -4462,7 +4808,8 @@
         "北科大",
         "臺北科技大學",
         "台北科技大學",
-        "國立臺北科技大學"
+        "國立臺北科技大學",
+        "ntut"
       ],
       "id": 1,
       "TDID": "3517370FEF424732A1BE2319BC91835B",
@@ -4479,7 +4826,8 @@
       "keywords": [
         "醒吾",
         "醒吾科大",
-        "醒吾科技大學"
+        "醒吾科技大學",
+        "hwu"
       ],
       "id": 1,
       "TDID": "010D6E95EFB649B6BDBE5CCBBE39184C",
@@ -4510,7 +4858,16 @@
       "accountType": "email",
       "objectId": "5d78acabc05a80008b7f9d86",
       "createdAt": "2019-09-11T08:13:31.211Z",
-      "updatedAt": "2019-09-11T08:16:19.036Z"
+      "updatedAt": "2019-09-11T08:16:19.036Z",
+      "canOffCampusLogin": true,
+      "identityConfig": {
+        "realm": "blcu",
+        "auth-server-url": "http://58.194.243.239:8600/auth",
+        "ssl-required": "none",
+        "resource": "tronclass-app",
+        "public-client": true,
+        "confidential-port": 0
+      }
     },
     {
       "orgName": "嘉南藥理大學",
@@ -4563,14 +4920,20 @@
       "area": "tw"
     },
     {
-      "orgName": "財團法人辭修高中",
-      "objectId": "5e731e9291db280095a83600",
-      "createdAt": "2019-08-21T04:13:14.121Z",
-      "updatedAt": "2019-08-21T04:13:41.571Z",
-      "env": "prod",
-      "isPublic": true,
+      "apiUrl": "https://tsshs.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-tsshs",
       "id": "165",
-      "area": "tw"
+      "orgName": "財團法人辭修高中",
+      "ntfUrl": "https://tsshs.tronclass.com/ntf",
+      "keywords": [
+        "財團法人辭修高中",
+        "tsshs",
+        "辭修"
+      ],
+      "objectId": "5e731e9291db280095a83600",
+      "createdAt": "2022-08-30T00:12:16.876Z",
+      "updatedAt": "2022-08-30T00:12:16.876Z"
     },
     {
       "updatedAt": "2020-05-19T03:25:26.981Z",
@@ -4606,12 +4969,12 @@
       "updatedAt": "2020-05-25T04:52:01.199Z",
       "objectId": "5ecb4ef104cf67000611299d",
       "area": "cn",
-      "apiUrl": "http://121.36.33.41",
+      "apiUrl": "https://lms.biichg.com",
       "orgName": "北京市仪器仪表高级技工学校",
       "deliveryOrg": "BJYBJX",
       "id": 1,
       "createdAt": "2020-05-25T04:52:01.199Z",
-      "ntfUrl": "http://121.36.33.41/ntf",
+      "ntfUrl": "https://lms.biichg.com/ntf",
       "yeekeApi": "",
       "TDID": "9DD0D53A81A44D85B092A4070FB4B0B0",
       "identityConfig": {
@@ -4619,9 +4982,9 @@
         "isApiLogin": false,
         "resource": "TronClassApp",
         "realm": "nsjx",
-        "tms-url": "http://121.36.33.41:8191"
+        "tms-url": "https://tms.biichg.com"
       },
-      "tms-url": "http://121.36.33.41:8191",
+      "tms-url": "https://tms.biichg.com",
       "canOffCampusLogin": true
     },
     {
@@ -4637,8 +5000,8 @@
     {
       "updatedAt": "2020-05-28T09:50:55.655Z",
       "objectId": "5ecf897f06d99f0008cef2d2",
-      "apiUrl": "http://tc10.sdust.edu.cn:8085/",
-      "lrpApi": "http://tc2.sdust.edu.cn:8084/",
+      "apiUrl": "http://tc10.sdust.edu.cn:8085",
+      "lrpApi": "http://tc2.sdust.edu.cn:8084",
       "orgName": "山东科技大学",
       "createdAt": "2020-05-28T09:50:55.655Z",
       "identityConfig": {
@@ -4653,7 +5016,7 @@
       "area": "cn",
       "ntfUrl": "http://tc10.sdust.edu.cn:8085/ntf",
       "deliveryOrg": "SDUST",
-      "id": 5
+      "id": 1
     },
     {
       "updatedAt": "2020-05-29T08:35:29.434Z",
@@ -4699,7 +5062,7 @@
       "isPublic": true,
       "objectId": "5eed70c43521d400060802ce",
       "env": "prod",
-      "orgName": "Tencent Thailand",
+      "orgName": "Panyapiwat Institute of Management (PIM)",
       "id": "178",
       "area": "tw",
       "updatedAt": "2020-06-20T02:13:24.530Z",
@@ -4711,7 +5074,8 @@
       "keywords": [
         "高雄實踐大學",
         "高雄實踐",
-        "shijiandaxue"
+        "shijiandaxue",
+        "usc"
       ],
       "id": 1,
       "TDID": "C6CCA1A720404A77ACBD0622DD031820",
@@ -4726,81 +5090,21 @@
       "updatedAt": "2020-07-01T02:56:46.903Z"
     },
     {
-      "apiUrl": "https://nu.tronclass.com.tw",
-      "orgName": "wg-n",
-      "keywords": [
-        "WG",
-        "智園"
-      ],
-      "id": 1,
-      "TDID": "657DF118B30047FCB37ECB9B296A8888",
-      "deliveryOrg": "tw-azure-nu",
-      "ntfUrl": "https://nu.tronclass.com.tw/ntf",
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "apiUrl": "https://cct.tronclass.com",
       "area": "tw",
-      "objectId": "5f83d8c30ed95f044fca8e00",
-      "createdAt": "2020-10-12T04:17:07.986Z",
-      "updatedAt": "2020-10-12T04:17:07.986Z"
-    },
-    {
-      "TDID": "5AD3574CACBB40BA8767D5C7D678CE19",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 1,
-      "keywords": [
-        "WG",
-        "智園"
-      ],
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
-      "orgName": "wg-p",
-      "objectId": "5f83f6fe5b2555353d5ab966",
-      "createdAt": "2020-10-12T06:26:06.776Z",
-      "updatedAt": "2020-10-12T06:26:06.776Z"
-    },
-    {
-      "TDID": "5AD3574CACBB40BA8767D5C7D678CE19",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 2,
+      "deliveryOrg": "tw-azure-su",
+      "id": 21,
       "orgName": "臺北基督學院",
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
+      "ntfUrl": "https://cct.tronclass.com/ntf",
       "keywords": [
-        "基督"
+        "臺北基督學院",
+        "基督",
+        "cct"
       ],
       "objectId": "5f83f8e10ed95f044fcaa89a",
       "createdAt": "2020-10-12T06:34:09.854Z",
-      "updatedAt": "2020-10-12T06:34:09.854Z"
-    },
-    {
-      "TDID": "5AD3574CACBB40BA8767D5C7D678CE19",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 4,
-      "keywords": [
-        "長榮"
-      ],
-      "ntfUrl": "https://nu.tronclass.com.tw/ntf",
-      "orgName": "長榮大學",
-      "objectId": "5f979214a503da2830ca7d76",
-      "createdAt": "2020-10-27T03:20:52.369Z",
-      "updatedAt": "2020-10-27T03:20:52.369Z"
-    },
-    {
-      "orgName": "樹德科技大學",
-      "TDID": "5AD3574CACBB40BA8767D5C7D678CE19",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 3,
-      "keywords": [
-        "樹德"
-      ],
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
-      "objectId": "5f83fa455b2555353d5aba4b",
-      "createdAt": "2020-10-12T06:40:05.061Z",
-      "updatedAt": "2020-10-12T06:40:05.061Z"
+      "updatedAt": "2020-10-12T06:34:09.853Z"
     },
     {
       "isPublic": true,
@@ -4988,21 +5292,6 @@
       "updatedAt": "2020-11-10T01:37:23.207Z"
     },
     {
-      "TDID": "6795b8519a2445478b3955fe77df372e",
-      "apiUrl": "https://az.tronclass.com",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-su",
-      "id": 3,
-      "ntfUrl": "https://az.tronclass.com/ntf",
-      "orgName": "建元顧問股份有限公司-測試",
-      "keywords": [
-        "建元顧問股份有限公司"
-      ],
-      "objectId": "5fb61bd4ce93317ad6978699",
-      "   createdAt": "2020-11-19T07:16:36.644Z",
-      "updatedAt": "2020-11-19T07:16:36.644Z"
-    },
-    {
       "area": "tw",
       "env": "prod",
       "id": 183,
@@ -5049,21 +5338,6 @@
       "objectId": "5efbfb6e7de7872349dfadbd"
     },
     {
-      "TDID": "6795b8519a2445478b3955fe77df372e",
-      "id": 4,
-      "objectId": "5fbf5a2c1b1e021403598720",
-      "createdAt": "2020-11-26T07:33:00.227Z",
-      "updatedAt": "2020-11-26T07:34:10.792Z",
-      "apiUrl": "https://az.tronclass.com",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-su",
-      "keywords": [
-        "光遠心國際股份有限公司"
-      ],
-      "ntfUrl": "https://az.tronclass.com/ntf",
-      "orgName": "光遠心國際股份有限公司"
-    },
-    {
       "id": 1,
       "TDID": "C98CED74A2F34AA58D0E5D0D1B7AC372",
       "objectId": "",
@@ -5104,20 +5378,6 @@
       "objectId": "5fc75c1d8d95d146401ddc58",
       "createdAt": "2020-12-02T09:19:25.698Z",
       "updatedAt": "2020-12-02T09:19:25.698Z"
-    },
-    {
-      "area": "tw",
-      "env": "prod",
-      "id": 187,
-      "isPublic": true,
-      "orgName": "國立臺中科技大學",
-      "objectId": "5fc8a15ab7df726fba7e50c7",
-      "createdAt": "2020-12-03T08:27:06.515Z",
-      "updatedAt": "2020-12-03T08:27:06.515Z",
-      "keywords": [
-        "台中",
-        "科技大學"
-      ]
     },
     {
       "area": "cn",
@@ -5484,15 +5744,6 @@
       "orgName": "南京外国语学校"
     },
     {
-      "id": 1000000092,
-      "isPublic": true,
-      "area": "cn",
-      "env": "prod",
-      "createdAt": "2020-09-30 03:04:54",
-      "updatedAt": "2020-09-30 03:46:42",
-      "orgName": "上海理工大学"
-    },
-    {
       "id": 1000000093,
       "isPublic": true,
       "area": "cn",
@@ -5561,12 +5812,13 @@
       "createdAt": "2016-07-08T09:53:24.238Z",
       "deliveryOrg": "staging-fju",
       "keywords": [
-        "54712195"
+        "輔仁",
+        "fju"
       ],
       "accountType": "user_no",
       "ntfUrl": "https://wtelearn2.fju.edu.tw/ntf",
       "objectId": "5f338a5c63edfb00097cc9f5",
-      "orgName": "54712195",
+      "orgName": "輔仁TC測試",
       "updatedAt": "2018-09-27T09:51:38.076Z",
       "id": 1
     },
@@ -5585,8 +5837,13 @@
       "apiUrl": "https://tronclass.mcut.edu.tw",
       "area": "tw",
       "ntfUrl": "https://tronclass.mcut.edu.tw/ntf",
-      "casUrl": "https://tronclass.mcut.edu.tw/cas",
+      "casUrl": "https://tronclass.mcut.edu.tw",
+      "casApi": "https://tronclass.mcut.edu.tw",
       "deliveryOrg": "MCUT",
+      "keywords": [
+        "明志科技大學",
+        "mcut"
+      ],
       "id": 1,
       "orgName": "明志科技大學_管理暨設計學院",
       "accountType": "user_no",
@@ -5651,7 +5908,7 @@
       "objectId": "5fd319005380992c077dc4c1",
       "createdAt": "2020-12-11T07:00:16.919Z",
       "isPublic": true,
-      "orgName": "智园测试专用",
+      "orgName": "智园演示机构",
       "env": "prod"
     },
     {
@@ -5716,7 +5973,7 @@
       "deliveryOrg": "tw-azure-su",
       "id": 5,
       "ntfUrl": "https://elearn.hs.edu.tw/ntf",
-      "orgName": "新興科技遠距服務學校",
+      "orgName": "新興科技教育遠距示範服務學校",
       "keywords": [
         "成功大學",
         "新興科技"
@@ -5777,7 +6034,8 @@
       "apiUrl": "https://tronclass.mdu.edu.tw",
       "area": "tw",
       "ntfUrl": "https://tronclass.mdu.edu.tw/ntf",
-      "casUrl": "https://tronclass.mdu.edu.tw/cas",
+      "casUrl": "https://tronclass.mdu.edu.tw",
+      "casApi": "https://tronclass.mdu.edu.tw",
       "deliveryOrg": "MDU",
       "id": 1,
       "keywords": [
@@ -5882,39 +6140,6 @@
       "env": "prod"
     },
     {
-      "TDID": "5AD3574CACBB40BA8767D5C7D678CE19",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 8,
-      "orgName": "德明財經科技大學",
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
-      "keywords": [
-        "德明財經科技大學",
-        "德明"
-      ],
-      "accountType": "user_no",
-      "objectId": "601a413d8f5787459b205002",
-      "createdAt": "2021-02-03T06:22:53.817Z",
-      "updatedAt": "2021-02-03T06:23:54.170Z"
-    },
-    {
-      "apiUrl": "https://az.tronclass.com",
-      "orgName": "瑞儀光電",
-      "keywords": [
-        "瑞儀",
-        "光電"
-      ],
-      "id": 9,
-      "TDID": "6795b8519a2445478b3955fe77df372e",
-      "deliveryOrg": "tw-azure-su",
-      "ntfUrl": "https://az.tronclass.com/ntf",
-      "area": "tw",
-      "objectId": "601ba9858f5787459b217749",
-      "createdAt": "2020-11-05T08:13:32.506Z",
-      "updatedAt": "2020-11-05T08:16:12.403Z"
-    },
-    {
       "TDID": "C364EFD4FDAB4D95B11252BDC574D406",
       "area": "tw",
       "id": 1,
@@ -5931,24 +6156,8 @@
       "updatedAt": "2021-02-04T08:24:36.266Z",
       "accountType": "user_no",
       "apiUrl": "https://tronclass.asia.edu.tw",
-      "casUrl": "https://tronclass.asia.edu.tw/cas"
-    },
-    {
-      "TDID": "5AD3574CACBB40BA8767D5C7D678CE19",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 6,
-      "orgName": "亞洲大學test",
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
-      "keywords": [
-        "亞洲大學",
-        "亞洲",
-        "asia"
-      ],
-      "objectId": "60092ac9b618fb1a74aad153",
-      "createdAt": "2021-01-08T10:34:09.854Z",
-      "updatedAt": "2021-01-08T10:34:09.854Z"
+      "casApi": "https://tronclass.asia.edu.tw",
+      "casUrl": "https://tronclass.asia.edu.tw"
     },
     {
       "TDID": "E10567ED07BD4D888D81EBD4FC73183D",
@@ -6018,30 +6227,28 @@
     },
     {
       "objectId": "6036032d5c402858d285927a",
-      "apiUrl": "http://8.136.25.185/",
+      "apiUrl": "http://10.62.106.184",
       "orgName": "湖南大学（私有云）",
       "deliveryOrg": "HNU",
+      "keywords": [
+        "湖南大学"
+      ],
       "id": 1,
       "area": "cn",
       "updatedAt": "2021-02-24T07:41:33.808Z",
       "TDID": "67DE9BF9C6DC4128BB66A1A8A7690C90",
       "createdAt": "2021-02-24T07:41:33.808Z",
-      "ntfUrl": "http://8.136.25.185/ntf"
-    },
-    {
-      "TDID": "F09B008EE75148F88506DB23903E7836",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "area": "tw",
-      "deliveryOrg": "tw-azure-pu",
-      "id": 9,
-      "orgName": "龍華科技大學",
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf",
-      "keywords": [
-        "龍華科技大學"
-      ],
-      "objectId": "6040b7c17b6753092e02d32e",
-      "createdAt": "2021-03-04T10:34:41.759Z",
-      "updatedAt": "2021-03-04T10:34:41.759Z"
+      "ntfUrl": "http://10.62.106.184/ntf",
+      "identityConfig": {
+        "realm": "hnu",
+        "auth-server-url": "http://10.62.106.188:8600/auth",
+        "ssl-required": "external",
+        "resource": "TronClass-App",
+        "public-client": true,
+        "confidential-port": 0,
+        "isApiLogin": false
+      },
+      "canOffCampusLogin": true
     },
     {
       "objectId": "6041a540f8ac3a24dee8c7bb",
@@ -6065,20 +6272,27 @@
       ],
       "identityConfig": {
         "realm": "Hit",
-        "auth-server-url": "http://openlearning.hit.edu.cn:8600/auth",
+        "auth-server-url": "http://openlearning-identity.hit.edu.cn/auth",
+        "ssl-required": "external",
         "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0,
         "isApiLogin": false
       },
-      "identityConfigH5": {
+      "identityConfigH5Welink": {
         "realm": "Hit",
-        "auth-server-url": "http://openlearning.hit.edu.cn:8600/auth",
-        "resource": "TronClassH5"
+        "auth-server-url": "http://openlearning-identity.hit.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassH5",
+        "public-client": true,
+        "confidential-port": 0
       },
+      "canOffCampusLogin": true,
       "ntfUrl": "http://openlearning.hit.edu.cn/ntf",
       "objectId": "59ae1a17a22b9d0064e3340f",
       "orgName": "哈尔滨工业大学",
       "updatedAt": "2021-03-05T03:29:27.822Z",
-      "id": 1
+      "id": 3
     },
     {
       "objectId": "60488e3db725a143ea6a1f9c",
@@ -6109,39 +6323,6 @@
       "updatedAt": "2021-03-12T08:11:24.390Z",
       "createdAt": "2021-03-12T08:11:24.390Z",
       "env": "prod"
-    },
-    {
-      "orgName": "龙场悟道",
-      "keywords": [
-        "longchang"
-      ],
-      "apiUrl": "http://lms.ouchn.cn",
-      "deliveryOrg": "ouchn",
-      "id": 1,
-      "area": "cn",
-      "ntfUrl": "http://lms.ouchn.cn/ntf"
-    },
-    {
-      "orgName": "龙场子道场-2",
-      "keywords": [
-        "longchang"
-      ],
-      "apiUrl": "http://lms.ouchn.cn",
-      "deliveryOrg": "ouchn",
-      "id": 2,
-      "area": "cn",
-      "ntfUrl": "http://lms.ouchn.cn/ntf"
-    },
-    {
-      "orgName": "龙场子道场-3",
-      "keywords": [
-        "longchang"
-      ],
-      "apiUrl": "http://lms.ouchn.cn",
-      "deliveryOrg": "ouchn",
-      "id": 3,
-      "area": "cn",
-      "ntfUrl": "http://lms.ouchn.cn/ntf"
     },
     {
       "keywords": [
@@ -6202,12 +6383,14 @@
       "TDID": "61346C827AF34EEAABE415111D1E2CCA",
       "createdAt": "2021-03-23T07:41:33.808Z",
       "ntfUrl": "https://1906.usst.edu.cn/ntf",
+      "casUrl": "http://ehall.usst.edu.cn/amp-auth-adapter",
       "identityConfig": {
-        "kc_idp_hint": "",
         "realm": "usst",
         "auth-server-url": "https://1906.usst.edu.cn:8600/auth",
+        "ssl-required": "external",
         "resource": "TronClassApp",
-        "isApiLogin": false
+        "public-client": true,
+        "confidential-port": 0
       },
       "identityConfigH5Welink": {
         "realm": "usst",
@@ -6245,19 +6428,59 @@
       "ntfUrl": "http://192.168.0.232/ntf"
     },
     {
-      "orgName": "qa-product-org-2",
+      "orgName": "qa-product-org-6",
       "objectId": "5d429e51c8959c008a5c2d85",
       "createdAt": "2019-08-01T08:09:53.875Z",
       "updatedAt": "2019-08-01T08:16:02.965Z",
-      "id": 2,
-      "apiUrl": "https://lms-qa.tronclass.com.cn",
-      "edurpApi": "http://edurp-h5.qa.tronclass.com.cn/third-login",
+      "id": 6,
+      "apiUrl": "https://lms-product.tronclass.com.cn",
       "keywords": [
         "qa",
         "product"
       ],
-      "deliveryOrg": "",
-      "ntfUrl": "https://lms-qa.tronclass.com.cn/ntf",
+      "identityConfig": {
+        "isApiLogin": false,
+        "realm": "xjtu",
+        "auth-server-url": "http://class.xjtu.edu.cn:8600/auth",
+        "resource": "tronclass-app"
+      },
+      "canOffCampusLogin": true,
+      "deliveryOrg": "jlu",
+      "ntfUrl": "https://lms-product.tronclass.com.cn/ntf",
+      "area": "cn"
+    },
+    {
+      "orgName": "中国科学技术大学",
+      "createdAt": "2019-08-01T08:09:53.875Z",
+      "updatedAt": "2019-08-01T08:16:02.965Z",
+      "id": 1,
+      "inCastUrl": "https://incast.v.ustc.edu.cn",
+      "apiUrl": "https://home.v.ustc.edu.cn",
+      "casUrl": "https://passport.ustc.edu.cn",
+      "identityConfigH5": {
+        "realm": "ustc",
+        "auth-server-url": "https://identity.v.ustc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClass-Mobile",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Wecom": {
+        "realm": "ustc",
+        "auth-server-url": "https://identity.v.ustc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": true,
+      "keywords": [
+        "中科院",
+        "ustc",
+        "中国科学技术大学"
+      ],
+      "deliveryOrg": "ustc",
+      "ntfUrl": "https://home.v.ustc.edu.cn/ntf",
       "area": "cn"
     },
     {
@@ -6309,16 +6532,6 @@
       "updatedAt": "2021-04-07T06:28:06.064Z",
       "createdAt": "2021-04-07T06:28:06.064Z",
       "env": "prod"
-    },
-    {
-      "area": "tw",
-      "env": "prod",
-      "id": 193,
-      "isPublic": true,
-      "orgName": "國立東華大學",
-      "updatedAt": "2021-02-22T09:14:27.783Z",
-      "objectId": "6074083de8151c3d0a99edae",
-      "createdAt": "2021-02-22T09:14:27.783Z"
     },
     {
       "keywords": [
@@ -6448,18 +6661,34 @@
       "TDID": "6BF876181FC44DBDA2F74C23A451259A",
       "createdAt": "2021-04-25T09:42:00.291Z",
       "ntfUrl": "https://lms-product.tronclass.com.cn/ntf",
-      "casUrl": "http://testcas.ouchn.cn/lyuapServer",
+      "canOffCampusLogin": true,
+      "identityConfig": {
+        "realm": "product",
+        "auth-server-url": "https://identity-product.tronclass.com.cn/auth",
+        "ssl-required": "none",
+        "resource": "TronclassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5": {
+        "realm": "product",
+        "auth-server-url": "https://identity-product.tronclass.com.cn/auth",
+        "ssl-required": "none",
+        "resource": "ouchnApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
       "identityConfigH5Ouchn": {
         "realm": "product",
         "auth-server-url": "https://identity-product.tronclass.com.cn/auth",
-        "ssl-required": "external",
-        "resource": "tronclassH5",
+        "ssl-required": "none",
+        "resource": "ouchnApp",
         "public-client": true,
         "confidential-port": 0
       }
     },
     {
-      "apiUrl": "http://lms.ouchn.cn",
+      "apiUrl": "https://lms.ouchn.cn",
       "orgName": "国家开放大学",
       "deliveryOrg": "ouchn",
       "id": 1,
@@ -6467,19 +6696,27 @@
       "updatedAt": "2021-04-25T09:42:00.291Z",
       "TDID": "6BF876181FC44DBDA2F74C23A451259A",
       "createdAt": "2021-04-25T09:42:00.291Z",
-      "ntfUrl": "http://lms.ouchn.cn/ntf",
-      "casUrl": "http://tysfrz.pt.ouchn.cn/lyuapServer",
+      "ntfUrl": "https://lms.ouchn.cn/ntf",
+      "casUrl": "https://tysfrz.pt.ouchn.cn/lyuapServer",
+      "identityConfigH5": {
+        "realm": "guokai",
+        "auth-server-url": "https://lms-identity.ouchn.cn/auth",
+        "ssl-required": "none",
+        "resource": "ouchnApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
       "identityConfigH5Ouchn": {
         "realm": "guokai",
-        "auth-server-url": "http://lms-identity.ouchn.cn/auth",
+        "auth-server-url": "https://lms-identity.ouchn.cn/auth",
         "ssl-required": "none",
-        "resource": "tronclassH5",
+        "resource": "ouchnApp",
         "public-client": true,
         "confidential-port": 0
       },
       "identityConfigH5Wechat": {
         "realm": "guokai",
-        "auth-server-url": "http://lms-identity.ouchn.cn/auth",
+        "auth-server-url": "https://lms-identity.ouchn.cn/auth",
         "ssl-required": "none",
         "resource": "tronclassH5",
         "public-client": true,
@@ -6491,7 +6728,7 @@
       "apiUrl": "https://lms-product.tronclass.com.cn",
       "orgName": "国开测试环境子机构",
       "deliveryOrg": "test-ouchn-01",
-      "id": 4,
+      "id": 19,
       "area": "cn",
       "updatedAt": "2021-04-28T08:29:02.386Z",
       "TDID": "B87C6363E37F4486B182C14768D5B87E",
@@ -6499,19 +6736,14 @@
       "ntfUrl": "https://lms-product.tronclass.com.cn/ntf"
     },
     {
-      "keywords": [
-        "WG學院"
-      ],
-      "objectId": "608eaa3f33ced0068b14bafa",
-      "apiUrl": "https://pu.tronclass.com.tw",
-      "orgName": "WG學院",
-      "deliveryOrg": "tw-azure-pu",
-      "area": "tw",
-      "id": 10,
-      "updatedAt": "2021-05-02T13:33:51.346Z",
-      "accountType": "user_no",
-      "createdAt": "2021-05-02T13:33:51.346Z",
-      "ntfUrl": "https://pu.tronclass.com.tw/ntf"
+      "apiUrl": "https://lms-product.tronclass.com.cn",
+      "orgName": "河开测试环境",
+      "deliveryOrg": "test-hekai",
+      "id": 16,
+      "area": "cn",
+      "updatedAt": "2021-04-28T08:29:02.386Z",
+      "createdAt": "2021-04-28T08:29:02.386Z",
+      "ntfUrl": "https://lms-product.tronclass.com.cn/ntf"
     },
     {
       "objectId": "608bf6056d8bee18f6da3ad0",
@@ -6670,24 +6902,6 @@
       "env": "prod"
     },
     {
-      "apiUrl": "https://az.tronclass.com",
-      "orgName": "臺南市私立德光高級中學",
-      "keywords": [
-        "德光",
-        "台南",
-        "臺南",
-        "tkgsh"
-      ],
-      "id": 13,
-      "TDID": "6795b8519a2445478b3955fe77df372e",
-      "deliveryOrg": "tw-azure-su",
-      "ntfUrl": "https://az.tronclass.com/ntf",
-      "area": "tw",
-      "objectId": "601ba9858f5787459b217749",
-      "createdAt": "2020-11-05T08:13:32.506Z",
-      "updatedAt": "2020-11-05T08:16:12.403Z"
-    },
-    {
       "orgName": "qa-sharding-master",
       "objectId": "5b6d56b1a22b9d0031703410",
       "createdAt": "2018-08-10T09:11:13.731Z",
@@ -6700,7 +6914,7 @@
         "test"
       ],
       "id": 1,
-      "deliveryOrg": "sharding-test",
+      "deliveryOrg": "OUYA",
       "ntfUrl": "https://lms-product.tronclass.com.cn/ntf",
       "TDID": ""
     },
@@ -6716,7 +6930,7 @@
         "sharding",
         "test"
       ],
-      "id": 10000000002,
+      "id": 10000000001,
       "deliveryOrg": "sharding-test",
       "ntfUrl": "https://lms-product.tronclass.com.cn/ntf",
       "TDID": ""
@@ -6735,6 +6949,7 @@
       "TDID": "AC93EBCF48B2434E8D3F07C77923F7A4",
       "createdAt": "2021-06-28T06:34:35.200Z",
       "ntfUrl": "http://zucc.courses.zj.edu.cn/ntf",
+      "edurpApi": "http://qms-h5.zucc.edu.cn/identity-token-login",
       "identityConfigH5Dingtalk": {
         "realm": "zju-xzzj",
         "auth-server-url": "http://identity.courses.zj.edu.cn:8600/auth",
@@ -6752,12 +6967,6 @@
       "objectId": "60dab17638136d6285a0cb05",
       "apiUrl": "https://az.tronclass.com",
       "area": "tw",
-      "ACL": {
-        "*": {
-          "read": true,
-          "write": true
-        }
-      },
       "id": 14,
       "accountType": "user_no",
       "deliveryOrg": "tw-azure-su",
@@ -6828,12 +7037,1740 @@
         "TDOC",
         "Taiwan Digital Opportunity Center"
       ],
-      "apiUrl": "ttps://az.tronclass.com",
+      "apiUrl": "https://tdoc.tronclass.com",
       "area": "tw",
-      "ntfUrl": "https://az.tronclass.com/ntf",
+      "ntfUrl": "https://tdoc.tronclass.com/ntf",
       "updatedAt": "2021-07-14T08:03:04.462Z",
       "objectId": "60ee9a38a3b5755931718584",
       "createdAt": "2021-07-14T08:03:04.462Z"
+    },
+    {
+      "objectId": "60f1231f2c88c922c2da6e19",
+      "updatedAt": "2021-07-16T06:11:43.065Z",
+      "orgName": "zhujun@cernet.com",
+      "isPublic": true,
+      "area": "cn",
+      "id": "1000000161",
+      "createdAt": "2021-07-16T06:11:43.065Z",
+      "env": "prod"
+    },
+    {
+      "objectId": "60f123af2c88c922c2da6f04",
+      "orgName": "赛尔网络家长学校",
+      "area": "cn",
+      "isPublic": true,
+      "id": "1000000161",
+      "updatedAt": "2021-07-16T06:14:07.513Z",
+      "createdAt": "2021-07-16T06:14:07.513Z",
+      "env": "prod"
+    },
+    {
+      "orgName": "学在吉大",
+      "objectId": "3c8b095144d94400667af2f8",
+      "createdAt": "2021-07-23T02:09:21.980Z",
+      "updatedAt": "2021-07-23T02:15:25.854Z",
+      "apiUrl": "https://jwccourses.jlu.edu.cn",
+      "keywords": [
+        "吉大",
+        "jida",
+        "jlu",
+        "学在吉大"
+      ],
+      "deliveryOrg": "jlu",
+      "ntfUrl": "https://jwccourses.jlu.edu.cn/ntf",
+      "area": "cn",
+      "TDID": "9204F352B5784092BA3C7ADC6389545B",
+      "id": 1,
+      "inCastUrl": "https://jwcincast.jlu.edu.cn",
+      "edurpApi": "https://jwcedurp-h5.jlu.edu.cn/identity-token-login-to-portal",
+      "casUrl": "https://cas.jlu.edu.cn/tpass",
+      "identityConfigH5Wechat": {
+        "realm": "jlu",
+        "auth-server-url": "https://jwcidentity.jlu.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWeChatH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "objectId": "60fe8f261de21d3e0725d9eb",
+      "apiUrl": "http://tronclassroom.com",
+      "orgName": "华为演示环境",
+      "deliveryOrg": "HUAWEIYANSHI",
+      "id": 12,
+      "area": "cn",
+      "updatedAt": "2021-07-26T10:32:06.295Z",
+      "TDID": "0DE7FEA07D444356BBE7FE27F5712E43",
+      "createdAt": "2021-07-26T10:32:06.295Z",
+      "ntfUrl": "http://tronclassroom.com/ntf"
+    },
+    {
+      "objectId": "6100cf831de21d3e07297b33",
+      "orgName": "长春市第一中等专业学校",
+      "area": "cn",
+      "isPublic": true,
+      "id": "1000000163",
+      "updatedAt": "2021-07-28T03:31:15.829Z",
+      "createdAt": "2021-07-28T03:31:15.829Z",
+      "env": "prod"
+    },
+    {
+      "objectId": "61023f721de21d3e072bb407",
+      "orgName": "小鱼易连",
+      "createdAt": "2021-07-29T05:41:06.700Z",
+      "isPublic": true,
+      "area": "cn",
+      "updatedAt": "2021-07-29T05:41:06.700Z",
+      "id": "1000000164",
+      "env": "prod"
+    },
+    {
+      "objectId": "610a63230dbd3453d4d1fff1",
+      "apiUrl": "http://tronclassroom.com",
+      "orgName": "泉州职业技术大学智慧教室样板间",
+      "createdAt": "2021-08-04T09:51:31.029Z",
+      "updatedAt": "2021-08-04T09:51:31.029Z",
+      "area": "cn",
+      "id": 13,
+      "TDID": "2D0CF029A0B1423BB85F404B9A075B70",
+      "deliveryOrg": "QZZYJSYANGBANJIAN",
+      "ntfUrl": "http://tronclassroom.com/ntf"
+    },
+    {
+      "objectId": "610b4eaccc3b443d8d2b1680",
+      "orgName": "南京极域",
+      "createdAt": "2021-08-05T02:36:28.090Z",
+      "isPublic": true,
+      "updatedAt": "2021-08-05T02:36:28.090Z",
+      "area": "cn",
+      "id": "1000000165",
+      "env": "prod"
+    },
+    {
+      "objectId": "61121f0e0dbd3453d4e16718",
+      "updatedAt": "2021-08-10T06:39:10.666Z",
+      "orgName": "华为大学",
+      "isPublic": true,
+      "area": "cn",
+      "id": "1000000167",
+      "createdAt": "2021-08-10T06:39:10.666Z",
+      "env": "prod"
+    },
+    {
+      "objectId": "611dff61b7612951d146035c",
+      "orgName": "北京安博科瑞教育科技有限公司",
+      "createdAt": "2021-08-19T06:51:13.111Z",
+      "isPublic": true,
+      "area": "cn",
+      "updatedAt": "2021-08-19T06:51:13.111Z",
+      "id": "1000000168",
+      "env": "prod"
+    },
+    {
+      "objectId": "611dff66a0926f44323ebdc4",
+      "orgName": "北京安博科瑞教育科技有限公司",
+      "isPublic": true,
+      "area": "cn",
+      "updatedAt": "2021-08-19T06:51:18.780Z",
+      "id": "1000000168",
+      "createdAt": "2021-08-19T06:51:18.780Z",
+      "env": "prod"
+    },
+    {
+      "objectId": "611e01eda0926f44323ed1a0",
+      "orgName": "沈阳城市学院(公有云)",
+      "createdAt": "2021-08-19T07:02:05.820Z",
+      "isPublic": true,
+      "updatedAt": "2021-08-19T07:02:05.820Z",
+      "area": "cn",
+      "id": "1000000169",
+      "env": "prod"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "updatedAt": "2021-08-24 11:55:28",
+      "objectId": "61246db09c2c492f6aa4aaf6",
+      "orgName": "MS Learn",
+      "createdAt": "2021-08-24 11:55:28",
+      "keywords": [
+        "MS Learn"
+      ],
+      "id": 19,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "accountType": "user_no",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw"
+    },
+    {
+      "objectId": "6125a0e23076516431fdb014",
+      "orgName": "深圳市福田区华强职业技术学校",
+      "area": "cn",
+      "isPublic": true,
+      "id": "1000000170",
+      "updatedAt": "2021-08-25T01:46:10.864Z",
+      "createdAt": "2021-08-25T01:46:10.864Z",
+      "env": "prod"
+    },
+    {
+      "keywords": [
+        "qa",
+        "incast"
+      ],
+      "objectId": "5d429e51c8959c008a5c2d85",
+      "apiUrl": "https://lms-qa.tronclass.com.cn",
+      "area": "cn",
+      "inCastUrl": "https://incast-qa.tronclass.com.cn",
+      "updatedAt": "2019-08-01T08:16:02.965Z",
+      "deliveryOrg": "BJGYJS",
+      "orgName": "qa-incast-test",
+      "edurpApi": "https://edurp-h5-qa.tronclass.com.cn/identity-token-login-to-portal",
+      "createdAt": "2019-08-01T08:09:53.875Z",
+      "id": 10000000008,
+      "thirdParty": {
+        "dingtalk": {
+          "cropId": "dingba1b48d1ce4e9029ffe93478753d9884"
+        },
+        "line": {
+          "liffId": "1655259824-bwQGzjj9"
+        }
+      },
+      "ntfUrl": "https://lms-qa.tronclass.com.cn/ntf"
+    },
+    {
+      "TDID": "D4E5FC3FF1804F81BFA925216E18A43B",
+      "area": "tw",
+      "apiUrl": "https://tronclass.cjcu.edu.tw",
+      "deliveryOrg": "CJCU",
+      "id": 1,
+      "keywords": [
+        "CJCU",
+        "長榮大學",
+        "Chang Jung Christian University"
+      ],
+      "accountType": "user_no",
+      "ntfUrl": "https://tronclass.cjcu.edu.tw/ntf",
+      "orgName": "長榮大學",
+      "updatedAt": "2021-08-30T03:24:40.683Z",
+      "objectId": "612c4f78e83fb06ed86104c1",
+      "createdAt": "2021-08-30T03:24:40.683Z",
+      "identityConfig": {
+        "realm": "cjcu",
+        "auth-server-url": "https://identity.cjcu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Line": {
+        "realm": "cjcu",
+        "auth-server-url": "https://identity.cjcu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "tronclassLineH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "TDID": "D4E5FC3FF1804F81BFA925216E18A43B",
+      "area": "tw",
+      "apiUrl": "https://tronclass.cjcu.edu.tw",
+      "deliveryOrg": "CJCU",
+      "id": 1,
+      "keywords": [
+        "CJCU",
+        "長榮大學",
+        "Chang Jung Christian University"
+      ],
+      "accountType": "user_no",
+      "ntfUrl": "https://tronclass.cjcu.edu.tw/ntf",
+      "orgName": "Chang Jung Christian University(CJCU)",
+      "updatedAt": "2021-08-30T03:24:40.683Z",
+      "objectId": "612cff78e83fb06ed86104c1",
+      "createdAt": "2021-08-30T03:24:40.683Z",
+      "identityConfig": {
+        "realm": "cjcu",
+        "auth-server-url": "https://identity.cjcu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Line": {
+        "realm": "cjcu",
+        "auth-server-url": "https://identity.cjcu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "tronclassLineH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "apiUrl": "https://ulearn.nfu.edu.tw",
+      "area": "tw",
+      "orgName": "國立虎尾科技大學",
+      "id": 1,
+      "deliveryOrg": "nfu",
+      "accountType": "user_no",
+      "TDID": "01FBA138364C4918B735ECC93B74C3A9",
+      "keywords": [
+        "國立虎尾科技大學",
+        "虎尾",
+        "nfu",
+        "Formosa",
+        "formosa"
+      ],
+      "ntfUrl": "https://ulearn.nfu.edu.tw/ntf",
+      "updatedAt": "2022-06-30T09:25:59.620Z",
+      "objectId": "612c7d7b9c2c492f6ab11576",
+      "createdAt": "2021-08-30T06:40:59.620Z",
+      "identityConfig": {
+        "realm": "nfu",
+        "auth-server-url": "https://identity.nfu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": true
+    },
+    {
+      "apiUrl": "https://ulearn.nfu.edu.tw",
+      "area": "tw",
+      "orgName": "National Formosa University",
+      "id": 1,
+      "deliveryOrg": "nfu",
+      "accountType": "user_no",
+      "TDID": "01FBA138364C4918B735ECC93B74C3A9",
+      "keywords": [
+        "國立虎尾科技大學",
+        "虎尾",
+        "nfu",
+        "Formosa",
+        "formosa"
+      ],
+      "ntfUrl": "https://ulearn.nfu.edu.tw/ntf",
+      "updatedAt": "2022-06-30T09:25:59.620Z",
+      "objectId": "612c7d7b9c2c492f6ab11576",
+      "createdAt": "2021-08-30T06:40:59.620Z",
+      "identityConfig": {
+        "realm": "nfu",
+        "auth-server-url": "https://identity.nfu.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": true
+    },
+    {
+      "keywords": [
+        "XMU"
+      ],
+      "objectId": "61308188c4ccb57a9d900208",
+      "apiUrl": "https://lnt.xmu.edu.cn",
+      "orgName": "厦门大学课程中心",
+      "deliveryOrg": "XMU",
+      "id": 1,
+      "area": "cn",
+      "updatedAt": "2021-09-20T07:47:20.716Z",
+      "TDID": "AED0E8EBE6034A549F3C1AC52FACBD34",
+      "createdAt": "2021-09-02T07:47:20.716Z",
+      "ntfUrl": "http://lnt.xmu.edu.cn/ntf",
+      "identityConfigH5Wecom": {
+        "realm": "xmu",
+        "auth-server-url": "https://c-identity.xmu.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "objectId": "6131f23dc4ccb57a9d91f684",
+      "orgName": "阿里巴巴",
+      "area": "cn",
+      "isPublic": true,
+      "id": "1000000171",
+      "updatedAt": "2021-09-03T10:00:29.061Z",
+      "createdAt": "2021-09-03T10:00:29.061Z",
+      "env": "prod"
+    },
+    {
+      "keywords": [
+        "qa",
+        "product",
+        "ouya"
+      ],
+      "objectId": "5d429e51c8959c008a5c2d85",
+      "apiUrl": "https://lms-qa.tronclass.com.cn",
+      "area": "cn",
+      "inCastUrl": "https://incast-qa.tronclass.com.cn",
+      "updatedAt": "2019-08-01T08:16:02.965Z",
+      "deliveryOrg": "OUYA",
+      "orgName": "qa-incast-test-ouya",
+      "edurpApi": "https://edurp-h5-qa.tronclass.com.cn/identity-token-login-to-portal",
+      "createdAt": "2019-08-01T08:09:53.875Z",
+      "id": 10000000008,
+      "thirdParty": {
+        "dingtalk": {
+          "cropId": "dingba1b48d1ce4e9029ffe93478753d9884"
+        },
+        "line": {
+          "liffId": "1655259824-bwQGzjj9"
+        }
+      },
+      "ntfUrl": "https://lms-qa.tronclass.com.cn/ntf"
+    },
+    {
+      "id": "1000000172",
+      "area": "cn",
+      "env": "prod",
+      "orgName": "华夏银行信用卡中心",
+      "isPublic": true
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "id": 22,
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "國立東華大學",
+      "keywords": [
+        "國立東華大學",
+        "東華",
+        "National Dong Hwa University",
+        "Dong Hwa"
+      ],
+      "updatedAt": "2021-08-30T06:42:50.240Z",
+      "objectId": "614320ba7bb0d334c67de981",
+      "createdAt": "2021-08-30T06:42:50.240Z"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "id": 22,
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "National Dong Hwa University",
+      "keywords": [
+        "國立東華大學",
+        "東華",
+        "National Dong Hwa University",
+        "Dong Hwa"
+      ],
+      "updatedAt": "2021-08-30T06:42:50.240Z",
+      "objectId": "61432040ec1d407bb2da2eba",
+      "createdAt": "2021-08-30T06:42:50.240Z"
+    },
+    {
+      "inCastUrl": "https://jwcincast.jlu.edu.cn",
+      "deliveryOrg": "qa",
+      "apiUrl": "https://lms-qa.tronclass.com.cn",
+      "keywords": [
+        "qa",
+        "product"
+      ],
+      "orgName": "qa-product-org-7",
+      "updatedAt": "2019-08-01T08:16:02.965Z",
+      "id": 1,
+      "createdAt": "2019-08-01T08:09:53.875Z",
+      "area": "cn",
+      "ntfUrl": "https://lms-qa.tronclass.com.cnntf"
+    },
+    {
+      "TDID": "4F195C61BD774B708107B5A3B81D2E1C",
+      "area": "tw",
+      "apiUrl": "https://tc.nutc.edu.tw",
+      "deliveryOrg": "NUTC",
+      "id": 1,
+      "keywords": [
+        "國立臺中科技大學",
+        "中科大",
+        "nutc",
+        "NUTC"
+      ],
+      "accountType": "user_no",
+      "ntfUrl": "https://tc.nutc.edu.tw/ntf",
+      "casApi": "https://tc.nutc.edu.tw",
+      "casUrl": "https://tc.nutc.edu.tw",
+      "orgName": "國立臺中科技大學",
+      "updatedAt": "2021-09-16T10:43:28.277Z",
+      "objectId": "61431fd0ec1d407bb2da2e89",
+      "createdAt": "2021-09-16T10:43:28.278Z"
+    },
+    {
+      "env": "prod",
+      "objectId": "6142afcbfb77015d809af096",
+      "orgName": "ND Demo",
+      "updatedAt": "2021-09-16T02:45:31.892Z",
+      "id": "1000000173",
+      "createdAt": "2021-09-16T02:45:31.892Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "id": 23,
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "耕莘健康管理專科學校",
+      "keywords": [
+        "耕莘",
+        "ctcn"
+      ],
+      "updatedAt": "2021-08-30T06:42:50.240Z",
+      "objectId": "614320ba7bb0d334c67de980",
+      "createdAt": "2021-08-30T06:42:50.240Z"
+    },
+    {
+      "TDID": "AE8AF18EB1A1447C9078263F2F9CC89F",
+      "apiUrl": "https://mooc2.uestc.edu.cn",
+      "area": "cn",
+      "id": 1,
+      "deliveryOrg": "uestc",
+      "ntfUrl": "https://mooc2.uestc.edu.cn/ntf",
+      "orgName": "成电慕课",
+      "identityConfigH5Feishu": {
+        "realm": "uestc",
+        "auth-server-url": "https://mooc2.uestc.edu.cn:8643/auth",
+        "ssl-required": "external",
+        "resource": "tronclassFeishuH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "thirdParty": {
+        "feishu": {
+          "appId": "cli_a1b30acb03fa5013"
+        }
+      },
+      "keywords": [
+        "成电",
+        "电子科大"
+      ]
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "id": 24,
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "STUDIO A 晶實科技",
+      "keywords": [
+        "STUDIO",
+        "晶實科技"
+      ],
+      "updatedAt": "2021-10-05T04:04:59.386Z",
+      "objectId": "615bceebec1d407bb237e04b",
+      "createdAt": "2021-10-05T04:04:59.386Z"
+    },
+    {
+      "env": "prod",
+      "objectId": "6161022db0fc702a29f6a382",
+      "orgName": "简学",
+      "updatedAt": "2021-10-09T02:45:01.897Z",
+      "id": "1000000174",
+      "createdAt": "2021-10-09T02:45:01.897Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "objectId": "61669a0d5dcf8f23dc1a347e",
+      "apiUrl": "http://exam.sycu.cn:30080",
+      "keywords": [
+        "SYCU"
+      ],
+      "orgName": "沈阳城市学院",
+      "updatedAt": "2021-10-13T08:34:21.102Z",
+      "id": 1,
+      "createdAt": "2021-10-13T08:34:21.102Z",
+      "area": "cn",
+      "ntfUrl": "http://exam.sycu.cn:30080/ntf",
+      "deliveryOrg": "SYCU",
+      "TDID": "65B104B4B880408E8839729A46170051",
+      "identityConfig": {
+        "realm": "sycu",
+        "auth-server-url": "http://exam.sycu.cn:38600/auth",
+        "ssl-required": "external",
+        "resource": "TronClass-App",
+        "public-client": true,
+        "confidential-port": 0,
+        "isApiLogin": true
+      }
+    },
+    {
+      "env": "prod",
+      "objectId": "6167c7a25dcf8f23dc1b7fae",
+      "orgName": "河北敏行电子科技",
+      "updatedAt": "2021-10-14T06:01:06.867Z",
+      "id": "1000000175",
+      "createdAt": "2021-10-14T06:01:06.867Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "env": "prod",
+      "objectId": "6167cb495dcf8f23dc1b835f",
+      "orgName": "希沃",
+      "updatedAt": "2021-10-14T06:16:41.173Z",
+      "id": "1000000176",
+      "createdAt": "2021-10-14T06:16:41.173Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "env": "prod",
+      "objectId": "616fb2e0b406a312d39df591",
+      "orgName": "重庆邮电大学",
+      "updatedAt": "2021-10-20T06:10:40.612Z",
+      "id": "1000000177",
+      "createdAt": "2021-10-20T06:10:40.612Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "env": "prod",
+      "objectId": "61725f015285185c60a667a2",
+      "orgName": "上海外国语大学附属外国语学校",
+      "updatedAt": "2021-10-22T06:49:37.936Z",
+      "id": "1000000178",
+      "createdAt": "2021-10-22T06:49:37.936Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "env": "prod",
+      "objectId": "617a1ba25285185c60aec5a7",
+      "orgName": "上海建桥学院",
+      "updatedAt": "2021-10-28T03:40:18.272Z",
+      "id": "1000000179",
+      "createdAt": "2021-10-28T03:40:18.272Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "id": 26,
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "政大策略管理中心(iSVMS)/avm",
+      "keywords": [
+        "政大策略管理中心",
+        "政大",
+        "iSVMS",
+        "isvms",
+        "avm"
+      ],
+      "updatedAt": "2021-10-31T18:35:28.398Z",
+      "objectId": "617ee1f0cd64666bf2250b21",
+      "createdAt": "2021-10-31T18:35:28.398Z"
+    },
+    {
+      "accountType": "user_no",
+      "apiUrl": "https://staging.tronclass.com.tw:8080",
+      "area": "tw",
+      "id": 1,
+      "deliveryOrg": "wgtp-staging1",
+      "ntfUrl": "https://staging.tronclass.com.tw:8080/ntf",
+      "orgName": "wgtp-staging1",
+      "keywords": [
+        "wg",
+        "staging"
+      ],
+      "updatedAt": "2021-11-03T10:53:14.194Z",
+      "objectId": "61826a1a5820fb592cc213b7",
+      "createdAt": "2021-11-03T10:53:14.194Z"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "id": 27,
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "Chung Shan Medical University",
+      "keywords": [
+        "中山醫學大學",
+        "csmu",
+        "Chung Shan Medical University",
+        "Chung Shan",
+        "Medical"
+      ],
+      "updatedAt": "2021-11-11T20:52:16.893Z",
+      "objectId": "618d828083ad7a74a1b5b06c",
+      "createdAt": "2021-11-11T20:52:16.893Z"
+    },
+    {
+      "accountType": "user_no",
+      "apiUrl": "https://staging.tronclass.com.tw:8085",
+      "area": "tw",
+      "id": 1,
+      "deliveryOrg": "wgtp-staging2",
+      "ntfUrl": "https://staging.tronclass.com.tw:8085/ntf",
+      "orgName": "wgtp-staging2",
+      "keywords": [
+        "wg",
+        "staging"
+      ],
+      "updatedAt": "2021-11-03T10:53:14.194Z",
+      "objectId": "618e131e00c6e664e5bb62a9",
+      "createdAt": "2021-11-03T10:53:14.194Z"
+    },
+    {
+      "orgName": "qa-product-dison",
+      "objectId": "5d429e51c8959c008a5c2d85",
+      "createdAt": "2019-08-01T08:09:53.875Z",
+      "updatedAt": "2019-08-01T08:16:02.965Z",
+      "id": 1,
+      "inCastUrl": "https://incast-qa.tronclass.com.cn",
+      "apiUrl": "https://lms-qa.tronclass.com.cn",
+      "identityConfig": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClass App",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Chd": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "CHDApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": true,
+      "identityConfigH5": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClass App",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Welink": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWelinkH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Dingtalk": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassDingTalkH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Feishu": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassFeishuH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "thirdParty": {
+        "feishu": {
+          "appId": "cli_a1bc799426b9100b"
+        },
+        "dingtalk": {
+          "cropId": "dingba1b48d1ce4e9029ffe93478753d9884"
+        },
+        "line": {
+          "liffId": "1655259824-bwQGzjj9"
+        }
+      },
+      "edurpApi": "https://edurp-h5-qa.tronclass.com.cn/identity-token-login-to-portal",
+      "keywords": [
+        "dison"
+      ],
+      "deliveryOrg": "nfu",
+      "ntfUrl": "https://lms-qa.tronclass.com.cn/ntf",
+      "area": "cn"
+    },
+    {
+      "env": "prod",
+      "objectId": "61a451f3de42272de2efa932",
+      "orgName": "南京大学",
+      "updatedAt": "2021-11-29T04:07:15.636Z",
+      "id": "1000000181",
+      "createdAt": "2021-11-29T04:07:15.636Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 29,
+      "keywords": [
+        "國際醫療翻譯協會",
+        "imtia"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "國際醫療翻譯協會/imtia",
+      "updatedAt": "2021-11-30T03:56:36.902Z",
+      "objectId": "61a5a0f45ff1f2711a053fc9",
+      "createdAt": "2021-11-30T03:56:36.902Z"
+    },
+    {
+      "objectId": "61a5b8bee7b84562fe751109",
+      "apiUrl": "http://lms.zjxu.edu.cn",
+      "deliveryOrg": "ZJXU",
+      "orgName": "嘉兴学院（私有云）",
+      "updatedAt": "2021-11-30T05:38:06.531Z",
+      "id": 1,
+      "createdAt": "2021-11-30T05:38:06.531Z",
+      "area": "cn",
+      "ntfUrl": "http://lms.zjxu.edu.cn/ntf",
+      "TDID": "18F2C193BEDE455A9B66F16BD777E8FB"
+    },
+    {
+      "env": "prod",
+      "objectId": "61a82d65f21fa4169bd729f5",
+      "orgName": "皖江工学院",
+      "updatedAt": "2021-12-02T02:20:21.261Z",
+      "id": "1000000183",
+      "createdAt": "2021-12-02T02:20:21.261Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "TDID": "2EBF6E07DFD54A2F9B9C0FFF3E6A255C",
+      "apiUrl": "https://tronclass.au.edu.tw",
+      "area": "tw",
+      "deliveryOrg": "ALETU",
+      "id": 1,
+      "accountType": "user_no",
+      "orgName": "真理大學",
+      "ntfUrl": "https://tronclass.au.edu.tw/ntf",
+      "keywords": [
+        "真理",
+        "au",
+        "alet",
+        "Aletheia University"
+      ],
+      "objectId": "61b088565ff1f2711a2f8dd9",
+      "createdAt": "2021-12-08T10:26:30.398Z",
+      "updatedAt": "2021-12-08T10:26:30.398Z",
+      "identityConfig": {
+        "realm": "aletu",
+        "auth-server-url": "https://identity.au.edu.tw/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "TDID": "23A98426495F468696BCD4CC1F1F5147",
+      "apiUrl": "https://collegeplus.itri.org.tw",
+      "area": "tw",
+      "deliveryOrg": "tw-itri",
+      "id": 1,
+      "accountType": "user_no",
+      "orgName": "工研院產業學院-雲端教室",
+      "ntfUrl": "https://collegeplus.itri.org.tw/ntf",
+      "keywords": [
+        "工研院",
+        "工研院產業學院",
+        "itri"
+      ],
+      "objectId": "61b314b65ff1f2711a333e08",
+      "createdAt": "2021-12-10T08:49:58.022Z",
+      "updatedAt": "2021-12-10T08:49:58.022Z",
+      "identityConfigH5Line": {
+        "realm": "itri",
+        "auth-server-url": "https://collegeplus.itri.org.tw:8083/auth",
+        "ssl-required": "external",
+        "resource": "tronclassLineH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 30,
+      "keywords": [
+        "健行科技大學",
+        "uch"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "orgName": "健行科技大學",
+      "updatedAt": "2021-12-10T10:28:14.546Z",
+      "objectId": "61b32bbeb5af6f41364b2be5",
+      "createdAt": "2021-12-10T10:28:14.546Z"
+    },
+    {
+      "env": "prod",
+      "objectId": "61b988a772ea8d5fe7331d30",
+      "orgName": "飞书",
+      "updatedAt": "2021-12-15T06:18:15.253Z",
+      "id": "1000000184",
+      "createdAt": "2021-12-15T06:18:15.253Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "env": "prod",
+      "objectId": "61c96c8a34646c767bbcb849",
+      "orgName": "嘉兴南湖学院",
+      "updatedAt": "2021-12-27T07:34:34.162Z",
+      "id": "1000000185",
+      "createdAt": "2021-12-27T07:34:34.162Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "objectId": "61c9bcd4b13f157776565760",
+      "apiUrl": "https://api-test.tronclass.com.cn",
+      "deliveryOrg": "lms_api_tests",
+      "orgName": "lms_api_tests",
+      "updatedAt": "2021-12-27T13:17:08.386Z",
+      "id": 1,
+      "createdAt": "2021-12-27T13:17:08.387Z",
+      "area": "cn",
+      "ntfUrl": "https://api-test.tronclass.com.cn/ntf",
+      "TDID": "CD2FC2EF0E9B4C6C8085DB7C302DDDF1",
+      "identityConfig": {
+        "realm": "qa",
+        "auth-server-url": "https://identity-qa.tronclass.com.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClass App",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": true
+    },
+    {
+      "env": "prod",
+      "objectId": "61ca757ab13f15777657231f",
+      "orgName": "湖南电信",
+      "updatedAt": "2021-12-28T02:24:58.607Z",
+      "id": "1000000186",
+      "createdAt": "2021-12-28T02:24:58.607Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "apiUrl": "http://lms.wust.edu.cn",
+      "keywords": [
+        "武汉科技大学",
+        "武汉科技"
+      ],
+      "deliveryOrg": "WUST",
+      "updatedAt": "2021-01-07T04:07:00.295Z",
+      "id": 1,
+      "createdAt": "2021-01-07T04:07:00.295Z",
+      "area": "cn",
+      "ntfUrl": "http://lms.wust.edu.cn/ntf",
+      "orgName": "武汉科技大学畅播",
+      "identityConfigH5Wecom": {
+        "realm": "master",
+        "auth-server-url": "http://identity-lms.wust.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "env": "prod",
+      "objectId": "61dd15853d39f2117f313373",
+      "orgName": "北京工商大学",
+      "updatedAt": "2022-01-11T05:28:37.966Z",
+      "id": "1000000187",
+      "createdAt": "2022-01-11T05:28:37.966Z",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "orgName": "金华职业技术学院",
+      "area": "cn",
+      "apiUrl": "https://lms.info.jhc.cn",
+      "ntfUrl": "https://lms.info.jhc.cn/ntf",
+      "inCastUrl": "https://incast.info.jhc.cn",
+      "keywords": [
+        "金华职业技术学院"
+      ],
+      "identityConfig": {
+        "realm": "jhc",
+        "auth-server-url": "https://identity.info.jhc.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "id": 1,
+      "deliveryOrg": "JINHUA",
+      "updatedAt": "2021-01-07T04:07:00.295Z",
+      "createdAt": "2021-01-07T04:07:00.295Z"
+    },
+    {
+      "apiUrl": "http://courses.cuc.edu.cn",
+      "keywords": [
+        "中国传媒大学"
+      ],
+      "deliveryOrg": "CUC",
+      "updatedAt": "2021-01-07T04:07:00.295Z",
+      "id": 1000000000,
+      "createdAt": "2021-01-07T04:07:00.295Z",
+      "area": "cn",
+      "ntfUrl": "http://courses.cuc.edu.cn/ntf",
+      "orgName": "中国传媒大学",
+      "identityConfig": {
+        "realm": "cuc",
+        "auth-server-url": "http://identity.courses.cuc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "canOffCampusLogin": true,
+      "identityConfigH5": {
+        "realm": "cuc",
+        "auth-server-url": "http://identity.courses.cuc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassApp",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfigH5Wecom": {
+        "realm": "cuc",
+        "auth-server-url": "http://identity.courses.cuc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 33,
+      "orgName": "亞太教育/asia-learning",
+      "keywords": [
+        "亞太教育",
+        "asia",
+        "learning"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2021-12-30T07:08:17.419Z",
+      "objectId": "62145a662fc7d77b87961746",
+      "createdAt": "2021-12-30T07:08:17.419Z"
+    },
+    {
+      "createdAt": "2021-04-25T09:42:00.291Z",
+      "apiUrl": "http://stresstest.ouchn.cn",
+      "deliveryOrg": "stresstest_ouchn_1",
+      "ntfUrl": "http://stresstest.ouchn.cn/ntf",
+      "orgName": "stresstest_1",
+      "area": "cn",
+      "updatedAt": "2021-04-25T09:42:00.291Z",
+      "id": 1
+    },
+    {
+      "createdAt": "2021-04-25T09:42:00.291Z",
+      "apiUrl": "https://stresstest.ouchn.cn",
+      "deliveryOrg": "stresstest_ouchn_8",
+      "ntfUrl": "https://stresstest.ouchn.cn/ntf",
+      "orgName": "stresstest_8",
+      "area": "cn",
+      "updatedAt": "2021-04-25T09:42:00.291Z",
+      "id": 8
+    },
+    {
+      "createdAt": "2021-04-25T09:42:00.291Z",
+      "apiUrl": "http://stresstest.ouchn.cn",
+      "deliveryOrg": "stresstest_ouchn_41",
+      "ntfUrl": "http://stresstest.ouchn.cn/ntf",
+      "orgName": "stresstest_41",
+      "area": "cn",
+      "updatedAt": "2021-04-25T09:42:00.291Z",
+      "id": 41
+    },
+    {
+      "createdAt": "2021-04-25T09:42:00.291Z",
+      "apiUrl": "http://stresstest.ouchn.cn",
+      "deliveryOrg": "stresstest_ouchn_130000000001",
+      "ntfUrl": "http://stresstest.ouchn.cn/ntf",
+      "orgName": "stresstest_130000000001",
+      "area": "cn",
+      "updatedAt": "2021-04-25T09:42:00.291Z",
+      "id": 130000000001
+    },
+    {
+      "identityConfig": {
+        "ssl-required": "external",
+        "confidential-port": 0,
+        "resource": "TronClassApp",
+        "auth-server-url": "https://tronclass_test.pu.edu.tw:8083/auth",
+        "public-client": true,
+        "realm": "pu"
+      },
+      "keywords": [
+        "52024708"
+      ],
+      "updatedAt": "2022-02-22T18:05:16.876Z",
+      "accountType": "user_no",
+      "objectId": "61a886e85ff1f2711a07e0ed",
+      "createdAt": "2022-02-22T18:05:16.876Z",
+      "apiUrl": "https://tronclass_test.pu.edu.tw",
+      "ntfUrl": "https://tronclass_test.pu.edu.tw/ntf",
+      "area": "tw",
+      "deliveryOrg": "PU",
+      "orgName": "52024708",
+      "TDID": "63783D83F65842CCA697002FFA383100",
+      "id": 1
+    },
+    {
+      "apiUrl": "http://lms.ccjxgy.com:8088",
+      "keywords": [
+        "长春市机械工业学校"
+      ],
+      "deliveryOrg": "ccjxgy",
+      "updatedAt": "2021-01-07T04:07:00.295Z",
+      "id": 1,
+      "createdAt": "2021-01-07T04:07:00.295Z",
+      "area": "cn",
+      "ntfUrl": "http://lms.ccjxgy.com:8088/ntf",
+      "orgName": "长春市机械工业学校"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 34,
+      "orgName": "長庚科技大學",
+      "keywords": [
+        "長庚科技大學",
+        "cgust",
+        "Chang Gung"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-02-25T10:30:17.419Z",
+      "objectId": "62145a662fc7d77b87961740",
+      "createdAt": "2022-02-25T10:30:17.419Z"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 34,
+      "orgName": "Chang Gung of Science and Technology",
+      "keywords": [
+        "長庚科技大學",
+        "cgust",
+        "Chang Gung"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-02-25T10:30:17.419Z",
+      "objectId": "62145a662fc7d77b87961740",
+      "createdAt": "2022-02-25T10:30:17.419Z"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 35,
+      "orgName": "樹德科技大學",
+      "keywords": [
+        "樹德科技大學",
+        "stu",
+        "Shu-Te"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-03-02T06:58:58.419Z",
+      "objectId": "62145a662fc7d77b87961743",
+      "createdAt": "2022-03-02T06:58:58.419Z"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 35,
+      "orgName": "Shu-Te University",
+      "keywords": [
+        "樹德科技大學",
+        "stu",
+        "Shu-Te"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-03-02T06:58:58.419Z",
+      "objectId": "62145a662fc7d77b87961743",
+      "createdAt": "2022-03-02T06:58:58.419Z"
+    },
+    {
+      "createdAt": "2022-03-08T02:46:22.473Z",
+      "env": "prod",
+      "updatedAt": "2022-03-08T02:46:22.473Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "深圳锐取公司",
+      "id": "1000000190",
+      "objectId": "6226c37ef04bc232df11939d"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 36,
+      "orgName": "中臺科技大學",
+      "keywords": [
+        "中臺科技大學",
+        "ctust"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-03-09T06:32:58.419Z",
+      "objectId": "62145a662fc7d77b87961743",
+      "createdAt": "2022-03-09T06:32:58.419Z"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 36,
+      "orgName": "Central Taiwan University of Science and Technology",
+      "keywords": [
+        "中臺科技大學",
+        "ctust"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-03-09T06:32:58.419Z",
+      "objectId": "62145a662fc7d77b87961743",
+      "createdAt": "2022-03-09T06:32:58.419Z"
+    },
+    {
+      "createdAt": "2022-03-16T03:18:11.973Z",
+      "env": "prod",
+      "updatedAt": "2022-03-16T03:18:11.973Z",
+      "isPublic": true,
+      "orgName": "湖南第一师范学院",
+      "area": "cn",
+      "id": "1000000191",
+      "objectId": "623156f3c62513794f8c6072"
+    },
+    {
+      "createdAt": "2022-03-23T03:41:38.440Z",
+      "env": "prod",
+      "updatedAt": "2022-03-23T03:41:38.440Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "北京博汇科技股份有限公司",
+      "id": "1000000192",
+      "objectId": "623a96f265f7bc435e4bd5ce"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 37,
+      "orgName": "空中英語教室/StudioClassroom",
+      "keywords": [
+        "空中英語教室",
+        "StudioClassroom",
+        "studio"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-03-23T10:40:58.419Z",
+      "objectId": "62145a662fc7d77b87961740",
+      "createdAt": "2022-03-23T10:40:58.419Z"
+    },
+    {
+      "createdAt": "2022-03-25T10:37:19.070Z",
+      "env": "prod",
+      "updatedAt": "2022-03-25T10:37:19.070Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "北华大学计算机科学技术学院",
+      "id": "1000000193",
+      "objectId": "623d9b5fd513f03b16a87697"
+    },
+    {
+      "orgName": "工美测试",
+      "createdAt": "2019-03-08T03:32:36.353Z",
+      "updatedAt": "2019-03-08T03:45:55.725Z",
+      "apiUrl": "http://219.232.205.50",
+      "keywords": [
+        "工美测试"
+      ],
+      "deliveryOrg": "GMCS",
+      "ntfUrl": "http://219.232.205.50/ntf",
+      "area": "cn",
+      "id": 1,
+      "tms-url": "http://tms.bjgmjx.com",
+      "canOffCampusLogin": true
+    },
+    {
+      "createdAt": "2022-03-30T06:41:58.058Z",
+      "env": "prod",
+      "updatedAt": "2022-03-30T06:41:58.058Z",
+      "isPublic": true,
+      "orgName": "中央民族大学",
+      "area": "cn",
+      "id": "1000000195",
+      "objectId": "6243fbb6cfa11057e89c7c14"
+    },
+    {
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "accountType": "user_no",
+      "apiUrl": "https://az.tronclass.com",
+      "area": "tw",
+      "deliveryOrg": "tw-azure-su",
+      "id": 38,
+      "orgName": "ADP",
+      "keywords": [
+        "ADP"
+      ],
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "updatedAt": "2022-04-01T09:08:58.419Z",
+      "objectId": "62145a662fc7d77b87961741",
+      "createdAt": "2022-04-01T09:08:58.419Z"
+    },
+    {
+      "createdAt": "2022-04-06T05:58:43.198Z",
+      "env": "prod",
+      "updatedAt": "2022-04-06T05:58:43.198Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "河南理工大学",
+      "id": "1000000196",
+      "objectId": "624d2c1396549b175e0ad0a5"
+    },
+    {
+      "apiUrl": "https://lms.scpcfe.cn",
+      "keywords": [
+        "四川财经学院"
+      ],
+      "deliveryOrg": "SCPCFE",
+      "updatedAt": "2021-01-07T04:07:00.295Z",
+      "id": 1,
+      "createdAt": "2021-01-07T04:07:00.295Z",
+      "area": "cn",
+      "ntfUrl": "https://lms.scpcfe.cn/ntf",
+      "orgName": "四川财经职业学院",
+      "edurpApi": "https://qms-h5.scpcfe.cn/identity-token-login-to-portal",
+      "identityConfigH5Wecom": {
+        "realm": "scpcfe",
+        "auth-server-url": "https://identity.scpcfe.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "createdAt": "2022-04-11T06:44:29.190Z",
+      "env": "prod",
+      "updatedAt": "2022-04-11T06:44:29.190Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "杭州市萧山区第四中等职业学校",
+      "id": "1000000197",
+      "objectId": "6253ce4d96549b175e1326cb"
+    },
+    {
+      "env": "prod",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "西昌民族幼儿师范高等专科学校",
+      "id": "1000000198"
+    },
+    {
+      "env": "prod",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "湘湖未来学校",
+      "id": "1000000199"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "中國文化大學海外專班",
+      "keywords": [
+        "文化",
+        "中國文化",
+        "中国文化",
+        "pccu",
+        "chinese culture",
+        "culture"
+      ],
+      "id": 39,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fa3b42c2a467453576d791c",
+      "createdAt": "2022-05-03T08:13:32.506Z",
+      "updatedAt": "2022-05-03T08:16:12.403Z"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "中国文化大学海外专班",
+      "keywords": [
+        "文化",
+        "中國文化",
+        "中国文化",
+        "pccu",
+        "chinese culture",
+        "culture"
+      ],
+      "id": 39,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "cn",
+      "objectId": "5fa3b42c2a477453576d791c",
+      "createdAt": "2022-05-03T08:13:32.506Z",
+      "updatedAt": "2022-05-03T08:16:12.403Z"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "CCUoversea",
+      "keywords": [
+        "文化",
+        "中國文化",
+        "中国文化",
+        "pccu",
+        "chinese culture",
+        "culture"
+      ],
+      "id": 39,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fa3b42c2a467453576d791c",
+      "createdAt": "2022-05-03T08:13:32.506Z",
+      "updatedAt": "2022-05-03T08:16:12.403Z"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "CCUoversea",
+      "keywords": [
+        "文化",
+        "中國文化",
+        "中国文化",
+        "pccu",
+        "chinese culture",
+        "culture"
+      ],
+      "id": 39,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "cn",
+      "objectId": "5fa3b42c2a477453576d791c",
+      "createdAt": "2022-05-03T08:13:32.506Z",
+      "updatedAt": "2022-05-03T08:16:12.403Z"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "iStuNet",
+      "keywords": [
+        "iStuNet"
+      ],
+      "id": 40,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fa3b42c2a177453576d791c",
+      "createdAt": "2022-05-12T06:13:32.506Z",
+      "updatedAt": "2022-05-12T06:16:12.403Z"
+    },
+    {
+      "env": "prod",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "河南开放大学",
+      "id": "1000000200"
+    },
+    {
+      "orgName": "郑州旅游职业学院",
+      "id": 1,
+      "apiUrl": "http://lms.zztrc.edu.cn",
+      "keywords": [
+        "郑州旅游职业学院",
+        "郑旅",
+        "郑州职业旅游学院"
+      ],
+      "deliveryOrg": "ZZTRC",
+      "ntfUrl": "http://lms.zztrc.edu.cn/ntf",
+      "area": "cn",
+      "identityConfig": {
+        "realm": "zztrc",
+        "auth-server-url": "http://identityzx.zztrc.edu.cn/auth",
+        "resource": "tronclass-app",
+        "isApiLogin": false
+      }
+    },
+    {
+      "area": "cn",
+      "createdAt": "2022-05-31T02:15:06.559Z",
+      "env": "prod",
+      "id": "1000000201",
+      "isPublic": true,
+      "orgName": "西安铁路职业技术学院"
+    },
+    {
+      "area": "cn",
+      "createdAt": "2022-05-31T02:15:06.559Z",
+      "env": "prod",
+      "id": "1000000202",
+      "isPublic": true,
+      "orgName": "树人大学"
+    },
+    {
+      "createdAt": "2022-06-01T02:38:36.991Z",
+      "env": "prod",
+      "updatedAt": "2022-06-01T02:38:36.991Z",
+      "isPublic": true,
+      "orgName": "宁波职业技术学院",
+      "area": "cn",
+      "id": "1000000203",
+      "objectId": "6296d12c0534fd5ba0b2c5df"
+    },
+    {
+      "createdAt": "2022-06-01T02:40:27.273Z",
+      "env": "prod",
+      "updatedAt": "2022-06-01T02:40:27.273Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "广州市机电技师学院",
+      "id": "1000000204",
+      "objectId": "6296d19be3c0de5dcab75079"
+    },
+    {
+      "createdAt": "2022-06-08T01:41:39.895Z",
+      "env": "prod",
+      "updatedAt": "2022-06-08T01:41:39.895Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "杭州电子科技大学",
+      "id": "1000000205",
+      "objectId": "629ffe530534fd5ba0bfde75"
+    },
+    {
+      "orgName": "临沂大学",
+      "id": 1,
+      "apiUrl": "http://ylb.lyu.edu.cn",
+      "inCastUrl": "http://ylbapi.lyu.edu.cn",
+      "keywords": [
+        "临沂大学",
+        "临沂"
+      ],
+      "deliveryOrg": "LYU",
+      "ntfUrl": "http://ylb.lyu.edu.cn/ntf",
+      "area": "cn",
+      "identityConfig": {
+        "realm": "lyu",
+        "auth-server-url": "http://ylbrz.lyu.edu.cn/auth",
+        "resource": "tronclass-app",
+        "isApiLogin": false
+      },
+      "identityConfigH5Wecom": {
+        "realm": "lyu",
+        "auth-server-url": "http://ylbrz.lyu.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "tronclassWecomH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "createdAt": "2022-06-09T06:25:59.042Z",
+      "env": "prod",
+      "updatedAt": "2022-06-09T06:25:59.042Z",
+      "isPublic": true,
+      "area": "cn",
+      "orgName": "西安若恩教育科技有限公司",
+      "id": "1000000206",
+      "objectId": "62a19277e3c0de5dcac6b9e8"
+    },
+    {
+      "env": "prod",
+      "area": "cn",
+      "orgName": "杭州地铁",
+      "id": "1",
+      "apiUrl": "http://172.16.148.130",
+      "deliveryOrg": "HZMETRO",
+      "ntfUrl": "http://172.16.148.130/ntf"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "國立臺中教育大學/NTCU",
+      "keywords": [
+        "National Taichung University of Education",
+        "NTCU",
+        "中教大",
+        "臺中教大"
+      ],
+      "id": 41,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fa3b42c2a1774ˇ3576d791c",
+      "createdAt": "2022-06-17T10:45:32.506Z",
+      "updatedAt": "2022-06-17T10:45:12.403Z"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "National Taichung University of Education /NTCU",
+      "keywords": [
+        "National Taichung University of Education",
+        "NTCU",
+        "中教大",
+        "臺中教大"
+      ],
+      "id": 41,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fa3b42c2a1774ˇ3576d791c",
+      "createdAt": "2022-06-17T10:45:32.506Z",
+      "updatedAt": "2022-06-17T10:45:12.403Z"
+    },
+    {
+      "apiUrl": "https://az.tronclass.com",
+      "orgName": "國立臺中教育大學",
+      "keywords": [
+        "National Taichung University of Education",
+        "NTCU",
+        "中教大",
+        "臺中教大"
+      ],
+      "id": 41,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://az.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fa3b42c2a1774ˇ3576d791c",
+      "createdAt": "2022-06-17T10:45:32.506Z",
+      "updatedAt": "2022-06-17T10:45:12.403Z"
+    },
+    {
+      "env": "prod",
+      "area": "cn",
+      "orgName": "新疆石河子职业技术学院",
+      "id": "1",
+      "apiUrl": "http://ims.shzv.edu.cn",
+      "deliveryOrg": "SHZV",
+      "ntfUrl": "http://ims.shzv.edu.cn/ntf"
+    },
+    {
+      "orgName": "浙大附属第一医院",
+      "id": "1000000207",
+      "env": "prod",
+      "area": "cn",
+      "isPublic": true
+    },
+    {
+      "updatedAt": "2022-07-06T03:30:46.882Z",
+      "orgName": "即构科技客户演示环境",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "62c501e65ee85713b0b4a413",
+      "createdAt": "2022-07-06T03:30:46.882Z",
+      "id": "1000000208"
+    },
+    {
+      "orgName": "萧山区卫生中等专业学校",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "id": "1000000209"
+    },
+    {
+      "apiUrl": "https://gridow.tronclass.com",
+      "orgName": "Gridow",
+      "keywords": [
+        "Gridow",
+        "睿格"
+      ],
+      "id": 42,
+      "TDID": "6795b8519a2445478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://gridow.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "5fb3b42c2a1774ˇ3576d791c",
+      "createdAt": "2022-07-07T11:11:32.506Z",
+      "updatedAt": "2022-07-07T11:11:12.403Z"
+    },
+    {
+      "objectId": "5996abcb570c3500605bb7ea",
+      "orgName": "前瞻醫療顯示與多媒體聯盟/AMAM",
+      "area": "tw",
+      "isPublic": true,
+      "updatedAt": "2022-07-25T10:20:27.290Z",
+      "id": 187,
+      "createdAt": "2022-07-25T10:20:31.444Z",
+      "env": "prod",
+      "keywords": [
+        "醫療",
+        "前瞻",
+        "Advance medical and multimedia (AMAM)",
+        "AMAM"
+      ]
+    },
+    {
+      "objectId": "5986abcb570c3500605bb7ea",
+      "orgName": "Advance medical and multimedia (AMAM)",
+      "area": "tw",
+      "isPublic": true,
+      "updatedAt": "2022-07-25T10:20:27.290Z",
+      "id": 187,
+      "createdAt": "2022-07-25T10:20:31.444Z",
+      "env": "prod",
+      "keywords": [
+        "醫療",
+        "前瞻",
+        "Advance medical and multimedia (AMAM)",
+        "AMAM"
+      ]
     },
     {
       "orgName": "成都理工大学",
@@ -6862,6 +8799,118 @@
         "public-client": true,
         "confidential-port": 0
       }
+    },
+    {
+      "updatedAt": "2022-09-08T07:46:50.688Z",
+      "orgName": "华中科技大学试用版",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "63199deab2de814899987360",
+      "createdAt": "2022-09-08T07:46:50.688Z",
+      "id": "1000000213"
+    },
+    {
+      "orgName": "成都中医大学",
+      "id": 1,
+      "apiUrl": "http://lms.cdutcm.edu.cn",
+      "casUrl": "https://sso.cdutcm.edu.cn/esc-sso",
+      "keywords": [
+        "成都中医大学",
+        "成都中医"
+      ],
+      "deliveryOrg": "CDUTCM",
+      "ntfUrl": "http://lms.cdutcm.edu.cn/ntf",
+      "area": "cn",
+      "identityConfigH5": {
+        "realm": "cdutcm",
+        "auth-server-url": "http://identity.cdutcm.edu.cn/auth",
+        "resource": "TronClass-Mobile"
+      },
+      "identityConfigH5Wechat": {
+        "realm": "cdutcm",
+        "auth-server-url": "http://identity.cdutcm.edu.cn/auth",
+        "ssl-required": "none",
+        "resource": "tronclassWechatH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
+      "updatedAt": "2022-08-08T05:43:49.877Z",
+      "orgName": "陕西财经职业技术学院",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "62f0a295b589d71e49d8d2d2",
+      "createdAt": "2022-08-08T05:43:49.877Z",
+      "id": "1000000211"
+    },
+    {
+      "updatedAt": "2022-09-27T09:41:26.023Z",
+      "orgName": "深圳微纳研究院",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "6332c5466acaed3f7accd6c4",
+      "createdAt": "2022-09-27T09:41:26.023Z",
+      "id": "1000000214"
+    },
+    {
+      "updatedAt": "2022-10-18T08:57:06.794Z",
+      "orgName": "重庆迪灿科技有限公司",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "634e6a62cd84e144d5abca88",
+      "createdAt": "2022-10-18T08:57:06.794Z",
+      "id": "1000000215"
+    },
+    {
+      "updatedAt": "2022-10-19T08:28:19.994Z",
+      "orgName": "广州番禺职业技术学院",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "634fb523c9cfd6302c952c48",
+      "createdAt": "2022-10-19T08:28:19.994Z",
+      "id": "1000000216"
+    },
+    {
+      "apiUrl": "https://cathaylife.tronclass.com",
+      "orgName": "國泰學習網",
+      "keywords": [
+        "國泰",
+        "cathaylife"
+      ],
+      "id": 46,
+      "TDID": "6795b8519a24５5478b3955fe77df372e",
+      "deliveryOrg": "tw-azure-su",
+      "ntfUrl": "https://cathaylife.tronclass.com/ntf",
+      "area": "tw",
+      "objectId": "605ace9b77a60d48420e5022",
+      "createdAt": "2022-10-20T06:54:07.697Z",
+      "updatedAt": "2022-10-20T06:54:07.697Z"
+    },
+    {
+      "updatedAt": "2022-10-21T02:05:57.265Z",
+      "orgName": "南京中医药大学国际教育学院",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "6351fe859ab7fe3cc5fac246",
+      "createdAt": "2022-10-21T02:05:57.265Z",
+      "id": "1000000217"
+    },
+    {
+      "updatedAt": "2022-10-21T08:28:37.982Z",
+      "orgName": "广州市交通技师学院",
+      "isPublic": true,
+      "env": "prod",
+      "area": "cn",
+      "objectId": "635258359ab7fe3cc5fb68e9",
+      "createdAt": "2022-10-21T08:28:37.982Z",
+      "id": "1000000218"
     }
   ]
 }
