@@ -15,7 +15,6 @@ async function generatePackageJson() {
   const original = require('../package.json')
   const result = {
     name: original.name,
-    build: original.build,
     author: original.author,
     version: original.version,
     license: original.license,

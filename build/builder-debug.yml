@@ -1,6 +1,7 @@
 x64:
   firstOrDefaultFilePatterns:
     - '**/*'
+    - '!**/node_modules'
     - '!build{,/**/*}'
     - '!**/*.{iml,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,suo,xproj,cc,d.ts,pdb}'
     - '!**/._*'

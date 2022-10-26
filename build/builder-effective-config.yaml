@@ -2,7 +2,7 @@ directories:
   output: build
   buildResources: build
   app: dist
-productName: 'InClass'
+productName: InClass
 appId: ''
 files: []
 nsis:
@@ -42,4 +42,4 @@ linux:
 snap:
   publish:
     - github
-electronVersion: 13.1.7
+electronVersion: 21.2.0
