@@ -4,7 +4,7 @@ const tw = {
   uk: 'English(UK)',
   common: {
     confirm: '確定',
-    cancel: "取消",
+    cancel: '取消',
     login: '登錄',
     exitConfirm: '確定退出嗎?'
   },
@@ -14,7 +14,7 @@ const tw = {
     invalid_org_name: '未找到符合條件的學校/機構，請重新輸入',
 
     login_method_tip: '非本學校/機構人員，請選擇 賬號密碼 或 第三方登錄',
-    uniform_identification_login: '統一身份認證網關登錄',
+    uniform_identification_login: '登錄',
     username_password_login: '賬號密碼登錄',
 
     passwordLogin: '賬號密碼登錄',

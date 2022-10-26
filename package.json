@@ -34,8 +34,7 @@
     "vue": "3.1.5",
     "vue-axios": "^3.2.5",
     "vue-i18n": "^9.1.7",
-    "vue-router": "^4.0.14",
-    "windicss": "^3.1.5"
+    "vue-router": "^4.0.14"
   },
   "external": [
     "electron-updater",
@@ -53,8 +52,8 @@
     "builtin-modules": "^3.2.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
-    "electron": "^13.1.7",
-    "electron-builder": "^22.11.7",
+    "electron": "^21.2.0",
+    "electron-builder": "^23.6.0",
     "esbuild": "^0.12.15",
     "extract-zip": "^1.7.0",
     "fs-extra": "^9.0.1",

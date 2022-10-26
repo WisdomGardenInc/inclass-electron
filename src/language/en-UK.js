@@ -4,7 +4,7 @@ const uk = {
   uk: 'English(UK)',
   common: {
     confirm: 'Confirm',
-    cancel: "Cancel",
+    cancel: 'Cancel',
     login: 'Login',
     exitConfirm: 'Are you sure you want to exit?'
   },
@@ -14,7 +14,7 @@ const uk = {
     invalid_org_name: 'no org/school matched, please try again',
 
     login_method_tip: 'off-campus user please sign in via username & passsword',
-    uniform_identification_login: 'CAS login',
+    uniform_identification_login: 'Login',
     username_password_login: 'Off-Campus User login',
 
     passwordLogin: 'username & password login',

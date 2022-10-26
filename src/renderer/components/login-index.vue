@@ -22,7 +22,7 @@
   </div>
 
   <div v-if="scope.currentOrg && scope.currentComponent !== 'step-1'" class="footer clearfix flex justify-center mt-2">
-    <div class="change-org" @click="changeOrgHandler">
+    <div class="change-org cursor-pointer" @click="changeOrgHandler">
       {{ $t('login.changeOrg') }}
       <div class="arrow-right-green"></div>
     </div>
@@ -34,7 +34,7 @@ import OrgSelect from '/@/components/org-select.vue'
 import UnifiedLogin from '/@/components/unified-login.vue'
 import loginStepThree from '/@/components/login-step-3.vue'
 import { useIpc } from '../composables'
-import { Modal } from 'ant-design-vue';
+import { Modal } from 'ant-design-vue'
 
 const { invoke } = useIpc()
 
@@ -57,21 +57,21 @@ export default {
 
   computed: {
     canBack() {
-      return this.scope.currentComponent !== 'step-1';
+      return this.scope.currentComponent !== 'step-1'
     },
     historyOrg() {
-      return JSON.parse(localStorage.getItem('org'));
+      return JSON.parse(localStorage.getItem('org'))
     }
   },
 
   methods: {
     backHandler() {
       const curStep = this.scope.currentComponent
-      this.scope.currentComponent = curStep.substring(0, curStep.length - 1) + (curStep.charAt(curStep.length - 1) - 1);
+      this.scope.currentComponent = curStep.substring(0, curStep.length - 1) + (curStep.charAt(curStep.length - 1) - 1)
     },
 
     langChange() {
-      this.showLocaleChange = !this.showLocaleChange;
+      this.showLocaleChange = !this.showLocaleChange
     },
     toCN() {
       this.$i18n.locale = 'cn'
@@ -92,15 +92,15 @@ export default {
         okText: this.$t('common.confirm'),
         cancelText: this.$t('common.cancel'),
         onOk() {
-          invoke('closeApp');
-        },
-      });
+          invoke('closeApp')
+        }
+      })
     },
 
     changeOrgHandler() {
       this.scope.currentComponent = 'step-1'
       this.scope.currentOrg = null
-    },
+    }
   },
 
   mounted() {

@@ -2,12 +2,12 @@
   <div class="wrapper">
     <div class="title mb-16"> {{ scope.currentOrg.orgName }} </div>
 
-    <div class="button">
-      <a v-if="!isPublicCloud" class="btn-primary" @click="toUniformLogin">
+    <div class="button mb-5 mx-auto">
+      <div v-if="isPublicCloud" class="btn-default" @click="pwdLogin">{{ $t('login.username_password_login') }}</div>
+      <a v-else class="btn-primary" @click="toUniformLogin">
         <span>{{ $t("login.uniform_identification_login") }}</span>
         <div class="arrow-right-white"></div>
       </a>
-      <div class="btn-default" @click="pwdLogin">{{ $t('login.username_password_login') }}</div>
     </div>
   </div>
 </template>
@@ -20,14 +20,14 @@ export default {
 
   computed: {
     isPublicCloud() {
-      return this.scope.currentOrg.isPublic ? this.scope.currentOrg.isPublic : false;
+      return this.scope.currentOrg.isPublic
     },
 
     loginUrl() {
       if (this.isPublicCloud) {
-        return 'https://tronclass.com.cn/inclass/courses';
+        return 'https://tronclass.com.cn/inclass/courses'
       } else {
-        return `${this.scope.currentOrg.apiUrl}/inclass/courses`;
+        return `${this.scope.currentOrg.apiUrl}/inclass/courses`
       }
     }
   },
@@ -40,15 +40,15 @@ export default {
     toUniformLogin() {
       if (this.loginUrl != null) {
         try {
-          const feature = `top=0,left=0,toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,location=no,status=no,channelmode = yes,height=${screen.height},width=${screen.width}`;
-          window.open(this.loginUrl, '_blank', feature);
+          const feature = `top=0,left=0,toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,location=no,status=no,channelmode = yes,height=${screen.height},width=${screen.width}`
+          window.open(this.loginUrl, '_blank', feature)
         } catch (e) { }
       }
     }
   },
 
   mounted() {
-    localStorage.setItem('org', JSON.stringify(this.scope.currentOrg));
+    localStorage.setItem('org', JSON.stringify(this.scope.currentOrg))
   }
 }
 </script>
@@ -70,7 +70,6 @@ export default {
   }
 
   .button {
-    margin: auto;
     width: 400px;
 
     .btn-primary {
@@ -78,7 +77,6 @@ export default {
       display: inline-block;
       width: 400px;
       height: 56px;
-      margin-bottom: 20px;
       background-color: #20BEC9;
       border-radius: 36px;
       font-size: 24px;
