@@ -14,7 +14,7 @@ async function main() {
   logger.initialize(app.getPath('userData'))
   initialize(logger)
   app.whenReady().then(() => {
-    const main = createWindow()
+    createWindow()
   })
 }
 
@@ -25,8 +25,8 @@ function logout() {
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    height: 800,
+    width: 1300,
     webPreferences: {
       preload: indexPreload,
       contextIsolation: true,
@@ -38,35 +38,35 @@ function createWindow() {
 
   let currentOrg: Org | null = null
 
-  ipcMain.handle("orgChanged", (event, arg) => {
+  ipcMain.handle('orgChanged', (event, arg) => {
     currentOrg = JSON.parse(arg)
   })
 
-  ipcMain.handle("open-inclass-list", (event, arg) => {
-    mainWindow.loadURL(arg.next_url);
-    mainWindow.maximize();
-    mainWindow.fullScreen = true;
-    mainWindow.webContents.on("did-finish-load", function () {
-    });
+  ipcMain.handle('open-inclass-list', (event, arg) => {
+    mainWindow.loadURL(arg.next_url)
+    mainWindow.maximize()
+    mainWindow.fullScreen = true
+    mainWindow.webContents.on('did-finish-load', function () {
+    })
   })
 
-  ipcMain.handle("closeApp", (event, arg) => {
-    mainWindow.close();
+  ipcMain.handle('closeApp', (event, arg) => {
+    mainWindow.close()
   })
 
   ipcMain.handle('app:logout', () => {
     logout()
   })
 
-  mainWindow.loadURL(indexHtmlUrl)
+  mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
 
   mainWindow.webContents.on('did-create-window', (childWindow) => {
     childWindow.webContents.on('will-redirect', async (e, url) => {
-      if (currentOrg && url.includes("/user/index")) {
-        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`);
-        childWindow.close();
+      if (currentOrg && url.includes('/user/index')) {
+        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`)
+        childWindow.close()
         mainWindow.maximize()
-        mainWindow.fullScreen = true;
+        mainWindow.fullScreen = true
       }
     })
   })
