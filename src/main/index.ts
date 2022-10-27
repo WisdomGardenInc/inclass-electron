@@ -59,6 +59,7 @@ function createWindow() {
   })
 
   mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
+  mainWindow.webContents.openDevTools()
 
   mainWindow.webContents.on('did-create-window', (childWindow) => {
     childWindow.webContents.on('will-redirect', async (e, url) => {
