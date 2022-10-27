@@ -1,6 +1,6 @@
 {
   "name": "inclass-electron",
-  "version": "0.0.12-bqe-debug",
+  "version": "0.0.13-bqe-debug",
   "private": true,
   "description": "",
   "repository": {
@@ -52,7 +52,7 @@
     "builtin-modules": "^3.2.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
-    "electron": "^21.2.0",
+    "electron": "^20.2.0",
     "electron-builder": "^23.6.0",
     "esbuild": "^0.12.15",
     "extract-zip": "^1.7.0",
