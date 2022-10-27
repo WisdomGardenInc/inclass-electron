@@ -18,8 +18,7 @@
     "build:lite": "cross-env BUILD_TARGET=lite node scripts/build.js",
     "build:production": "cross-env BUILD_TARGET=production node scripts/build.js",
     "lint": "eslint --ext .ts,.vue,.js src scripts",
-    "lint:fix": "npm run lint -- --fix",
-    "postinstall": "node ./scripts/dev.install.js"
+    "lint:fix": "npm run lint -- --fix"
   },
   "author": {
     "email": "example@email.com",

@@ -42,4 +42,4 @@ linux:
 snap:
   publish:
     - github
-electronVersion: 21.2.0
+electronVersion: 20.3.3
