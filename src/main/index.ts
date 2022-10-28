@@ -59,7 +59,19 @@ function createWindow() {
   })
 
   mainWindow.webContents.openDevTools()
-  mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
+
+  const url = require('url').format({
+    protocol: 'http',
+    hostname: 'lms.sgxx.cn',
+    pathname: '/inclass/courses'
+  })
+
+  mainWindow.loadURL(url).then(() => {
+    console.log("success")
+  }, (err) => {
+    console.log(err)
+    console.log(err)
+  })
 
   // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
   //   if (isMainFrame) {
