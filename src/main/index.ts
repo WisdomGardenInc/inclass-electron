@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Menu, session } from 'electron'
+import { app, BrowserWindow, BrowserView, ipcMain, Menu, session } from 'electron'
 import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
@@ -59,14 +59,20 @@ function createWindow() {
   })
 
   mainWindow.webContents.openDevTools()
-  mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
 
-  mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
-    if (isMainFrame) {
-      setTimeout(() => mainWindow.loadURL(newURL), 100)
-      e.preventDefault()
-    }
-  })
+  const view = new BrowserView()
+  mainWindow.setBrowserView(view)
+  view.setBounds({ x: 0, y: 0, width: 800, height: 1300 })
+  view.webContents.loadURL('http://lms.sgxx.cn/inclass/courses')
+
+  // mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
+
+  // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
+  //   if (isMainFrame) {
+  //     setTimeout(() => mainWindow.loadURL(newURL), 100)
+  //     e.preventDefault()
+  //   }
+  // })
 
   mainWindow.webContents.on('did-create-window', (childWindow) => {
     // mainWindow.webContents.on('will-redirect', function (e, newURL, isMainFrame) {
