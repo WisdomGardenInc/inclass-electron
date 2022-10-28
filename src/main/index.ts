@@ -7,7 +7,6 @@ import anotherPreload from '/@preload/another'
 import indexHtmlUrl from '/@renderer/index.html'
 import sideHtmlUrl from '/@renderer/side.html'
 import logoUrl from '/@static/logo.png'
-const log = require('electron-log');
 
 Menu.setApplicationMenu(null)
 async function main() {
@@ -68,12 +67,7 @@ function createWindow() {
     pathname: '/inclass/courses'
   })
 
-  mainWindow.loadURL(url).then(() => {
-    log.info("success")
-  }, (err) => {
-    log.info('err')
-    log.info(err)
-  })
+  mainWindow.loadURL(url)
 
   netLog.stopLogging()
   // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
