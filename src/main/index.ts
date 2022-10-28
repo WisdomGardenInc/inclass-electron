@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Menu, session } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu, session, netLog } from 'electron'
 import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
@@ -7,13 +7,15 @@ import anotherPreload from '/@preload/another'
 import indexHtmlUrl from '/@renderer/index.html'
 import sideHtmlUrl from '/@renderer/side.html'
 import logoUrl from '/@static/logo.png'
+const log = require('electron-log');
 
 Menu.setApplicationMenu(null)
 async function main() {
   const logger = new Logger()
   logger.initialize(app.getPath('userData'))
   initialize(logger)
-  app.whenReady().then(() => {
+  app.whenReady().then(async () => {
+    await netLog.startLogging('C:\inclass.log')
     createWindow()
   })
 }
@@ -67,12 +69,13 @@ function createWindow() {
   })
 
   mainWindow.loadURL(url).then(() => {
-    console.log("success")
+    log.info("success")
   }, (err) => {
-    console.log(err)
-    console.log(err)
+    log.info('err')
+    log.info(err)
   })
 
+  netLog.stopLogging()
   // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
   //   if (isMainFrame) {
   //     setTimeout(() => mainWindow.loadURL(newURL), 100)
