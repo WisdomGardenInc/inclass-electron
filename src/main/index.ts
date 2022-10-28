@@ -58,19 +58,34 @@ function createWindow() {
     logout()
   })
 
-  mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
   mainWindow.webContents.openDevTools()
+  mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
+
+  mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
+    if (isMainFrame) {
+      setTimeout(() => mainWindow.loadURL(newURL), 100)
+      e.preventDefault()
+    }
+  })
 
   mainWindow.webContents.on('did-create-window', (childWindow) => {
-    childWindow.webContents.on('will-redirect', async (e, url) => {
-      if (currentOrg && url.includes('/user/index')) {
-        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`)
-        childWindow.close()
-        mainWindow.maximize()
-        mainWindow.fullScreen = true
-      }
-    })
+    // mainWindow.webContents.on('will-redirect', function (e, newURL, isMainFrame) {
+    //   console.log(newURL, isMainFrame)
+    //   if (isMainFrame) {
+    //     setTimeout(() => mainWindow.loadURL(newURL), 100)
+    //     e.preventDefault()
+    //   }
+    // })
+    // childWindow.webContents.on('will-redirect', async (e, url) => {
+    //   if (currentOrg && url.includes('/user/index')) {
+    //     mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`)
+    //     childWindow.close()
+    //     mainWindow.maximize()
+    //     mainWindow.fullScreen = true
+    //   }
+    // })
   })
+
   return mainWindow
 }
 
