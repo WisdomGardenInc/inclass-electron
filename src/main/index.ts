@@ -74,6 +74,13 @@ function createWindow() {
     log.error(err)
   })
 
+  mainWindow.webContents.on('did-get-redirect-request', function (e, oldURL, newURL, isMainFrame, httpResponseCode, requestMethod, refeerrer, header) {
+    if (isMainFrame) {
+      setTimeout(() => mainWindow.loadURL(newURL), 100);
+      e.preventDefault();
+    }
+  });
+
   netLog.stopLogging()
   // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
   //   if (isMainFrame) {
