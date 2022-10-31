@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, Menu, session, netLog } from 'electron'
+import log from 'electron-log'
 import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
@@ -67,7 +68,12 @@ function createWindow() {
     pathname: '/inclass/courses'
   })
 
-  mainWindow.loadURL(url)
+  mainWindow.loadURL(url).then(() => {
+    log.info('load success')
+  }, (err) => {
+    log.error('load error')
+    log.error(err)
+  })
 
   netLog.stopLogging()
   // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
