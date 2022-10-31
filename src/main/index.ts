@@ -62,13 +62,12 @@ function createWindow() {
 
   mainWindow.webContents.openDevTools()
 
-  // const url = require('url').format({
-  //   protocol: 'http',
-  //   hostname: 'lms.sgxx.cn',
-  //   pathname: '/inclass/courses'
-  // })
+  const url = require('url').format({
+    protocol: 'http',
+    hostname: '23.104.162.82'
+  })
 
-  mainWindow.loadURL('23.104.162.82').then(() => {
+  mainWindow.loadURL(url).then(() => {
     log.info('load success')
   }, (err) => {
     log.error('load error')
