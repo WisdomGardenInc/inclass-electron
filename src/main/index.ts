@@ -76,6 +76,8 @@ function createWindow() {
   })
 
   mainWindow.webContents.on('did-get-redirect-request', function (e, oldURL, newURL, isMainFrame, httpResponseCode, requestMethod, refeerrer, header) {
+    log.info('I am did-get-redirect-request')
+
     if (isMainFrame) {
       setTimeout(() => mainWindow.loadURL(newURL), 100);
       e.preventDefault();
@@ -83,14 +85,25 @@ function createWindow() {
   });
 
   netLog.stopLogging()
-  // mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
-  //   if (isMainFrame) {
-  //     setTimeout(() => mainWindow.loadURL(newURL), 100)
-  //     e.preventDefault()
-  //   }
-  // })
+  mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
+    log.info('I am will-redirect out')
+    if (isMainFrame) {
+      setTimeout(() => mainWindow.loadURL(newURL), 100)
+      e.preventDefault()
+    }
+  })
 
-  // mainWindow.webContents.on('did-create-window', (childWindow) => {
+  mainWindow.webContents.on('did-create-window', (childWindow) => {
+    log.info('I am did-create-window')
+
+    mainWindow.webContents.on('will-redirect', function (e, newURL, isInPlace, isMainFrame) {
+      log.info('I am will-redirect inner')
+      if (isMainFrame) {
+        setTimeout(() => mainWindow.loadURL(newURL), 100)
+        e.preventDefault()
+      }
+    })
+  })
   // mainWindow.webContents.on('will-redirect', function (e, newURL, isMainFrame) {
   //   console.log(newURL, isMainFrame)
   //   if (isMainFrame) {
