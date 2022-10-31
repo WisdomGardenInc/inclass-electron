@@ -29,12 +29,12 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     height: 800,
     width: 1300,
-    // webPreferences: {
-    //   // preload: indexPreload,
-    //   // contextIsolation: true,
-    //   // nodeIntegration: false,
-    //   // webSecurity: false
-    // },
+    webPreferences: {
+      preload: indexPreload,
+      contextIsolation: true,
+      nodeIntegration: false,
+      webSecurity: false
+    },
     icon: logoUrl
   })
 
