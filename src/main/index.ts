@@ -64,7 +64,8 @@ function createWindow() {
 
   const url = require('url').format({
     protocol: 'http',
-    hostname: '23.104.162.82'
+    hostname: 'lms.sgxx.cn',
+    pathname: '/public-course'
   })
 
   mainWindow.loadURL(url).then(() => {
