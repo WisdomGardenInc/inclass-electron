@@ -59,6 +59,10 @@ const _ipcRenderer: IpcRenderer = {
   eventNames: () => ipcRenderer.eventNames()
 }
 
+_ipcRenderer.on('redirect-url', function (event, url) {
+  window.location.assign(url);
+})
+
 const api = {
   shell,
   clipboard,
