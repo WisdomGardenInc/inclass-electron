@@ -31,7 +31,7 @@ function createWindow() {
     width: 1300,
     webPreferences: {
       preload: indexPreload,
-      contextIsolation: true,
+      contextIsolation: false,
       nodeIntegration: false,
       webSecurity: false
     },
@@ -120,6 +120,8 @@ function createWindow() {
   //   }
   // })
   // })
+
+  mainWindow.show()
 
   return mainWindow
 }
