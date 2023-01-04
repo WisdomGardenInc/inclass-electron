@@ -3,9 +3,6 @@ import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
 import indexPreload from '/@preload/index'
-import anotherPreload from '/@preload/another'
-import indexHtmlUrl from '/@renderer/index.html'
-import sideHtmlUrl from '/@renderer/side.html'
 import logoUrl from '/@static/logo.png'
 
 Menu.setApplicationMenu(null)
@@ -36,12 +33,6 @@ function createWindow() {
     icon: logoUrl
   })
 
-  let currentOrg: Org | null = null
-
-  ipcMain.handle('orgChanged', (event, arg) => {
-    currentOrg = JSON.parse(arg)
-  })
-
   ipcMain.handle('open-inclass-list', (event, arg) => {
     mainWindow.loadURL(arg.next_url)
     mainWindow.maximize()
@@ -58,18 +49,18 @@ function createWindow() {
     logout()
   })
 
-  mainWindow.loadURL('http://lms.sgxx.cn/inclass/courses')
+  const apiUrl = 'https://lms.cdut.edu.cn'
 
-  mainWindow.webContents.on('did-create-window', (childWindow) => {
-    childWindow.webContents.on('will-redirect', async (e, url) => {
-      if (currentOrg && url.includes('/user/index')) {
-        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`)
-        childWindow.close()
-        mainWindow.maximize()
-        mainWindow.fullScreen = true
-      }
-    })
+  mainWindow.webContents.on('will-redirect', async (e, url) => {
+    if (url.includes('/user/index')) {
+      mainWindow.loadURL(`${apiUrl}/inclass/courses`)
+      mainWindow.maximize()
+      mainWindow.fullScreen = true
+    }
   })
+
+  mainWindow.loadURL(`${apiUrl}/inclass/courses`)
+
   return mainWindow
 }
 
