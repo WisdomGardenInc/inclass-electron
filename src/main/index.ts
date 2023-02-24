@@ -49,7 +49,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://lms.cdut.edu.cn'
+  const apiUrl = 'http://lms-uat.tronclass.com.cn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
