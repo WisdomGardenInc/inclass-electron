@@ -3,7 +3,7 @@ import './dialog'
 import { Logger } from './logger'
 import { initialize } from './services'
 import indexPreload from '/@preload/index'
-import logoUrl from '/@static/logo.png'
+import logoUrl from '/@static/cdut-logo.png'
 
 Menu.setApplicationMenu(null)
 async function main() {
@@ -30,7 +30,8 @@ function createWindow() {
       nodeIntegration: false,
       webSecurity: false
     },
-    icon: logoUrl
+    icon: logoUrl,
+    title: '成理智慧教学平台'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {
@@ -60,6 +61,10 @@ function createWindow() {
   })
 
   mainWindow.loadURL(`${apiUrl}/inclass/courses`)
+
+  mainWindow.on('page-title-updated', (evt) => {
+    evt.preventDefault()
+  })
 
   return mainWindow
 }
