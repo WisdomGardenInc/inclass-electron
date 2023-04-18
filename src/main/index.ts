@@ -31,7 +31,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: '成理智慧教学平台'
+    title: '智慧教学平台'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {
@@ -50,7 +50,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://lms.cdut.edu.cn'
+  const apiUrl = 'https://course-online.chd.edu.cn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
