@@ -31,7 +31,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: '智慧教学平台'
+    title: '长安学堂'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {

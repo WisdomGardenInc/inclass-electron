@@ -8,7 +8,7 @@
     "url": "https://github.com/ci010/electron-vue-next.git"
   },
   "build": {
-    "productName": "InClass"
+    "productName": "长安学堂"
   },
   "scripts": {
     "dev:docs": "node scripts/dev.docs.js",
