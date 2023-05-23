@@ -5,6 +5,8 @@ import { initialize } from './services'
 import indexPreload from '/@preload/index'
 import logoUrl from '/@static/cdut-logo.png'
 
+app.commandLine.appendSwitch('ignore-certificate-errors')
+
 Menu.setApplicationMenu(null)
 async function main() {
   const logger = new Logger()
