@@ -6,6 +6,7 @@ import indexPreload from '/@preload/index'
 import logoUrl from '/@static/cdut-logo.png'
 
 app.commandLine.appendSwitch('ignore-certificate-errors')
+app.commandLine.appendSwitch('ignore-gpu-blocklist')
 
 Menu.setApplicationMenu(null)
 async function main() {
