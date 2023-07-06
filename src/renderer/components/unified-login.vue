@@ -14,6 +14,8 @@
 
 <script>
 import { mixin } from '../assets/js/mixin.js'
+import { useIpc } from '../composables'
+const { invoke } = useIpc()
 
 export default {
   mixins: [mixin],
@@ -40,8 +42,7 @@ export default {
     toUniformLogin() {
       if (this.loginUrl != null) {
         try {
-          const feature = `top=0,left=0,toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,location=no,status=no,channelmode = yes,height=${screen.height},width=${screen.width}`
-          window.open(this.loginUrl, '_blank', feature)
+          invoke('create-window', this.loginUrl)
         } catch (e) { }
       }
     }
