@@ -17,6 +17,35 @@ const padStart = (string: unknown, length = 0, chars = ' '): string => {
   return str
 }
 
+const startScreenshot = async (screenshots: Screenshots) => {
+  await screenshots.startCapture()
+  screenshots.$view.webContents.executeJavaScript(`
+    // 将触摸事件转换为鼠标事件
+    document.addEventListener('touchstart', function(event) {
+      var touch = event.touches[0];
+      var mouseEvent = new MouseEvent('mousedown', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      window.dispatchEvent(mouseEvent);
+    });
+
+    document.addEventListener('touchmove', function(event) {
+      var touch = event.touches[0];
+      var mouseEvent = new MouseEvent('mousemove', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      window.dispatchEvent(mouseEvent);
+    });
+
+    document.addEventListener('touchend', function(event) {
+      var mouseEvent = new MouseEvent('mouseup', {});
+      window.dispatchEvent(mouseEvent);
+    });
+  `)
+}
+
 export const initScreenshoots = () => {
   let screenShotBase64Url: string = ''
   let screenShotBoundsInfo: Object = {}
@@ -43,7 +72,7 @@ export const initScreenshoots = () => {
   app.on('browser-window-focus', () => {
     if (!globalShortcut.isRegistered('CommandOrControl+Shift+D')) {
       globalShortcut.register('CommandOrControl+Shift+D', async () => {
-        await screenshots.startCapture()
+        await startScreenshot(screenshots)
       })
     }
 
@@ -102,9 +131,9 @@ export const initScreenshoots = () => {
   })
 
   ipcMain.handle('start-screen-shot', async () => {
+    await startScreenshot(screenshots)
     // screenshots.$view.webContents.openDevTools()
     // screenshots.$win.webContents.openDevTools()
-    await screenshots.startCapture()
   })
 
   intervalId = setInterval(() => {
