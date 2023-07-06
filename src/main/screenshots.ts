@@ -1,7 +1,7 @@
 import { app, globalShortcut, clipboard, nativeImage, ipcMain, dialog } from 'electron'
 import fs from 'fs-extra'
 import Event, { ScreenshotsData } from '/@main/type'
-const Screenshots = require('electron-screenshots').default
+import Screenshots from 'electron-screenshots'
 
 let intervalId: NodeJS.Timeout | null = null
 
@@ -62,12 +62,14 @@ export const initScreenshoots = () => {
     e.preventDefault()
     screenShotBase64Url = uint8Array2PngBase64(buffer)
     screenShotBoundsInfo = bounds
+    // @ts-ignore
     screenshots.$win.hide()
     screenshots.endCapture()
   })
 
   screenshots.on('cancel', (e: Event) => {
     e.preventDefault()
+    // @ts-ignore
     screenshots.$win.hide()
     screenshots.endCapture()
   })
@@ -82,6 +84,7 @@ export const initScreenshoots = () => {
     const minutes = padStart(time.getMinutes(), 2, '0')
     const seconds = padStart(time.getSeconds(), 2, '0')
     const milliseconds = padStart(time.getMilliseconds(), 3, '0')
+    // @ts-ignore
     const { canceled, filePath } = await dialog.showSaveDialog(screenshots.$win, {
       defaultPath: `${year}${month}${date}${hours}${minutes}${seconds}${milliseconds}.png`,
       filters: [
@@ -93,6 +96,7 @@ export const initScreenshoots = () => {
       // @ts-ignore
       await fs.writeFile(filePath, buffer)
     }
+    // @ts-ignore
     screenshots.$win.hide()
     screenshots.endCapture()
   })
