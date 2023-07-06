@@ -21,11 +21,38 @@ const startScreenshot = async (screenshots: Screenshots) => {
   await screenshots.startCapture()
   screenshots.$view.webContents.executeJavaScript(`
     // 将触摸事件转换为鼠标事件
+    document.removeEventListener('touchstart', function(event) {
+      var touch = event.touches[0];
+      var mouseEvent = new MouseEvent('mousedown', {
+        clientX: touch.clientX,
+        clientY: touch.clientY,
+        button: 1
+      });
+      window.dispatchEvent(mouseEvent);
+    });
+
+    document.removeEventListener('touchmove', function(event) {
+      var touch = event.touches[0];
+      var mouseEvent = new MouseEvent('mousemove', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      window.dispatchEvent(mouseEvent);
+    });
+
+    document.removeEventListener('touchend', function(event) {
+      var mouseEvent = new MouseEvent('mouseup', {});
+      window.dispatchEvent(mouseEvent);
+    });
+  `)
+  screenshots.$view.webContents.executeJavaScript(`
+    // 将触摸事件转换为鼠标事件
     document.addEventListener('touchstart', function(event) {
       var touch = event.touches[0];
       var mouseEvent = new MouseEvent('mousedown', {
         clientX: touch.clientX,
-        clientY: touch.clientY
+        clientY: touch.clientY,
+        button: 1
       });
       window.dispatchEvent(mouseEvent);
     });
