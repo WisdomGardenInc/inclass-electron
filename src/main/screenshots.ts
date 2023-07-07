@@ -26,7 +26,7 @@ const startScreenshot = async (screenshots: Screenshots) => {
       var mouseEvent = new MouseEvent('mousedown', {
         clientX: touch.clientX,
         clientY: touch.clientY,
-        button: 1
+        button: 0
       });
       window.dispatchEvent(mouseEvent);
     });
@@ -52,7 +52,7 @@ const startScreenshot = async (screenshots: Screenshots) => {
       var mouseEvent = new MouseEvent('mousedown', {
         clientX: touch.clientX,
         clientY: touch.clientY,
-        button: 1
+        button: 0
       });
       window.dispatchEvent(mouseEvent);
     });
