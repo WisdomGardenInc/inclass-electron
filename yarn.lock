@@ -1379,9 +1379,9 @@ callsites@^3.0.0, callsites@^3.1.0:
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
 caniuse-lite@^1.0.30001480, caniuse-lite@^1.0.30001503:
-  version "1.0.30001513"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001513.tgz#382fe5fbfb0f7abbaf8c55ca3ac71a0307a752e9"
-  integrity sha512-pnjGJo7SOOjAGytZZ203Em95MRM8Cr6jhCXNF/FAXTpCTRTECnqQWLpiTRqrFtdYcth8hf4WECUpkezuYsMVww==
+  version "1.0.30001514"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001514.tgz#e2a7e184a23affc9367b7c8d734e7ec4628c1309"
+  integrity sha512-ENcIpYBmwAAOm/V2cXgM7rZUrKKaqisZl4ZAI520FIkqGXUxJjmaIssbRW5HVVR5tyV6ygTLIm15aU8LUmQSaQ==
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -2714,7 +2714,7 @@ fs-extra@^10.1.0:
 
 fs-extra@^11.1.1:
   version "11.1.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.1.1.tgz#da69f7c39f3b002378b0954bb6ae7efdc0876e2d"
+  resolved "https://registry.npmmirror.com/fs-extra/-/fs-extra-11.1.1.tgz#da69f7c39f3b002378b0954bb6ae7efdc0876e2d"
   integrity sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==
   dependencies:
     graceful-fs "^4.2.0"
@@ -2752,7 +2752,7 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
-fsevents@^2.3.2, fsevents@~2.3.2:
+fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
@@ -3161,7 +3161,7 @@ ignore@^5.2.0, ignore@^5.2.4:
 image-size@^0.5.5, image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
-  integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
+  integrity sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==
 
 import-fresh@^3.0.0, import-fresh@^3.2.1, import-fresh@^3.3.0:
   version "3.3.0"
@@ -3890,10 +3890,10 @@ minipass@^4.2.4, minipass@^4.2.8:
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-4.2.8.tgz#f0010f64393ecfc1d1ccb5f582bcaf45f48e1a3a"
   integrity sha512-fNzuVyifolSLFL4NzpF+wEF4qrgqaaKX0haXPQEdQ7NKAN+WecoKMHV09YcuL/DHxrUsYQOK3MiuDf7Ip2OXfQ==
 
-"minipass@^5.0.0 || ^6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-6.0.2.tgz#542844b6c4ce95b202c0995b0a471f1229de4c81"
-  integrity sha512-MzWSV5nYVT7mVyWCwn2o7JH13w2TBRmmSqSRCKzTw+lmft9X4z+3wjvs06Tzijo5z4W/kahUCDpRXTF+ZrmF/w==
+"minipass@^5.0.0 || ^6.0.2 || ^7.0.0":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-7.0.1.tgz#dff63464407cd8b83d7f008c0f116fa8c9b77ebf"
+  integrity sha512-NQ8MCKimInjVlaIqx51RKJJB7mINVkLTJbsZKmto4UAAOC/CWXES8PGaOgoBZyqoUsUA/U3DToGK7GJkkHbjJw==
 
 minizlib@^2.1.1:
   version "2.1.2"
@@ -3995,47 +3995,47 @@ node-releases@^2.0.10, node-releases@^2.0.12:
 
 node-screenshots-darwin-arm64@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-darwin-arm64/-/node-screenshots-darwin-arm64-0.1.4.tgz#434e181156c235b7e41682de164732d2fbd8499c"
+  resolved "https://registry.npmmirror.com/node-screenshots-darwin-arm64/-/node-screenshots-darwin-arm64-0.1.4.tgz#434e181156c235b7e41682de164732d2fbd8499c"
   integrity sha512-PN9hy1Dd+vvRU6sol/sNBu1+XZ0VoUkZ1nWClmSjwLlwGYe2L5xNBnG1OTiiZeNCueBlyf/0k0vI5hognH/LVA==
 
 node-screenshots-darwin-universal@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-darwin-universal/-/node-screenshots-darwin-universal-0.1.4.tgz#93a9ce4b707f2e15114b75c67c89da7a030caa35"
+  resolved "https://registry.npmmirror.com/node-screenshots-darwin-universal/-/node-screenshots-darwin-universal-0.1.4.tgz#93a9ce4b707f2e15114b75c67c89da7a030caa35"
   integrity sha512-xYZrTyVI+8gWXr3mmhcvqUyv8lwWLruhNgE8ClhX+1y6rP8LKoZ5QohBuTPEtIo0oC0y0EETbBnHW/5IkRlijg==
 
 node-screenshots-darwin-x64@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-darwin-x64/-/node-screenshots-darwin-x64-0.1.4.tgz#5cff721d174d0b3b2f430c331012ad27ca852284"
+  resolved "https://registry.npmmirror.com/node-screenshots-darwin-x64/-/node-screenshots-darwin-x64-0.1.4.tgz#5cff721d174d0b3b2f430c331012ad27ca852284"
   integrity sha512-JDWSC7pmph7RN7SnJeXwwzKHk1anMk3cqskgT47h1t4Hu3tN1a0sKfKagglRaI9Y2IoDfBTLSZxNNwyCZag5iQ==
 
 node-screenshots-linux-x64-gnu@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-linux-x64-gnu/-/node-screenshots-linux-x64-gnu-0.1.4.tgz#77cc54ddfff941f34db61ad0aba0e3603e2e2937"
+  resolved "https://registry.npmmirror.com/node-screenshots-linux-x64-gnu/-/node-screenshots-linux-x64-gnu-0.1.4.tgz#77cc54ddfff941f34db61ad0aba0e3603e2e2937"
   integrity sha512-oj39sWl9Xe8wGmHeUoAwLSN+0186XJrmVojOSEovBLCY2teUSHNPOq8D52z67mPv7S4bNHilj5b52jz9nl31/Q==
 
 node-screenshots-linux-x64-musl@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-linux-x64-musl/-/node-screenshots-linux-x64-musl-0.1.4.tgz#cc558db789d44a8fda7274b82f34e2ffb77c8b83"
+  resolved "https://registry.npmmirror.com/node-screenshots-linux-x64-musl/-/node-screenshots-linux-x64-musl-0.1.4.tgz#cc558db789d44a8fda7274b82f34e2ffb77c8b83"
   integrity sha512-eHRC6BobZPRbyj01VIiaK84kg4plSGBSPYYSo4ObFzrFmD3dRaUgTfsACoi8th0XiNd25w6/FyAIKKGU5M8IPg==
 
 node-screenshots-win32-arm64-msvc@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-win32-arm64-msvc/-/node-screenshots-win32-arm64-msvc-0.1.4.tgz#a61c6d1f86761b24fdd379b8cd6249e2a2bda056"
+  resolved "https://registry.npmmirror.com/node-screenshots-win32-arm64-msvc/-/node-screenshots-win32-arm64-msvc-0.1.4.tgz#a61c6d1f86761b24fdd379b8cd6249e2a2bda056"
   integrity sha512-BgwLbAQwvnv+T0W47Dq9Pd7/IKTMRCie3ECW6aLG3jqsPhKMqXac8lyrJbaYR88lxlKWraWxREkb1sx6gQaUlA==
 
 node-screenshots-win32-ia32-msvc@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-win32-ia32-msvc/-/node-screenshots-win32-ia32-msvc-0.1.4.tgz#17809fd941fc822dcdffaa9312f95782f4f275b1"
+  resolved "https://registry.npmmirror.com/node-screenshots-win32-ia32-msvc/-/node-screenshots-win32-ia32-msvc-0.1.4.tgz#17809fd941fc822dcdffaa9312f95782f4f275b1"
   integrity sha512-afZqWWbfZ3nChI8eeZ93J7bn5096Zq+NRutvqNZhBYLAGZd+hCWqcDumTgJ74oUMVi49Cn06isXxj+MB3RtUDQ==
 
 node-screenshots-win32-x64-msvc@0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots-win32-x64-msvc/-/node-screenshots-win32-x64-msvc-0.1.4.tgz#325df877896dd0533e63c90f0d8436e2c11a43e5"
+  resolved "https://registry.npmmirror.com/node-screenshots-win32-x64-msvc/-/node-screenshots-win32-x64-msvc-0.1.4.tgz#325df877896dd0533e63c90f0d8436e2c11a43e5"
   integrity sha512-08mfx/6veDKrdx0KDVMqnYjZq0U4LIbezIKBIgI06Bj+S8CrgXBvTQTEu+lsL/PZMK+J9yimI2Bp77h2AqhaiQ==
 
 node-screenshots@^0.1.4:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/node-screenshots/-/node-screenshots-0.1.4.tgz#ec6c7626aaea9afc2bd78ad379dd9feeb13cd6c8"
+  resolved "https://registry.npmmirror.com/node-screenshots/-/node-screenshots-0.1.4.tgz#ec6c7626aaea9afc2bd78ad379dd9feeb13cd6c8"
   integrity sha512-QmbgiI0VkV3wu+Dn7Kn107/VnujdFgT3juDdaRv2GyOviVghP3+QD46IVU/IlXmzgxVFTjIiVBRrI6yovDnXiQ==
   optionalDependencies:
     node-screenshots-darwin-arm64 "0.1.4"
@@ -4281,12 +4281,12 @@ path-parse@^1.0.6, path-parse@^1.0.7:
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-scurry@^1.6.1, path-scurry@^1.7.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/path-scurry/-/path-scurry-1.10.0.tgz#0ffbd4c1f7de9600f98a1405507d9f9acb438ab3"
-  integrity sha512-tZFEaRQbMLjwrsmidsGJ6wDMv0iazJWk6SfIKnY4Xru8auXgmJkOBa5DUbYFcFD2Rzk2+KDlIiF0GVXNCbgC7g==
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/path-scurry/-/path-scurry-1.10.1.tgz#9ba6bf5aa8500fe9fd67df4f0d9483b2b0bfc698"
+  integrity sha512-MkhCqzzBEpPvxxQ71Md0b1Kk51W01lrYvlMzSUaIzNsODdd7mqhiimSZlr+VegAz5Z6Vzt9Xg2ttE//XBhH3EQ==
   dependencies:
     lru-cache "^9.1.1 || ^10.0.0"
-    minipass "^5.0.0 || ^6.0.2"
+    minipass "^5.0.0 || ^6.0.2 || ^7.0.0"
 
 path-type@^3.0.0:
   version "3.0.0"
@@ -4989,9 +4989,9 @@ semver@^6.1.0, semver@^6.2.0, semver@^6.3.0:
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
 semver@^7.0.0:
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.3.tgz#161ce8c2c6b4b3bdca6caadc9fa3317a4c4fe88e"
-  integrity sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
   dependencies:
     lru-cache "^6.0.0"
 
