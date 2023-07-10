@@ -1,7 +1,7 @@
 import { app, globalShortcut, clipboard, nativeImage, ipcMain, dialog } from 'electron'
 import fs from 'fs-extra'
 import Event, { ScreenshotsData } from '/@main/type'
-import Screenshots from 'electron-screenshots'
+import Screenshots from 'electron-screenshots-suport-touch'
 
 let intervalId: NodeJS.Timeout | null = null
 
@@ -20,56 +20,28 @@ const padStart = (string: unknown, length = 0, chars = ' '): string => {
 const startScreenshot = async (screenshots: Screenshots) => {
   await screenshots.startCapture()
   screenshots.$view.webContents.executeJavaScript(`
-    // 将触摸事件转换为鼠标事件
-    document.removeEventListener('touchstart', function(event) {
-      var touch = event.touches[0];
-      var mouseEvent = new MouseEvent('mousedown', {
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-        button: 0
-      });
-      window.dispatchEvent(mouseEvent);
-    });
-
-    document.removeEventListener('touchmove', function(event) {
+    const mouseMove = (event) => {
       var touch = event.touches[0];
       var mouseEvent = new MouseEvent('mousemove', {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
       window.dispatchEvent(mouseEvent);
-    });
+    }
 
-    document.removeEventListener('touchend', function(event) {
-      var mouseEvent = new MouseEvent('mouseup', {});
-      window.dispatchEvent(mouseEvent);
-    });
-  `)
-  screenshots.$view.webContents.executeJavaScript(`
-    // 将触摸事件转换为鼠标事件
-    document.addEventListener('touchstart', function(event) {
-      var touch = event.touches[0];
-      var mouseEvent = new MouseEvent('mousedown', {
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-        button: 0
-      });
-      window.dispatchEvent(mouseEvent);
-    });
-
-    document.addEventListener('touchmove', function(event) {
-      var touch = event.touches[0];
-      var mouseEvent = new MouseEvent('mousemove', {
+    const mouseUp = (event) => {
+      var touch = event.changedTouches[0];
+      var mouseEvent = new MouseEvent('mouseup', {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
       window.dispatchEvent(mouseEvent);
-    });
+    }
 
-    document.addEventListener('touchend', function(event) {
-      var mouseEvent = new MouseEvent('mouseup', {});
-      window.dispatchEvent(mouseEvent);
-    });
+    document.removeEventListener('touchmove', mouseMove);
+    document.removeEventListener('touchend', mouseUp);
+    document.addEventListener('touchmove', mouseMove);
+    document.addEventListener('touchend', mouseUp);
   `)
 }
 
@@ -100,6 +72,9 @@ export const initScreenshoots = () => {
     if (!globalShortcut.isRegistered('CommandOrControl+Shift+D')) {
       globalShortcut.register('CommandOrControl+Shift+D', async () => {
         await startScreenshot(screenshots)
+        // screenshots.$view.webContents.openDevTools()
+        // // @ts-ignore
+        // screenshots.$win.webContents.openDevTools()
       })
     }
 
