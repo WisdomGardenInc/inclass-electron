@@ -29,7 +29,7 @@
   "dependencies": {
     "ant-design-vue": "^2.2.2",
     "axios": "^0.21.1",
-    "electron-screenshots-suport-touch": "0.5.30",
+    "electron-screenshots-suport-touch": "0.5.32",
     "electron-updater": "^4.3.5",
     "qs": "^6.10.1",
     "vue": "3.1.5",
