@@ -14,7 +14,6 @@ async function main() {
   initialize(logger)
   app.whenReady().then(() => {
     createWindow()
-    initScreenshoots()
   })
 }
 
@@ -59,7 +58,6 @@ function createWindow() {
   })
 
   ipcMain.handle('create-window', (event, url) => {
-    ipcMain.removeHandler('get-bounds')
     const { width, height } = screen.getPrimaryDisplay().workAreaSize
     const newWindow = new BrowserWindow({
       height: height,
@@ -72,9 +70,7 @@ function createWindow() {
       }
     })
     newWindow.loadURL(url)
-    ipcMain.handle('get-bounds', () => {
-      return newWindow.getBounds()
-    })
+    initScreenshoots(newWindow)
   })
   mainWindow.loadURL(indexHtmlUrl)
 

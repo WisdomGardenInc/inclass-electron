@@ -60,8 +60,6 @@ const _ipcRenderer: IpcRenderer = {
 }
 
 const api = {
-  getBounds: () => ipcRenderer.invoke('get-bounds'),
-  getScreenShotResult: () => ipcRenderer.invoke('send-screen-shot-result'),
   startScreenShot: () => ipcRenderer.invoke('start-screen-shot'),
   shell,
   clipboard,
