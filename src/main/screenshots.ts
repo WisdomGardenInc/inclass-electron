@@ -33,7 +33,7 @@ const changeTouchToMouseEvent = (screenshots: Screenshots) => {
     `)
 }
 
-export const initScreenshoots = (currentWindow: any) => {
+export const initScreenshoots = () => {
   const screenshots = new Screenshots(
     {
       singleWindow: true,
@@ -82,7 +82,8 @@ export const initScreenshoots = (currentWindow: any) => {
     // @ts-ignore
     screenshots.$win.hide()
     screenshots.endCapture()
-    currentWindow.webContents.send('screen-shot-result', { screenShotBase64Url: uint8Array2PngBase64(buffer) })
+    // @ts-ignore
+    screenshots.currentWindow.webContents.send('screen-shot-result', { screenShotBase64Url: uint8Array2PngBase64(buffer) })
   })
 
   screenshots.on('cancel', (e: Event) => {
@@ -98,4 +99,6 @@ export const initScreenshoots = (currentWindow: any) => {
     // // @ts-ignore
     // screenshots.$win.webContents.openDevTools()
   })
+
+  return screenshots
 }

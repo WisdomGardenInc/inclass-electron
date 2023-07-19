@@ -8,12 +8,15 @@ import indexHtmlUrl from '/@renderer/index.html'
 import logoUrl from '/@static/logo.png'
 
 Menu.setApplicationMenu(null)
+
+let screenshots: any = null
 async function main() {
   const logger = new Logger()
   logger.initialize(app.getPath('userData'))
   initialize(logger)
   app.whenReady().then(() => {
     createWindow()
+    screenshots = initScreenshoots()
   })
 }
 
@@ -70,7 +73,7 @@ function createWindow() {
       }
     })
     newWindow.loadURL(url)
-    initScreenshoots(newWindow)
+    screenshots.currentWindow = newWindow
   })
   mainWindow.loadURL(indexHtmlUrl)
 
