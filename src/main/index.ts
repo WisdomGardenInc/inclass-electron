@@ -72,21 +72,20 @@ function createWindow() {
         nodeIntegration: false
       }
     })
+
+    newWindow.webContents.on('will-redirect', async (e, url) => {
+      if (currentOrg && url.includes('/user/index')) {
+        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`)
+        newWindow.close()
+        mainWindow.maximize()
+        mainWindow.fullScreen = true
+      }
+    })
     newWindow.loadURL(url)
     screenshots.currentWindow = newWindow
   })
   mainWindow.loadURL(indexHtmlUrl)
 
-  mainWindow.webContents.on('did-create-window', (childWindow) => {
-    childWindow.webContents.on('will-redirect', async (e, url) => {
-      if (currentOrg && url.includes('/user/index')) {
-        mainWindow.loadURL(`${currentOrg.apiUrl}/inclass/courses`)
-        childWindow.close()
-        mainWindow.maximize()
-        mainWindow.fullScreen = true
-      }
-    })
-  })
   return mainWindow
 }
 

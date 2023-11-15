@@ -105,7 +105,11 @@ export default {
 
   mounted() {
     this.scope.currentComponent = this.historyOrg ? 'step-2' : 'step-1'
+
     this.scope.currentOrg = this.historyOrg ? this.historyOrg : null
+
+    invoke('orgChanged', JSON.stringify(this.scope.currentOrg))
+
     if (!this.$i18n.locale) {
       this.$i18n.locale = 'cn'
     }

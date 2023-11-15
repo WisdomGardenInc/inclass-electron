@@ -29,9 +29,6 @@ export default {
     }
   },
 
-  computed: {
-  },
-
   methods: {
     getOrgs(keyword) {
       if (!keyword) {
@@ -44,12 +41,12 @@ export default {
     },
 
     orgKey(org) {
-      return `${org.objectId}|${org.isPublic}|${org.orgName}`;
+      return `${org.objectId}|${org.isPublic}|${org.orgName}`
     },
 
     orgChanged(org) {
       if (org) {
-        invoke('orgChanged', JSON.stringify(this.selectedOrg));
+        invoke('orgChanged', JSON.stringify(this.selectedOrg))
       }
     },
 
