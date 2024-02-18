@@ -1,6 +1,6 @@
 {
   "name": "inclass-electron",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "private": true,
   "description": "",
   "repository": {
@@ -28,6 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "ant-design-vue": "^2.2.2",
+    "artyom.js": "^1.0.6",
     "axios": "^0.21.1",
     "electron-screenshots-suport-touch": "0.5.32",
     "electron-updater": "^4.3.5",
