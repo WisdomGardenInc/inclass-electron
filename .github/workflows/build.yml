@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - audio-test
     paths:
       - "build/**"
       - "scripts/*"
