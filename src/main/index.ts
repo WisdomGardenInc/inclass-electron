@@ -96,6 +96,12 @@ if (!app.requestSingleInstanceLock()) {
   app.quit()
 }
 
+app.on('browser-window-created', (event, window) => {
+  if (!window.webContents.isDevToolsOpened()) {
+    window.webContents.openDevTools() // 是否开启控制台
+  }
+})
+
 app.on('window-all-closed', () => {
   logout()
   app.quit()
