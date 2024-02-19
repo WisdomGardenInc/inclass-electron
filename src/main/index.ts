@@ -16,6 +16,7 @@ async function main() {
   const logger = new Logger()
   logger.initialize(app.getPath('userData'))
   initialize(logger)
+  app.commandLine.appendSwitch('enable-features', 'WebSpeechAPI');
   app.whenReady().then(() => {
     createWindow()
 
