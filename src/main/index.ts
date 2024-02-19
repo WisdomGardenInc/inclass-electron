@@ -7,8 +7,6 @@ import indexPreload from '/@preload/index'
 import indexHtmlUrl from '/@renderer/index.html'
 import logoUrl from '/@static/logo.png'
 
-import Artyom from 'artyom.js'
-
 Menu.setApplicationMenu(null)
 
 let screenshots: any = null
@@ -20,32 +18,12 @@ async function main() {
   initialize(logger)
   app.whenReady().then(() => {
     createWindow()
-    enableAudio()
     screenshots = initScreenshoots()
   })
 }
 
 function logout() {
   session.defaultSession.clearStorageData({ storages: ['cookies'] })
-}
-
-function enableAudio() {
-  const Jarvis = new Artyom();
-
-  Jarvis.addCommands({
-    indexes: ["Hello", "Hi"], action: function () {
-      Jarvis.say("Hello, how are you today?");
-      mainWindow.loadURL("www.baidu.com");
-    }
-  });
-
-  Jarvis.initialize({
-    lang: "en-GB",
-    debug: true, // Show what recognizes in the Console
-    listen: true, // Start listening after this
-    speed: 0.9, // Talk a little bit slow
-    mode: "normal" // This parameter is not required as it will be normal by default
-  });
 }
 
 function createWindow() {

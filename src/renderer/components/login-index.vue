@@ -36,6 +36,8 @@ import loginStepThree from '/@/components/login-step-3.vue'
 import { useIpc } from '../composables'
 import { Modal } from 'ant-design-vue'
 
+import Artyom from 'artyom.js'
+
 const { invoke } = useIpc()
 
 export default {
@@ -113,6 +115,28 @@ export default {
     if (!this.$i18n.locale) {
       this.$i18n.locale = 'cn'
     }
+
+    const Jarvis = new Artyom();
+    window.jarvis = Jarvis;
+
+    Jarvis.addCommands({
+      indexes: ["小畅同学"], action: function () {
+        Jarvis.say("你好，主人");
+        console.log("hello")
+      }
+    });
+
+
+    Jarvis.initialize({
+      lang: "zh-CN",
+      debug: true, // Show what recognizes in the Console
+      listen: true, // Start listening after this
+      speed: 1, // Talk a little bit slow
+      continuous: true,
+      mode: "normal" // This parameter is not required as it will be normal by default
+    }).then(function () {
+      console.log("Ready to work !");
+    });
   }
 }
 </script>
