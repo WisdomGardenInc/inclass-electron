@@ -105,7 +105,7 @@ export default {
     },
 
     enableSpeechReg() {
-      Jarvis.initialize({
+      window.jarvis.initialize({
         lang: "en-US",
         debug: true, // Show what recognizes in the Console
         listen: true, // Start listening after this
