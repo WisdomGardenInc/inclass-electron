@@ -132,7 +132,7 @@ export default {
       debug: true, // Show what recognizes in the Console
       listen: true, // Start listening after this
       speed: 1, // Talk a little bit slow
-      continuous: true,
+      continuous: false,
       mode: "normal" // This parameter is not required as it will be normal by default
     }).then(function () {
       console.log("Ready to work !");
