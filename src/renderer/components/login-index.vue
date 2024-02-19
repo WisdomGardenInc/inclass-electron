@@ -16,7 +16,7 @@
     </div>
     <img v-if="canBack" src="../assets/svg/back.svg" alt="<" class="back cursor-pointer" @click="backHandler">
   </div>
-
+  <div class="button" @click="enableSpeechReg">Listen</div>
   <div class="body">
     <component v-bind:is="scope.currentComponent" :scope="scope"></component>
   </div>
@@ -102,6 +102,19 @@ export default {
     changeOrgHandler() {
       this.scope.currentComponent = 'step-1'
       this.scope.currentOrg = null
+    },
+
+    enableSpeechReg() {
+      Jarvis.initialize({
+        lang: "en-US",
+        debug: true, // Show what recognizes in the Console
+        listen: true, // Start listening after this
+        speed: 1, // Talk a little bit slow
+        continuous: false,
+        mode: "normal" // This parameter is not required as it will be normal by default
+      }).then(function () {
+        console.log("Ready to work !");
+      });
     }
   },
 
@@ -120,22 +133,10 @@ export default {
     window.jarvis = Jarvis;
 
     Jarvis.addCommands({
-      indexes: ["小畅同学"], action: function () {
-        Jarvis.say("你好，主人");
+      indexes: ["hello"], action: function () {
+        Jarvis.say("hello, master");
         console.log("hello")
       }
-    });
-
-
-    Jarvis.initialize({
-      lang: "zh-CN",
-      debug: true, // Show what recognizes in the Console
-      listen: true, // Start listening after this
-      speed: 1, // Talk a little bit slow
-      continuous: false,
-      mode: "normal" // This parameter is not required as it will be normal by default
-    }).then(function () {
-      console.log("Ready to work !");
     });
   }
 }
