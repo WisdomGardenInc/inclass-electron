@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Menu, session, screen, globalShortcut } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu, session, screen, globalShortcut, systemPreferences } from 'electron'
 import './dialog'
 import { Logger } from './logger'
 import { initScreenshoots } from './screenshots'
@@ -18,6 +18,17 @@ async function main() {
   initialize(logger)
   app.whenReady().then(() => {
     createWindow()
+
+    systemPreferences.askForMediaAccess('microphone').then((access) => {
+      if (access) {
+        console.log('Access to microphone is granted')
+      } else {
+        console.log('Access to microphone is denied')
+      }
+    }).catch((error) => {
+      console.log(`Error in requesting microphone access: ${error}`)
+    })
+
     screenshots = initScreenshoots()
   })
 }

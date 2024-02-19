@@ -37,7 +37,11 @@ const config = {
       {
         target: 'dmg'
       }
-    ]
+    ],
+    entitlements: 'build/entitlements.mac.plist',
+    extendInfo: {
+      "NSMicrophoneUsageDescription": "授权访问麦克风"
+    }
   },
   win: {
     icon: 'build/icons/icon.ico',
