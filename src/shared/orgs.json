@@ -1577,7 +1577,7 @@
       "createdAt": "2019-08-21T10:36:12.218Z",
       "updatedAt": "2019-08-21T10:40:38.045Z",
       "id": 1,
-      "apiUrl": "http://59.74.136.101",
+      "apiUrl": "https://course-online.chd.edu.cn",
       "lrpApi": "http://59.74.136.6",
       "keywords": [
         "长安大学",
@@ -1585,17 +1585,17 @@
         "长大"
       ],
       "deliveryOrg": "CHD",
-      "ntfUrl": "http://59.74.136.101/ntf",
+      "ntfUrl": "https://course-online.chd.edu.cn/ntf",
       "area": "cn",
       "identityConfig": {
         "realm": "chd",
-        "auth-server-url": "http://course-online.chd.edu.cn:8600/auth",
+        "auth-server-url": "https://identity.chd.edu.cn/auth",
         "resource": "tronclass-app",
         "isApiLogin": false
       },
       "identityConfigH5": {
         "realm": "chd",
-        "auth-server-url": "http://course-online.chd.edu.cn:8600/auth",
+        "auth-server-url": "https://identity.chd.edu.cn/auth",
         "resource": "tronclass-app",
         "isApiLogin": false
       },
