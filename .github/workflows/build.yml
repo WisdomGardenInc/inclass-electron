@@ -20,21 +20,11 @@ jobs:
       matrix:
         os: [windows-latest, macos-latest, macos-13]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 16
-      # - name: Get npm cache directory
-      #   id: npm-cache
-      #   run: |
-      #     echo "::set-output name=dir::$(npm config get cache)"
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: ${{ steps.npm-cache.outputs.dir }}
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
       - name: Install
         run: |
           yarn install
@@ -47,22 +37,16 @@ jobs:
         env:
           BUILD_NUMBER: ${{ steps.vars.outputs.build_number }}
           FULL_RELEASE: ${{ startsWith(github.event.commits[0].message, 'chore(release)') }}
-      # If you build nsis web, you should uncomment below
-      # - name: Upload Web Build
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: build
-      #     path: build/nsis-web/*.*
       - name: Upload Build
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: build-${{ matrix.runs-on }}
           path: build/*.*
       - name: Upload Windows Asar
         if: ${{ runner.os == 'Windows' && startsWith(github.event.commits[0].message, 'chore(release)') }}
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: build-window-asar
           path: build/win-unpacked/resources/app.asar
 
   repare-release:
@@ -73,11 +57,11 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Fetch All
         run: git fetch --prune --unshallow
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install
@@ -116,27 +100,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 16
       - name: Fetch All
         run: git fetch --prune --unshallow
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
       - name: Install
         run: |
           yarn install --ignore-optional
       - name: Download Build
         uses: actions/download-artifact@v4
         with:
-          name: build
           path: build
+          pattern: build-
+          merge-multiple: true
       - name: Get Package Version
         uses: ./.github/actions/get-version
         id: package
