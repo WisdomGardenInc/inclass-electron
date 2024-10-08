@@ -14,18 +14,10 @@
         </ul>
       </div>
     </div>
-    <img v-if="canBack" src="../assets/svg/back.svg" alt="<" class="back cursor-pointer" @click="backHandler">
   </div>
 
   <div class="body">
     <component v-bind:is="scope.currentComponent" :scope="scope"></component>
-  </div>
-
-  <div v-if="scope.currentOrg && scope.currentComponent !== 'step-1'" class="footer clearfix flex justify-center mt-2">
-    <div class="change-org cursor-pointer" @click="changeOrgHandler">
-      {{ $t('login.changeOrg') }}
-      <div class="arrow-right-green"></div>
-    </div>
   </div>
 </template>
 
@@ -35,6 +27,7 @@ import UnifiedLogin from '/@/components/unified-login.vue'
 import loginStepThree from '/@/components/login-step-3.vue'
 import { useIpc } from '../composables'
 import { Modal } from 'ant-design-vue'
+import { orgs } from '/@shared/orgs.json'
 
 const { invoke } = useIpc()
 
@@ -104,9 +97,8 @@ export default {
   },
 
   mounted() {
-    this.scope.currentComponent = this.historyOrg ? 'step-2' : 'step-1'
-
-    this.scope.currentOrg = this.historyOrg ? this.historyOrg : null
+    this.scope.currentComponent = 'step-2'
+    this.scope.currentOrg = orgs.find(org => org.deliveryOrg === 'XMU')
 
     invoke('orgChanged', JSON.stringify(this.scope.currentOrg))
 

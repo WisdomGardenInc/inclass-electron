@@ -50,6 +50,7 @@ export default {
 
   mounted() {
     localStorage.setItem('org', JSON.stringify(this.scope.currentOrg))
+    this.toUniformLogin()
   }
 }
 </script>
