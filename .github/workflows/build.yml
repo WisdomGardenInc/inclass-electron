@@ -54,13 +54,13 @@ jobs:
       #     name: build
       #     path: build/nsis-web/*.*
       - name: Upload Build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build/*.*
       - name: Upload Windows Asar
         if: ${{ runner.os == 'Windows' && startsWith(github.event.commits[0].message, 'chore(release)') }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build/win-unpacked/resources/app.asar
@@ -133,7 +133,7 @@ jobs:
         run: |
           yarn install --ignore-optional
       - name: Download Build
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: build
           path: build
