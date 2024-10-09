@@ -116,6 +116,8 @@ jobs:
           path: build
           pattern: build-
           merge-multiple: true
+        run: |
+          ls -alR build
       - name: Get Package Version
         uses: ./.github/actions/get-version
         id: package
