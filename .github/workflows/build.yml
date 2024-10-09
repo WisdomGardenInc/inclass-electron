@@ -39,18 +39,12 @@ jobs:
           FULL_RELEASE: ${{ startsWith(github.event.commits[0].message, 'chore(release)') }}
       - name: List
         run: |
-          ls -alhR build
+          ls -alh build
       - name: Upload Build
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.os }}
-          path: |
-            build/*.dmg
-            build/*.exe
-            build/*.deb
-            build/*.rpm
-            build/*.AppImage
-            build/*.snap
+          path: build
 
   repare-release:
     runs-on: ubuntu-latest
@@ -112,7 +106,7 @@ jobs:
           merge-multiple: true
       - name: List
         run: |
-          ls -alhR artifact
+          ls -alh artifact
       - name: Get Package Version
         uses: ./.github/actions/get-version
         id: package
