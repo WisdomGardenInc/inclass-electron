@@ -37,11 +37,20 @@ jobs:
         env:
           BUILD_NUMBER: ${{ steps.vars.outputs.build_number }}
           FULL_RELEASE: ${{ startsWith(github.event.commits[0].message, 'chore(release)') }}
+      - name: List
+        run: |
+          ls -alhR build
       - name: Upload Build
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.os }}
-          path: build/*.{dmg,exe,deb,rpm,AppImage,snap}
+          path: |
+            build/*.dmg
+            build/*.exe
+            build/*.deb
+            build/*.rpm
+            build/*.AppImage
+            build/*.snap
 
   repare-release:
     runs-on: ubuntu-latest
