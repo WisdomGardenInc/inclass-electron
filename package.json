@@ -1,6 +1,6 @@
 {
   "name": "inclass-electron",
-  "version": "0.0.22-chd",
+  "version": "0.0.23-chd",
   "private": true,
   "description": "",
   "repository": {
@@ -28,6 +28,7 @@
   "dependencies": {
     "ant-design-vue": "^2.2.2",
     "axios": "^0.21.1",
+    "electron-screenshots": "^0.5.27",
     "electron-updater": "^4.3.5",
     "qs": "^6.10.1",
     "vue": "3.1.5",
@@ -37,7 +38,8 @@
   },
   "external": [
     "electron-updater",
-    "fs-extra"
+    "fs-extra",
+    "electron-screenshots"
   ],
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",
