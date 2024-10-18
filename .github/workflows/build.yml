@@ -4,7 +4,7 @@ name: Build
 on:
   push:
     branches:
-      - *
+      - hjzh
     paths:
       - "build/**"
       - "scripts/*"
