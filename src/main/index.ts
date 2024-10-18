@@ -53,7 +53,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://course-online.chd.edu.cn'
+  const apiUrl = 'http://26.28.189.207'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
