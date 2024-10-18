@@ -2,7 +2,7 @@ directories:
   output: build
   buildResources: build
   app: dist
-productName: 长安学堂
+productName: 学在海指
 appId: ''
 files: []
 nsis:

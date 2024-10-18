@@ -34,7 +34,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: '长安学堂'
+    title: '学在海指'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {

@@ -3,7 +3,7 @@
  * @type {import('electron-builder').Configuration}
  */
 const config = {
-  productName: '长安学堂',
+  productName: '学在海指',
   appId: '',
   electronVersion: process.env.ELECTRON_VERSION, // only used for development debugging
   directories: {
