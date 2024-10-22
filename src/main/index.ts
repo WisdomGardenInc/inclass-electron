@@ -53,7 +53,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'http://26.28.189.207'
+  const apiUrl = 'http://lms.hjzh.mtn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
