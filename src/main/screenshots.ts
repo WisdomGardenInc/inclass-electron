@@ -1,6 +1,6 @@
 import { app, globalShortcut, clipboard, nativeImage, ipcMain } from 'electron'
 import Event, { ScreenshotsData } from './types'
-import Screenshots from 'electron-screenshots'
+import Screenshots from 'electron-screenshots-suport-touch'
 
 const uint8Array2PngBase64 = (buffer: Buffer) => {
   return `data:image/png;base64,${Buffer.from(buffer).toString('base64')}`

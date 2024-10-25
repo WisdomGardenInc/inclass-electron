@@ -1647,15 +1647,15 @@ electron-publish@23.6.0:
     lazy-val "^1.0.5"
     mime "^2.5.2"
 
-electron-screenshots@^0.5.27:
-  version "0.5.27"
-  resolved "https://registry.yarnpkg.com/electron-screenshots/-/electron-screenshots-0.5.27.tgz#64dd6fc098d427b0f85e6d44c4e08786054a25dd"
-  integrity sha512-kfCMZWvrs9/qc7gzCx8hS0LOoQFL7TZiyXg1S+/dEkQqsGJ0WLpld7Q4D6Dy4vYtxnDPeFfH2gCg1vDw7czE1Q==
+electron-screenshots-suport-touch@^0.5.32:
+  version "0.5.32"
+  resolved "https://registry.yarnpkg.com/electron-screenshots-suport-touch/-/electron-screenshots-suport-touch-0.5.32.tgz#e1aa969cfc385f21cae1efd390f0aebc2af732b6"
+  integrity sha512-psOBalBIuSTY4kZc8/He/iwx7APqWQbdKotEqml9NURVSHDjsFX6ASnvKz8EtIuFM2DW+wS2VhaRUupAhIHoig==
   dependencies:
     debug "^4.3.4"
     fs-extra "^11.1.1"
-    node-screenshots "^0.2.1"
-    react-screenshots "^0.5.22"
+    node-screenshots "^0.1.4"
+    react-screenshots-suport-touch "^0.5.31"
 
 electron-updater@^4.3.5:
   version "4.3.9"
@@ -3298,7 +3298,7 @@ node-screenshots-win32-x64-msvc@0.2.1:
   resolved "https://registry.yarnpkg.com/node-screenshots-win32-x64-msvc/-/node-screenshots-win32-x64-msvc-0.2.1.tgz#05351b59eaa374967d0f1372f9ff0e150c17dc6d"
   integrity sha512-dfxAck3LR9eTYpc/hVtomQYxpP/80p4+vP9k1whDBCClTzRlHvgx1U9b6c5bYpe8JZFtCZsJL75S5p0kQJk7Dg==
 
-node-screenshots@^0.2.1:
+node-screenshots@^0.1.4, node-screenshots@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/node-screenshots/-/node-screenshots-0.2.1.tgz#572f5bf670f76adf559a892bab44af86819ecd51"
   integrity sha512-1UY7VY/34uE6Giq/Winl0J7022KKwWt9T9Gu5ZBCxhXkWrv9q5pTVQRgZCcUIsIHq3zu8UFu5s8rqgauK2CnLA==
@@ -3687,10 +3687,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmmirror.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-screenshots@^0.5.22:
-  version "0.5.22"
-  resolved "https://registry.yarnpkg.com/react-screenshots/-/react-screenshots-0.5.22.tgz#2d974189d2d2df74388a4a19482fd1c956641837"
-  integrity sha512-aooIlb1k6161BTqhhyADlMrlF0n1UdudjuhyvXaCQfwURXZNuUerMxFuOfwNCgSbPAHlxdHCWtYQ6iQT+RaF+w==
+react-screenshots-suport-touch@^0.5.31:
+  version "0.5.31"
+  resolved "https://registry.yarnpkg.com/react-screenshots-suport-touch/-/react-screenshots-suport-touch-0.5.31.tgz#eb79960b1f1041c6cadefd916236e50001301ece"
+  integrity sha512-T8kaPNctOCvNd8ceK8LD34hFlQKeOZ0vZ2LSohjjt6vhqSUe2TRaMtqtrYokiskOn/5iyeClPZt4IUXug1GuMw==
 
 read-config-file@6.2.0:
   version "6.2.0"
