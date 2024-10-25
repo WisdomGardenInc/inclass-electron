@@ -60,6 +60,7 @@ const _ipcRenderer: IpcRenderer = {
 }
 
 const api = {
+  startScreenShot: () => ipcRenderer.invoke('start-screen-shot'),
   shell,
   clipboard,
   ipcRenderer: _ipcRenderer,
@@ -90,15 +91,15 @@ try {
 
 window.onload = function () {
   // redefine the behavior of close button
-  let confirmClose = false;
+  let confirmClose = false
   const closeBtn = <HTMLElement>document.querySelector('.exit')
   if (closeBtn) {
     closeBtn.setAttribute('href', '#')
     closeBtn.onclick = function () {
-      confirmClose = confirm('Exit(确认退出)?');
+      confirmClose = confirm('Exit(确认退出)?')
       if (confirmClose) {
         api.ipcRenderer.invoke('app:logout')
-        window.close();
+        window.close()
       }
     }
   }

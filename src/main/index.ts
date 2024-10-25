@@ -1,6 +1,8 @@
 import { app, BrowserWindow, ipcMain, Menu, session } from 'electron'
 import './dialog'
 import { Logger } from './logger'
+import { initScreenshoots } from './screenshots'
+
 import { initialize } from './services'
 import indexPreload from '/@preload/index'
 import logoUrl from '/@static/cdut-logo.png'
@@ -9,11 +11,13 @@ app.commandLine.appendSwitch('ignore-certificate-errors')
 app.commandLine.appendSwitch('ignore-gpu-blocklist')
 
 Menu.setApplicationMenu(null)
+let screenshots: any = null
 async function main() {
   const logger = new Logger()
   logger.initialize(app.getPath('userData'))
   initialize(logger)
   app.whenReady().then(() => {
+    screenshots = initScreenshoots()
     createWindow()
   })
 }
@@ -53,7 +57,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'http://lms.hjzh.mtn'
+  const apiUrl = 'https://lms-qa.tronclass.com.cn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
@@ -64,6 +68,7 @@ function createWindow() {
   })
 
   mainWindow.loadURL(`${apiUrl}/inclass/courses`)
+  screenshots.currentWindow = mainWindow
 
   mainWindow.on('page-title-updated', (evt) => {
     evt.preventDefault()

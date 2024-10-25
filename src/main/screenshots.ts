@@ -1,5 +1,5 @@
 import { app, globalShortcut, clipboard, nativeImage, ipcMain } from 'electron'
-import Event, { ScreenshotsData } from '/@main/type'
+import Event, { ScreenshotsData } from './types'
 import Screenshots from 'electron-screenshots'
 
 const uint8Array2PngBase64 = (buffer: Buffer) => {
