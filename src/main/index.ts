@@ -57,7 +57,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://lms-qa.tronclass.com.cn'
+  const apiUrl = 'http://lms.hjzh.mtn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
