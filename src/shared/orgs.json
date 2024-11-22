@@ -1,6 +1,36 @@
 {
   "orgs": [
     {
+      "apiUrl": "https://lms.njtc.edu.cn",
+      "orgName": "内江师范学院",
+      "deliveryOrg": "njtc",
+      "createdAt": "2024-05-17T08:44:09.083Z",
+      "updatedAt": "2024-05-17T09:47:58.478Z",
+      "ntfUrl": "https://lms.njtc.edu.cn/ntf",
+      "area": "cn",
+      "keywords": [
+        "内江师范学院",
+        "njtc"
+      ],
+      "id": 1,
+      "identityConfigH5": {
+        "realm": "njtc",
+        "auth-server-url": "https://identity.njtc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassH5",
+        "public-client": true,
+        "confidential-port": 0
+      },
+      "identityConfig": {
+        "realm": "njtc",
+        "auth-server-url": "https://identity.njtc.edu.cn/auth",
+        "ssl-required": "external",
+        "resource": "TronClassH5",
+        "public-client": true,
+        "confidential-port": 0
+      }
+    },
+    {
       "orgName": "智园研究院",
       "objectId": "5b6d56b1a22b9d0031707a10",
       "createdAt": "2018-08-10T09:11:13.731Z",
