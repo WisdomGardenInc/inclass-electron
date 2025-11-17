@@ -5,7 +5,7 @@ import { initScreenshoots } from './screenshots'
 
 import { initialize } from './services'
 import indexPreload from '/@preload/index'
-import logoUrl from '/@static/cdut-logo.png'
+import logoUrl from '/@static/logo.png'
 
 app.commandLine.appendSwitch('ignore-certificate-errors')
 app.commandLine.appendSwitch('ignore-gpu-blocklist')
