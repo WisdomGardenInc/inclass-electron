@@ -38,7 +38,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: '学在海指'
+    title: 'IMVT Class'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {
@@ -57,7 +57,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'http://lms.hjzh.mtn'
+  const apiUrl = 'https://imvtclass.tronclass.com'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
