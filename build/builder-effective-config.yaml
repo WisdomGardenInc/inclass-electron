@@ -2,7 +2,7 @@ directories:
   output: build
   buildResources: build
   app: dist
-productName: IMVT Class
+productName: 智慧南雍互动平台
 appId: ''
 files: []
 nsis:

@@ -3,7 +3,7 @@
  * @type {import('electron-builder').Configuration}
  */
 const config = {
-  productName: 'IMVT Class',
+  productName: '智慧南雍互动平台',
   appId: '',
   electronVersion: process.env.ELECTRON_VERSION, // only used for development debugging
   directories: {

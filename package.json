@@ -1,6 +1,6 @@
 {
   "name": "inclass-electron",
-  "version": "0.0.26-imvt",
+  "version": "0.0.26-nju",
   "private": true,
   "description": "",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/ci010/electron-vue-next.git"
   },
   "build": {
-    "productName": "IMVT Class"
+    "productName": "NJU Class"
   },
   "scripts": {
     "dev:docs": "node scripts/dev.docs.js",

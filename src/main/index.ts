@@ -38,7 +38,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: 'IMVT Class'
+    title: '智慧南雍互动平台'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {
@@ -57,7 +57,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://imvtclass.tronclass.com'
+  const apiUrl = 'https://lms.nju.edu.cn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
