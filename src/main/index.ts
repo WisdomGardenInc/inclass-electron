@@ -9,6 +9,7 @@ import logoUrl from '/@static/logo.png'
 
 app.commandLine.appendSwitch('ignore-certificate-errors')
 app.commandLine.appendSwitch('ignore-gpu-blocklist')
+app.commandLine.appendSwitch('js-flags', '--max-old-space-size=4096')
 
 Menu.setApplicationMenu(null)
 let screenshots: any = null

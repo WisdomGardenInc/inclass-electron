@@ -32,27 +32,19 @@ const config = {
     icon: 'build/icons/icon.icns',
     target: [
       {
-        target: 'zip'
+        target: 'zip',
+        arch: ['x64', 'arm64'] // <--- 必须修改：支持双架构
       },
       {
-        target: 'dmg'
+        target: 'dmg',
+        arch: ['x64', 'arm64'] // <--- 必须修改：支持双架构
       }
     ]
   },
   win: {
     icon: 'build/icons/icon.ico',
     target: [
-      // disable build for x32 by default
-      // 'nsis:ia32',
       'nsis:x64',
-      // uncomment to generate web installer
-      // electron-builder can use either web or offline installer to auto update
-      // {
-      //   target: 'nsis-web',
-      //   arch: [
-      //     'x64',
-      //   ]
-      // },
       {
         target: 'zip',
         arch: [
