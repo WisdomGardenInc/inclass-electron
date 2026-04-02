@@ -3,7 +3,7 @@
  * @type {import('electron-builder').Configuration}
  */
 const config = {
-  productName: '智慧南雍互动平台',
+  productName: '空军军医大学AI医学堂',
   appId: '',
   electronVersion: process.env.ELECTRON_VERSION, // only used for development debugging
   directories: {

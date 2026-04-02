@@ -39,7 +39,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: '智慧南雍互动平台'
+    title: '空军军医大学AI医学堂'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {
@@ -58,7 +58,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://lms.nju.edu.cn'
+  const apiUrl = 'https://ail.fmmu.edu.cn'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {
