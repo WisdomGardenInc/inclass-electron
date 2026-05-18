@@ -2,7 +2,7 @@ directories:
   output: build
   buildResources: build
   app: dist
-productName: 空军军医大学AI医学堂
+productName: 中国人民公安大学
 appId: ''
 files: []
 nsis:

@@ -39,7 +39,7 @@ function createWindow() {
       webSecurity: false
     },
     icon: logoUrl,
-    title: '空军军医大学AI医学堂'
+    title: '中国人民公安大学'
   })
 
   ipcMain.handle('open-inclass-list', (event, arg) => {
@@ -58,7 +58,7 @@ function createWindow() {
     logout()
   })
 
-  const apiUrl = 'https://ail.fmmu.edu.cn'
+  const apiUrl = 'http://172.23.190.41'
 
   mainWindow.webContents.on('will-redirect', async (e, url) => {
     if (url.includes('/user/index')) {

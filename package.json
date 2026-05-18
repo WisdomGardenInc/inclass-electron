@@ -1,6 +1,6 @@
 {
   "name": "inclass-electron",
-  "version": "0.0.30-fmmu",
+  "version": "0.0.30-ppsuc",
   "private": true,
   "description": "",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/ci010/electron-vue-next.git"
   },
   "build": {
-    "productName": "FMMU Class"
+    "productName": "PPSUC Class"
   },
   "scripts": {
     "dev:docs": "node scripts/dev.docs.js",

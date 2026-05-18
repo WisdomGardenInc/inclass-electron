@@ -4,7 +4,7 @@ name: Build
 on:
   push:
     branches:
-      - fmmu
+      - ppsuc
     paths:
       - "build/**"
       - "scripts/*"
