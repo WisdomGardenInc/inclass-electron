@@ -7,6 +7,7 @@ const uint8Array2PngBase64 = (buffer: Buffer) => {
 }
 
 const changeTouchToMouseEvent = (screenshots: Screenshots) => {
+  if (!screenshots.$view?.webContents) return
   screenshots.$view.webContents.executeJavaScript(`
       const mouseMove = (event) => {
         var touch = event.touches[0];
@@ -30,7 +31,7 @@ const changeTouchToMouseEvent = (screenshots: Screenshots) => {
       document.removeEventListener('touchend', mouseUp);
       document.addEventListener('touchmove', mouseMove);
       document.addEventListener('touchend', mouseUp);
-    `)
+    `).catch(() => { /* $view 可能未就绪，忽略 */ })
 }
 
 export const initScreenshoots = () => {
@@ -54,51 +55,78 @@ export const initScreenshoots = () => {
     }
   )
 
-  changeTouchToMouseEvent(screenshots)
+  const safeStartCapture = async () => {
+    try {
+      await screenshots.startCapture()
+      // $view 在第一次 startCapture 时才会创建，这里注入才安全
+      changeTouchToMouseEvent(screenshots)
+    } catch (err) {
+      console.error('[screenshots] startCapture failed:', err)
+      try { screenshots.endCapture() } catch (_) { /* ignore */ }
+    }
+  }
 
   app.on('browser-window-focus', () => {
     if (!globalShortcut.isRegistered('CommandOrControl+Shift+D')) {
-      globalShortcut.register('CommandOrControl+Shift+D', async () => {
-        await screenshots.startCapture()
-        // screenshots.$view.webContents.openDevTools()
-        // // @ts-ignore
-        // screenshots.$win.webContents.openDevTools()
-      })
-    }
-
-    if (!globalShortcut.isRegistered('esc')) {
-      globalShortcut.register('esc', () => {
-        if (screenshots.$win?.isFocused()) {
-          screenshots.$win.hide()
-          screenshots.endCapture()
-        }
-      })
+      globalShortcut.register('CommandOrControl+Shift+D', safeStartCapture)
     }
   })
 
+  // 截屏窗口内监听 ESC，避免全局拦截 Esc 引发的冲突 / 原生崩溃
+  screenshots.on('windowCreated' as any, () => {
+    const view = (screenshots as any).$view
+    if (!view?.webContents) return
+    view.webContents.on('before-input-event', (_e: any, input: any) => {
+      if (input.type === 'keyDown' && input.key === 'Escape') {
+        try {
+          (screenshots as any).$win?.hide()
+          screenshots.endCapture()
+        } catch (_) { /* ignore */ }
+      }
+    })
+  })
+
+  app.on('will-quit', () => {
+    globalShortcut.unregisterAll()
+  })
+
   screenshots.on('ok', (e: Event, buffer: Buffer, bounds: ScreenshotsData) => {
-    clipboard.writeImage(nativeImage.createFromBuffer(buffer))
     e.preventDefault()
-    // @ts-ignore
-    screenshots.$win.hide()
-    screenshots.endCapture()
-    // @ts-ignore
-    screenshots.currentWindow.webContents.send('screen-shot-result', { screenShotBase64Url: uint8Array2PngBase64(buffer) })
+    try {
+      // @ts-ignore
+      screenshots.$win?.hide()
+      screenshots.endCapture()
+    } catch (_) { /* ignore */ }
+
+    if (!buffer || buffer.length === 0) {
+      console.warn('[screenshots] empty buffer, skip')
+      return
+    }
+
+    try {
+      const img = nativeImage.createFromBuffer(buffer)
+      if (!img.isEmpty()) {
+        clipboard.writeImage(img)
+      }
+      // @ts-ignore
+      screenshots.currentWindow?.webContents?.send('screen-shot-result', {
+        screenShotBase64Url: uint8Array2PngBase64(buffer)
+      })
+    } catch (err) {
+      console.error('[screenshots] handle ok failed:', err)
+    }
   })
 
   screenshots.on('cancel', (e: Event) => {
     e.preventDefault()
-    // @ts-ignore
-    screenshots.$win.hide()
-    screenshots.endCapture()
+    try {
+      // @ts-ignore
+      screenshots.$win?.hide()
+      screenshots.endCapture()
+    } catch (_) { /* ignore */ }
   })
 
-  ipcMain.handle('start-screen-shot', async () => {
-    await screenshots.startCapture()
-    // screenshots.$view.webContents.openDevTools()
-    // // @ts-ignore
-    // screenshots.$win.webContents.openDevTools()
-  })
+  ipcMain.handle('start-screen-shot', safeStartCapture)
 
   return screenshots
 }

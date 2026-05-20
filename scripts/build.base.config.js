@@ -4,7 +4,9 @@
  */
 const config = {
   productName: '中国人民公安大学',
-  appId: '',
+  // exe 文件名 / 进程名使用 ASCII，避免 Electron 在 Windows 上对含中文路径的原生模块解析异常（截屏崩溃等）
+  executableName: 'ppsuc-class',
+  appId: 'cn.ppsuc.inclass',
   electronVersion: process.env.ELECTRON_VERSION, // only used for development debugging
   directories: {
     output: 'build',
