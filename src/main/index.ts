@@ -9,7 +9,7 @@ import logoUrl from '/@static/logo.png'
 
 app.commandLine.appendSwitch('ignore-certificate-errors')
 app.commandLine.appendSwitch('ignore-gpu-blocklist')
-app.commandLine.appendSwitch('js-flags', '--max-old-space-size=4096')
+app.commandLine.appendSwitch('js-flags', '--max-old-space-size=8192')
 
 // Win11 24H2 + Electron 21 的 GPU 合成路径在截屏时偶发原生空指针崩溃，
 // 关闭硬件加速可显著降低概率。若后续升级 Electron 可移除此行。
