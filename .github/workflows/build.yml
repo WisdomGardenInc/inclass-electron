@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, macos-13]
+        os: [windows-2022, macos-latest]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 16
