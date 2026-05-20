@@ -12956,6 +12956,23 @@
       },
       "canOffCampusLogin": false,
       "env": "prod"
+    },
+    {
+      "apiUrl": "http://127.0.0.1:5000",
+      "orgName": "中国人民公安大学",
+      "keywords": [
+        "ppsuc",
+        "中国人民",
+        "公安",
+        "公安大学"
+      ],
+      "id": 161,
+      "deliveryOrg": "ppsuc",
+      "ntfUrl": "http://172.23.190.41/ntf",
+      "area": "cn",
+      "useNotification": true,
+      "canOffCampusLogin": false,
+      "env": "prod"
     }
   ]
 }
