@@ -12958,7 +12958,7 @@
       "env": "prod"
     },
     {
-      "apiUrl": "http://127.0.0.1:5000",
+      "apiUrl": "http://172.23.190.41",
       "orgName": "中国人民公安大学",
       "keywords": [
         "ppsuc",
