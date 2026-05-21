@@ -1,6 +1,6 @@
 {
   "name": "inclass-electron",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "private": true,
   "description": "",
   "repository": {
@@ -54,7 +54,7 @@
     "builtin-modules": "^3.2.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
-    "electron": "^21.2.0",
+    "electron": "^22.3.27",
     "electron-builder": "^23.6.0",
     "esbuild": "^0.12.15",
     "extract-zip": "^1.7.0",
