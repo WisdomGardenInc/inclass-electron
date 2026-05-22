@@ -15,8 +15,12 @@ async function main() {
   logger.initialize(app.getPath('userData'))
   initialize(logger)
   app.whenReady().then(() => {
-    createWindow()
+    const mainWindow = createWindow()
     screenshots = initScreenshoots()
+
+    mainWindow.on('closed', () => {
+      app.quit()
+    })
   })
 }
 
