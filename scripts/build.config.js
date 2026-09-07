@@ -30,12 +30,21 @@ const config = {
   },
   mac: {
     icon: 'build/icons/icon.icns',
+    // universal: 一个包同时支持 Intel 与 Apple Silicon。
+    // GitHub 已下线 macos-13(x64) runner，只能在 arm64 runner 上出包，
+    // 靠 universal 覆盖 Intel Mac。
     target: [
       {
-        target: 'zip'
+        target: 'zip',
+        arch: [
+          'universal'
+        ]
       },
       {
-        target: 'dmg'
+        target: 'dmg',
+        arch: [
+          'universal'
+        ]
       }
     ]
   },
