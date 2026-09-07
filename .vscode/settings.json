@@ -14,5 +14,8 @@
   "vetur.validation.templateProps": true,
   "vetur.experimental.templateInterpolationService": true,
   "vetur.format.defaultFormatter.ts": "vscode-typescript",
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "i18n-ally.localesPaths": [
+    "src/language"
+  ]
 }
